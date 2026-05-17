@@ -1,0 +1,1876 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通过示例了解 Struts 1.x">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/-quiest-ingonghengu.html">
+      
+      
+        <link rel="prev" href="html-iaoan.html">
+      
+      
+        <link rel="next" href="huangianhaian.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>7. QuiEst 应用程序 - 通过示例了解 Struts 1.x</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "通过示例了解 Struts 1.x";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-quiest" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="通过示例了解 Struts 1.x" class="md-header__button md-logo" aria-label="通过示例了解 Struts 1.x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            通过示例了解 Struts 1.x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7.  QuiEst 应用程序
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-struts1x-dec-2003" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="通过示例了解 Struts 1.x" class="md-nav__button md-logo" aria-label="通过示例了解 Struts 1.x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    通过示例了解 Struts 1.x
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-struts1x-dec-2003" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ianini.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 一般信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. strutspersonne 应用程序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="onghiiuiiaoanehui.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 控制器对表单的处理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ongaiiaoanehiong.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 动态表单的使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uouanhenginguehueongaiiaoan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 具有完整性约束的动态表单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html-iaoan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. HTML 表单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.  QuiEst 应用程序
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="-quiest-ingonghengu.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.  QuiEst 应用程序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Users 类
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. 该网络应用程序
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. 应用程序架构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Web 应用程序配置文件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4. Web 应用程序配置文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-serverxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.1. server.xml 文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-webxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.2. web.xml 文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#743-struts-configxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.3. struts-config.xml 文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#744-beans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.4. 应用程序的表单对象（Beans）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#745" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.5. 应用程序操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#746" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.6. 应用程序的消息文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5. 查看代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5. 查看代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#751-loginsjsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.1. logins.jsp 视图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#752-infosjsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.2. infos.jsp 视图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#753-errorsjsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.3. errors.jsp 视图
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6. Java 类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6. Java 类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#761-quiest2actionservlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.1. Quiest2ActionServlet 类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#762-setuploginsaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.2. SetupLoginsAction 类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#763-infosloginbean-infosloginaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.3. InfosLoginBean 和 InfosLoginAction 类
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7. 部署
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8. 结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="huangianhaian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 创建插件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hionghuuuan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 使用数据源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 附录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="7-quiest">7. <span style="color: #365f91">QuiEst 应用程序</span></h1>
+<p>在此，我们将介绍一个比之前那些应用程序稍显复杂的 Struts 应用程序。此前那些应用程序为了教学目的而设计得较为简单。</p>
+<h2 id="71-users">7.1. <span style="color: #4f81bd">Users 类</span></h2>
+<p>我们有一个 Java 类，用于存储 Unix 机器上用户的相关信息。这些信息存储在三个特定文件中：</p>
+<ul>
+  <li><b>/etc/passwd</b>：用户列表
+  </li>
+  <li><b>/etc/group</b>：用户组列表
+  </li>
+  <li><b>/etc/aliases</b>：电子邮件别名列表
+  </li>
+</ul>
+
+<p>这三个文件的内容如下：</p>
+<p><strong><mark style="background-color: #fff5ce">- /etc/passwd</mark></strong></p>
+<p>该文件中的行采用以下格式：</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="font-style:italic">login:pwd:uid:gid:id:dir:shell</span></span></span>
+</code></pre></div>
+
+<p>其中</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>登录名
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用户登录</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>密码
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">其加密密码</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>用户ID
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用户 ID</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gid
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">他的组ID</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ID
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">他的身份</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dir
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">他的登录目录</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>shell
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">他的 shell</div></td></tr></table>
+
+<p>因此，用户的命令行可能如下所示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dupond:xg675SDFEkl09:110:57:Guillaume Dupond:/home/iup2-auto/dupond:/bin/bash
+</code></pre></div>
+<p>上述用户的 ID 为 110，属于组 57。组 57 的定义可在 <em>/etc/group</em> 文件中找到。</p>
+<p><strong><mark style="background-color: #fff5ce">- /etc/group</mark></strong></p>
+<p>该文件中的行采用以下格式：</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="font-style:italic">nomGroupe:pwd:gid:membre1,membre2,....</span></span></span>
+</code></pre></div>
+
+<p>其中</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>groupName
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">组名</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pwd
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">加密密码 - 此字段通常为空</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>组ID
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">组 ID</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>成员
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用户登录名 - 此字段可以为空</div></td></tr></table>
+
+<p>因此，上述第 57 组的配置行可以如下所示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>iup2-auto::57:
+</code></pre></div>
+<p>这表示第57组被命名为<em>iup2-auto</em>。</p>
+<p><strong><mark style="background-color: #fff5ce">- /etc/aliases</mark></strong></p>
+<p>该文件中的行采用以下格式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>alias:[tab]login
+</code></pre></div>
+<p>使用</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>别名
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">别名</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[tab]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">一个或多个制表符</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>登录
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">该别名所属用户的登录名</div></td></tr></table>
+
+<p>因此，该行</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="font-weight:bold">guillaume.dupond:    dupond</span></span></span>
+</code></pre></div>
+
+<p>表示别名 <em>guillaume.dupond</em> 属于登录名为 <em>dupond</em> 的用户。 请记住，别名用于电子邮件地址中。因此，如果在上例中，Unix 机器名为 <em>shiva.istia.univ-angers.fr</em>，那么发往 <em>guillaume.dupond@shiva.istia.univ-angers.fr 的</em>电子邮件将被投递到该机器上登录名为 <em>dupond</em> 的用户的邮箱中。</p>
+<p>这里我们不会详细探讨 users 类的整个接口，而是仅关注其构造函数和几个方法： </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">users</span><span class="p">{</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">   </span><span class="c1">// attributes</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">Hashtable</span><span class="w"> </span><span class="n">usersByLogin</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Hashtable</span><span class="p">();</span><span class="w">       </span><span class="c1">// login --&gt; login, pwd, ..., dir</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="w"> </span><span class="n">erreurs</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span><span class="w">             </span><span class="c1">// list of error messages</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p">....</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">   </span><span class="c1">// manufacturer</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">users</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">usersFileName</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">groupsFileName</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">aliasesFileName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">        </span><span class="c1">// usersFileName: name of the user file with lines of the form</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">         </span><span class="c1">// login:pwd:uid:gid:id:dir:shell</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">         </span><span class="c1">// groupsFileName: name of the group file with lines of the form</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">         </span><span class="c1">// name:pwd:number:member1,member2,...</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">         </span><span class="c1">// aliasesFileName: name of alias file with lines of the form</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">         </span><span class="c1">// alias:[tab]login</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">         </span><span class="c1">// builds the usersByLogin dictionary</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="p">....</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="p">}</span><span class="c1">// manufacturer</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">     </span><span class="c1">// user list</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">Hashtable</span><span class="w"> </span><span class="nf">getUsersByLogin</span><span class="p">(){</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">usersByLogin</span><span class="p">;</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">   </span><span class="c1">// errors</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ArrayList</span><span class="w"> </span><span class="nf">getErreurs</span><span class="p">(){</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">erreurs</span><span class="p">;</span>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>按登录用户
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">一个字典（哈希表），其键为 <b>passwd</b> 文件中的登录名。每个键对应的值是一个字符串数组（String[7]），其元素为与该登录名关联的 <b>passwd</b> 文件行中的 7 个字段。如果该行少于 7 个字段，则某些字段可能为空。</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>errors
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">错误消息列表——若无错误则为空</div></td></tr></table>
+
+<h2 id="72">7.2. <span style="color: #4f81bd">该网络应用程序</span></h2>
+<p>我们建议构建以下 Web 应用程序（表单页面）：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000038D0000011543C29878.png" width="455" height="139" style="display:inline-block; margin:4px;width:12.026cm;height:3.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000038D0000011543C29878.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>编号</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>名称</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HTML 类型</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>角色</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">cmbLogins</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;select ...&gt;...&lt;/select&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">显示所有可请求信息的登录项列表</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">btnSearch</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;submit&quot; ...&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用于启动搜索</div></td></tr></table>
+
+<p>当用户点击 [搜索] 按钮 (2) 时，系统会从类型为 <strong>users 的</strong> U 对象中查询登录信息 (1)。如果该登录信息存在，则返回以下响应（信息页面）：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005020000024B1F4A2322.png" width="641" height="294" style="display:inline-block; margin:4px;width:16.96cm;height:7.766cm;" class="odt-zoomable" data-zoom-src="images/10000000000005020000024B1F4A2322.png" /></td></tr></table>
+
+<p>如上方的浏览器 URL 所示，表单参数是通过 GET 请求发送至服务器的。因此，我们可以直接向浏览器提供包含这些参数的 URL。这就是我们在此处所做的操作，即输入一个不存在的登录名。我们将获得以下响应（错误页面）：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051200000267F1D1E3FD.png" width="643" height="304" style="display:inline-block; margin:4px;width:17cm;height:8.056cm;" class="odt-zoomable" data-zoom-src="images/100000000000051200000267F1D1E3FD.png" /></td></tr></table>
+
+<h2 id="73">7.3. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">应用程序架构</span></strong></span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000555000003713CB22692.png" width="643" height="415" style="display:inline-block; margin:4px;width:17cm;height:10.971cm;" class="odt-zoomable" data-zoom-src="images/1000000000000555000003713CB22692.png" /></td></tr></table>
+
+<p>该架构包括以下组件：</p>
+<ul>
+  <li>视图： 
+    <ul>
+      <li><b>logins.jsp</b>，用于显示登录列表（视图 1）
+      </li>
+      <li><b>infos.jsp，</b>用于显示与登录相关的信息（视图 2）
+      </li>
+      <li><b>erreurs.jsp</b>，用于显示错误列表（视图 3）
+      </li>
+    </ul>
+  </li>
+  <li>动作使用的 <b>ActionForm</b> 类型表单： 
+    <ul>
+      <li>formLogins，用于收集来自 <b>logins.jsp</b> 表单的数据
+      </li>
+    </ul>
+  </li>
+  <li>动作：
+    <ul>
+      <li><b>SetupLoginAction</b>，负责准备 form.jsp 的内容并显示该视图
+      </li>
+      <li><b>InfosLoginAction，在 logins.jsp </b>的内容发送至服务器后对其进行处理
+      </li>
+      <li>ForwardAction，负责处理 <b>infos.jsp </b>和 <b>erreurs.jsp</b> 视图中的 [返回表单] 链接
+      </li>
+    </ul>
+  </li>
+  <li><b>用户</b>业务类，由上述操作用于检索用户数据
+  </li>
+  <li>由三个平面文件 <b>passwd</b>、<b>group </b>和 <b>aliases</b> 提供的模型
+  </li>
+</ul>
+
+<h2 id="74-web">7.4. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">Web 应用程序配置文件</span></strong></span></h2>
+<h3 id="741-serverxml">7.4.1. <span style="color: #4f81bd">server.xml 文件</span></h3>
+<p>应用程序上下文将命名为 <strong>/strutsquiest2</strong>。因此，我们将向 Tomcat 的 <strong>server.xml</strong> 文件中添加以下行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">    </span><span class="nt">&lt;Context</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/strutsquiest2&quot;</span><span class="w"> </span><span class="na">docBase=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>完成此操作后，可能需要重启 Tomcat 以便其识别新上下文。可以通过访问 URL <strong>http://localhost:8080/strutsquiest2</strong> 来验证其有效性。</p>
+<h3 id="742-webxml">7.4.2. <span style="color: #4f81bd">web.xml 文件</span></h3>
+<p>应用程序的 <strong>web.xml</strong> 配置文件如下所示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">&lt;!DOCTYPE web-app PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN&quot; &quot;http://java.sun.com/j2ee/dtds/web-app_2_2.dtd&quot;&gt;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nt">&lt;web-app&gt;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nt">&lt;servlet&gt;</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">        </span><span class="nt">&lt;servlet-name&gt;</span>strutsquiest2<span class="nt">&lt;/servlet-name&gt;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">        </span><span class="nt">&lt;servlet-class&gt;</span>istia.st.struts.quiest.Quiest2ActionServlet<span class="nt">&lt;/servlet-class&gt;</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">        </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">            </span><span class="nt">&lt;param-name&gt;</span>config<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">            </span><span class="nt">&lt;param-value&gt;</span>/WEB-INF/struts-config.xml<span class="nt">&lt;/param-value&gt;</span><span class="w">            </span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="nt">&lt;/init-param&gt;</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">        </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">            </span><span class="nt">&lt;param-name&gt;</span>passwdFileName<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">            </span><span class="nt">&lt;param-value&gt;</span>data/passwd<span class="nt">&lt;/param-value&gt;</span><span class="w">            </span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">        </span><span class="nt">&lt;/init-param&gt;</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">        </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">            </span><span class="nt">&lt;param-name&gt;</span>groupFileName<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">            </span><span class="nt">&lt;param-value&gt;</span>data/group<span class="nt">&lt;/param-value&gt;</span><span class="w">            </span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">        </span><span class="nt">&lt;/init-param&gt;</span><span class="w">        </span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">    </span><span class="nt">&lt;/servlet&gt;</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="nt">&lt;servlet-mapping&gt;</span>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">        </span><span class="nt">&lt;servlet-name&gt;</span>strutsquiest2<span class="nt">&lt;/servlet-name&gt;</span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">        </span><span class="nt">&lt;url-pattern&gt;</span>*.do<span class="nt">&lt;/url-pattern&gt;</span><span class="w">        </span>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">    </span><span class="nt">&lt;/servlet-mapping&gt;</span>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div>
+<p>此 <strong>web.xml</strong> 文件引入了一项新功能。 Struts 控制器不再是 <strong>org.apache.struts.action.</strong>ActionServlet，而是一个派生类，我们在此将其命名为 <strong>istia.st.struts.quiest.Quiest2ActionServlet</strong>。这将允许我们获取两个初始化参数：<strong>passwdFileName</strong>（<strong>密码</strong>文件的位置）和 <strong>groupFileName</strong>（<strong>组</strong>文件的位置）。此应用程序中不需要<strong>别名</strong>文件。</p>
+<h3 id="743-struts-configxml">7.4.3. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">struts-config.xml 文件</span></strong></span></h3>
+<p><strong>struts-config.xml</strong> 文件内容如下： </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="cp">&lt;!DOCTYPE struts-config PUBLIC</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="cp">          &quot;-//Apache Software Foundation//DTD Struts Configuration 1.1//EN&quot;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="cp">          &quot;http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd&quot;&gt;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nt">&lt;struts-config&gt;</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="nt">&lt;form-beans&gt;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">        </span><span class="nt">&lt;form-bean</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;org.apache.struts.action.DynaActionForm&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">            </span><span class="nt">&lt;form-property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cmbLogins&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;java.lang.String&quot;</span><span class="w"> </span><span class="na">initial=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">            </span><span class="nt">&lt;form-property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tLogins&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;java.lang.String[]&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">        </span><span class="nt">&lt;/form-bean&gt;</span><span class="w">            </span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="nt">&lt;/form-beans&gt;</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">    </span><span class="nt">&lt;action-mappings&gt;</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/init&quot;</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.SetupLoginsAction&quot;</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherLogins&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/logins.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/infosLogin&quot;</span>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.InfosLoginAction&quot;</span>
+<a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherInfos&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/infos.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+<a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a>
+<a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/retourLogins&quot;</span>
+<a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a><span class="w">            </span><span class="na">parameter=</span><span class="s">&quot;/vues/logins.jsp&quot;</span>
+<a id="__codelineno-22-42" name="__codelineno-22-42" href="#__codelineno-22-42"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;org.apache.struts.actions.ForwardAction&quot;</span>
+<a id="__codelineno-22-43" name="__codelineno-22-43" href="#__codelineno-22-43"></a><span class="w">      </span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-44" name="__codelineno-22-44" href="#__codelineno-22-44"></a>
+<a id="__codelineno-22-45" name="__codelineno-22-45" href="#__codelineno-22-45"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
+<a id="__codelineno-22-46" name="__codelineno-22-46" href="#__codelineno-22-46"></a>
+<a id="__codelineno-22-47" name="__codelineno-22-47" href="#__codelineno-22-47"></a><span class="w">        </span><span class="nt">&lt;message-resources</span><span class="w"> </span>
+<a id="__codelineno-22-48" name="__codelineno-22-48" href="#__codelineno-22-48"></a><span class="w">          </span><span class="na">parameter=</span><span class="s">&quot;istia.st.struts.quiest.ApplicationResources&quot;</span>
+<a id="__codelineno-22-49" name="__codelineno-22-49" href="#__codelineno-22-49"></a><span class="w">    </span><span class="na">null=</span><span class="s">&quot;false&quot;</span>
+<a id="__codelineno-22-50" name="__codelineno-22-50" href="#__codelineno-22-50"></a><span class="w">  </span><span class="nt">/&gt;</span><span class="w">    </span>
+<a id="__codelineno-22-51" name="__codelineno-22-51" href="#__codelineno-22-51"></a>
+<a id="__codelineno-22-52" name="__codelineno-22-52" href="#__codelineno-22-52"></a><span class="nt">&lt;/struts-config&gt;</span>
+</code></pre></div>
+<p>它包含三个主要部分：</p>
+<ul>
+  <li>&lt;<b>form-beans</b>&gt; 部分中的表单声明
+  </li>
+  <li>&lt;<b>action-mappings</b>&gt; 部分中的<b>操作</b>声明
+  </li>
+  <li>&lt;<b>message-resources</b>&gt; 部分中的<b>资源文件</b>声明
+  </li>
+</ul>
+<h3 id="744-beans">7.4.4. <span style="color: #4f81bd">应用程序的表单对象（Beans）</span></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>    <span class="p">&lt;</span><span class="nt">form-beans</span><span class="p">&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>        <span class="p">&lt;</span><span class="nt">form-bean</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formLogins&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.action.DynaActionForm&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cmbLogins&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String&quot;</span> <span class="na">initial</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tLogins&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String[]&quot;</span><span class="p">/&gt;</span>            
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>    <span class="p">&lt;/</span><span class="nt">form-beans</span><span class="p">&gt;</span>    
+</code></pre></div>
+<p>我们的应用程序中只有一个表单 Bean，名为 <strong>formLogins</strong>，其类型继承自 <strong>DynaActionForm</strong>。它将在以下情况下使用：</p>
+<ul>
+  <li>用于存储显示视图 #1 所需的数据
+  </li>
+  <li>在用户提交表单时，从视图 #1 中检索表单的值
+  </li>
+</ul>
+
+<p><strong>formLogins</strong> Bean 的结构与视图 #1 中的表单相关联。让我们来看看：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000259000000EC4BEC3770.png" width="301" height="118" style="display:inline-block; margin:4px;width:7.952cm;height:3.124cm;" class="odt-zoomable" data-zoom-src="images/1000000000000259000000EC4BEC3770.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>编号</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>名称</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>HTML 类型</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>角色</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">cmbLogins</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;select ...&gt;...&lt;/select&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">显示所有可请求信息的登录项列表</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">btnSearch</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;submit&quot; ...&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用于启动搜索</div></td></tr></table>
+
+<p>让我们区分几种情况：</p>
+<ul>
+  <li>从客户端到服务器<b>，formLogins</b> 对象用于存储上方 HTML 表单中的值，这些值将通过 [Submit] 按钮提交。因此，它需要一个 <b>cmbLogins</b> 字段来接收 HTML <b>cmbLogins</b> 字段的值，即用户选择的登录名。
+  </li>
+  <li>从服务器到客户端<b>，formLogins</b> 对象用于为视图 #1 提供初始内容。其 <b>tLogins</b> 字段将作为列表 #1 的内容。其 <b>cmbLogins</b> 字段将用于设置列表 #1 中待选中的项目。
+  </li>
+</ul>
+<h3 id="745">7.4.5. <span style="color: #4f81bd">应用程序操作</span></h3>
+<p>操作由 <strong>Action</strong> 类型或其派生类型的对象处理。操作在 &lt;<strong>action-mappings</strong>&gt; 标签内进行配置：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="w">    </span><span class="nt">&lt;action-mappings&gt;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/init&quot;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.SetupLoginsAction&quot;</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherLogins&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/logins.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/infosLogin&quot;</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.InfosLoginAction&quot;</span>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherInfos&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/infos.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/retourLogins&quot;</span>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="w">            </span><span class="na">parameter=</span><span class="s">&quot;/vues/logins.jsp&quot;</span>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;org.apache.struts.actions.ForwardAction&quot;</span>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">      </span><span class="nt">/&gt;</span>
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
+</code></pre></div>
+<p><mark style="background-color: #fff5ce">/init 操作</mark></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/init&quot;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.SetupLoginsAction&quot;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherLogins&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/logins.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+</code></pre></div>
+<p>下面描述一下 <strong>/init</strong> 操作的工作原理：</p>
+<ul>
+  <li><b>/init</b> 操作通常仅在首次请求-响应循环中发生一次，即当用户请求 URL<b> http://localhost:8080/strutsquiest2/init.do 时</b>
+  </li>
+  <li>此时会创建或回收 <b>formsLogins</b> 对象。该对象会根据 <b>scope</b> 属性的指定，被从会话中检索（回收）或存入会话（创建）。
+  </li>
+  <li>其 <b>reset</b> 方法会被调用。请注意，在 <b>ActionForm</b> 类及其派生类中，该方法默认不执行任何操作。它在将客户端请求的数据复制到 <b>ActionForm</b> 对象之前被调用，用于在复制前清空该对象。这里的客户端请求是什么？ 当请求的 URL 为<b> http://localhost:8080/strutsquiest2/init.do</b> 时，将触发 <b>/init</b> 操作。该 URL 可通过 GET 或 POST 方式进行请求。只需在请求中包含与 <b>formLogins</b> 字段名称对应的参数，即可初始化这些字段，如下例所示：
+  </li>
+</ul>
+
+<p><img src="images/100000000000018D000000DD4795D34A.png" width="397" height="221" style="width:10.502cm;height:5.846cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018D000000DD4795D34A.png" /></p>
+<ul>
+  <li>该请求包含 <b>cmbLogins</b> 参数（<i>afterpak</i>）。因此，Struts 控制器将该参数的值复制到了 <b>formLogins</b> 的 <b>cmbLogins</b> 字段中。 随后 <b>SetupLoginsAction</b> 动作被执行，并最终显示了 <b>logins.jsp</b> 视图。该视图包含一个表单，其中某些字段的值来自 <b>formLogins</b>。因此，名为 <b>cmbLogins 的</b> HTML 下拉选择框从 <b>formLogins</b> 中的 <b>cmbLogins</b> 字段（<i>=afterpak</i>）获取了其值。这就是为什么登录列表显示的位置与 <i>afterpak</i> 登录对应。
+  </li>
+  <li>我们还可以尝试按以下方式传递 <b>tLogins</b> 参数： 
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>http://localhost:8080/strutsquiest2/init.do?cmbLogins=afterpak&amp;tLogins=login1&amp;tLogins=login2
+</code></pre></div>
+<p>这将使用数组 {&quot;login1&quot;,&quot;login2&quot;} 初始化 <strong>formLogins</strong> 的 <strong>tLogins</strong> 字段。然而，正如我们稍后将看到的<strong>，SetupLoginsAction</strong> 操作会为 <strong>tLogins</strong> 字段赋值，并将由此创建的数组替换为一个新数组。最终出现在 <strong>logins.jsp</strong> 视图中的正是这个新数组。</p>
+<ul>
+  <li>前面的讨论虽然有些复杂，但说明我们不能假设 <b>/init</b> 操作会在没有客户端参数的情况下被触发。因此，使用 <b>reset</b> 方法来清空 <b>formLogins</b> 可能会很有用。在这种情况下，我们需要扩展 <b>DynaActionForm</b> 类。我们在此处并未这样做。
+    <ul>
+      <li>一旦调用<b> formLogins</b> 的 reset 方法，控制器会将客户端请求中的数据复制到 <b>formLogins</b> 中同名的字段中。通常，<b>/init</b> 操作是在没有客户端参数的情况下调用的，但我们之前已经说明，没有任何东西能阻止客户端使用任意参数调用 <b>/init</b> 操作。因此，在本阶段结束时<b>，cmbLogins </b>和 <b>tLogins</b> 字段很可能已经有了值。 我们已经看到，<b>cmbLogins</b> 字段会保留该值，但 <b>tLogins</b> 字段不会。 
+      </li>
+      <li>随后，控制器会检查该操作的 <b>validate</b> 属性。此处的值为“false”。<b>formLogins</b> 的 <b>validate</b> 方法将不会被调用。因此，我们无需编写该方法。
+      </li>
+      <li>如果 <b>SetupLoginsAction</b> 对象已存在，则将其回收；否则创建新对象，并调用其 <b>execute</b> 方法。该方法的唯一目的是为 <b>formLogins</b> 的 <b>tLogins</b> 字段赋值。该值是登录名数组，将从 <b>users</b> 业务类中获取。此操作可能会失败。这就是为什么 <b>/init</b> 操作之后可能跟两个视图：
+        <ul>
+          <li>如果 <b>users</b> 类无法提供登录名数组，则显示 <b>errors.jsp</b> 视图
+          </li>
+          <li>否则显示 <b>logins.jsp</b> 视图
+          </li>
+        </ul>
+      </li>
+      <li>控制器将显示上述两个视图中的一个
+      </li>
+      <li><b>/init</b> 操作的请求-响应循环即告完成。
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><mark style="background-color: #fff5ce">/infosLogin 操作</mark></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/infosLogin&quot;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.InfosLoginAction&quot;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherInfos&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/infos.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+</code></pre></div>
+<p>下面我们来描述一下 <strong>/infosLogin</strong> 操作的工作原理：</p>
+<ul>
+  <li>当用户点击 <b>logins.jsp</b> 视图上的 [搜索] 按钮时，通常会触发 <b>/infosLogin</b> 操作。随后，系统会根据视图中 &lt;<b>form&gt; </b>HTML 标签的指定内容向服务器发送请求：
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">html:form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formLogins&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/infosLogin&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.action.DynaActionForm&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+  <li>我们可以看到，该请求是通过 <b>GET</b> 方法发送至服务器的。因此，用户可以手动输入该地址：
+  </li>
+</ul>
+
+<p><img src="images/100000000000028F0000013C58EFA133.png" width="655" height="316" style="width:17.328cm;height:8.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000028F0000013C58EFA133.png" /></p>
+<ul>
+  <li>formsLogins 对象会被创建或回收。它会根据 <b>scope</b> 属性的指定，从会话中检索（回收）或存入会话（创建）。
+  </li>
+  <li>在将客户端请求的数据复制到 <b>ActionForm</b> 对象之前，会调用其 <b>reset</b> 方法。该方法通常采用以下形式：<b>http://localhost:8080/strutsquiest2/infosLogin.do?cmbLogins=xx</b>，其中 <b>xx </b>是从登录名列表中选定的登录名。但如果用户通过传递任意参数使用了之前的 URL，该参数也可以是任意值。请考虑以下页面序列：
+  </li>
+</ul>
+
+<p><img src="images/10000000000002EC0000013CC48BE02D.png" width="680" height="287" style="width:17.988cm;height:7.599cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002EC0000013CC48BE02D.png" /></p>
+<ul>
+  <li>调用 <b>/infosLogin</b> 操作时，传入了参数字符串 <b>cmbLogins=xx&amp;tLogins=login1&amp;tLogins=login2</b>。因此，<b>formLogins</b> 中的 <b>cmbLogins </b>和 <b>tLogins</b> 字段将分别接收值 &quot;xx&quot; 和 {&quot;login1&quot;,&quot;login2&quot;}。 <b>/infosLogin</b> 操作将向 <b>users</b> 业务类请求与“xx”登录名关联的信息。<b>users</b> 类会响应称该登录名不存在。因此显示了上方的视图。现在，让我们点击上方的 [返回表单] 链接：
+  </li>
+</ul>
+
+<p><img src="images/100000000000019F000000EB63515C3C.png" width="415" height="235" style="width:10.978cm;height:6.216cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019F000000EB63515C3C.png" /></p>
+<ul>
+  <li>[返回表单]链接触发了 <b>/retourLogins</b> 操作。该操作仅直接显示 <b>logins.jsp</b> 视图，不执行任何中间操作。请注意<b>，tLogins</b> 字段用于填充 <b>logins.jsp</b> 视图中的登录名列表。由于用户已将该值修改为 {&quot;login1&quot;,&quot;login2&quot;}，因此这两个登录名现在会出现在列表中。 我们再次强调，在应用程序的运行中，必须充分考虑用户或程序设置的任意参数，这一点至关重要。解决此处问题的方案是让 [返回表单] 链接指向 <b>/init</b> 操作。这样可以确保返回正确的登录名列表。
+  </li>
+  <li>让我们回到对 <b>/infosLogin</b> 操作的常规请求，例如： 
+  </li>
+</ul>
+
+<p><strong>http://localhost:8080/strutsquiest2/infosLogin.do?cmbLogins=afterpak</strong></p>
+<ul>
+  <li>Struts 控制器会为 ActionForm 对象的 <b>cmbLogins</b> 字段赋值。然而，<b>tLogins</b> 字段将不会被赋值（因为发送的请求中没有对应的字段）。这种行为对我们来说是可行的。因此，我们无需为 <b>formLogins</b> 编写自定义<b>的重置</b>方法。
+    <ul>
+      <li>一旦调用<b> formLogins</b> 的重置方法，控制器会将客户端请求中的数据复制到 <b>formLogins</b> 中同名的字段中。<b>cmbLogins</b> 字段将接收一个值：用户选择的登录名（<i>afterpak</i>）。
+      </li>
+      <li>随后，控制器会检查该操作的 <b>validate</b> 属性。在此处，其值为“false”。因此不会调用 <b>formLogins</b> 的 <b>validate</b> 方法。
+      </li>
+      <li>如果 <b>InfosLoginAction</b> 对象已存在，则将其复用；否则创建该对象，并调用其 <b>execute</b> 方法。该方法的作用是检索与 <b>cmbLogins</b> 登录名关联的信息。这些信息将从<b>用户的</b>业务类中获取。此操作可能会失败（例如，登录名不存在）。这就是为什么 <b>/infosLogin</b> 操作之后可以跟两个视图：
+        <ul>
+          <li>如果 <b>users</b> 类无法提供所需的信息，则显示 <b>errors.jsp</b> 视图
+          </li>
+          <li>否则显示 <b>infos.jsp</b> 视图
+          </li>
+        </ul>
+      </li>
+      <li>控制器将显示这两个视图中的一个
+      </li>
+      <li><b>/infosLogin</b> 操作的请求-响应循环已完成。
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><mark style="background-color: #fff5ce">/retourLogins 操作</mark></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/retourLogins&quot;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">            </span><span class="na">parameter=</span><span class="s">&quot;/vues/logins.jsp&quot;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;org.apache.struts.actions.ForwardAction&quot;</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">      </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<ul>
+  <li>点击 <b>erreurs.jsp </b>和 <b>infos.jsp</b> 页面上的 [返回表单] 链接会触发 <b>/retourLogins</b> 操作。
+  </li>
+  <li>此处该操作未关联任何表单。因此，我们将直接调用 <b>ForwardAction</b> 对象的 <b>execute</b> 方法，该方法将返回一个指向 <b>/vues/logins.jsp</b> 视图的 <b>ActionForward</b> 对象。
+  </li>
+</ul>
+<h3 id="746">7.4.6. <span style="color: #4f81bd">应用程序的消息文件</span></h3>
+<p><strong>struts-config.xml</strong> 文件的第三部分是消息文件：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="w">        </span><span class="nt">&lt;message-resources</span><span class="w"> </span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">      </span><span class="na">parameter=</span><span class="s">&quot;istia.st.struts.quiest.ApplicationResources&quot;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="na">null=</span><span class="s">&quot;false&quot;</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="nt">/&gt;</span><span class="w">        </span>
+</code></pre></div>
+<p><strong>ApplicationResources.properties</strong> 文件位于 <strong>WEB-INF/classes/istia/st/struts/quiest</strong> 目录下。其内容如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>errors.header=&lt;ul&gt;
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>errors.footer=&lt;/ul&gt;
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>parametreManquant=&lt;li&gt;Le paramètre [{0}] n&#39;a pas été initialisé&lt;/li&gt;
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>usersException=&lt;li&gt;Erreur d&#39;initialisation de l&#39;application : {0}&lt;/li&gt;
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>loginInconnu=&lt;li&gt;Le login [{0}] n&#39;existe pas&lt;/li&gt;
+</code></pre></div>
+<h2 id="75">7.5. <span style="color: #4f81bd">查看代码</span></h2>
+<p>若读者无法理解下文展示的视图代码，建议先复习表单处理相关课程。</p>
+<h3 id="751-loginsjsp">7.5.1. <span style="color: #4f81bd">logins.jsp 视图</span></h3>
+<p>请记住，该视图会在以下两种情况下显示：</p>
+<ul>
+  <li>在首次请求-响应循环中调用 <b>/init</b> 操作时
+  </li>
+  <li>在后续请求-响应循环中调用 <b>/retourLogins</b> 操作时
+  </li>
+</ul>
+
+<p><strong>logins.jsp</strong> 视图的代码如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Quiest - formulaire<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">background</span><span class="o">=</span><span class="s">&quot;&lt;html:rewrite page=&quot;</span><span class="err">/</span><span class="na">images</span><span class="err">/</span><span class="na">standard</span><span class="err">.</span><span class="na">jpg</span><span class="err">&quot;</span><span class="p">/&gt;</span>&quot;&gt;
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>      <span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Application QuiEst<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>      <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>      <span class="p">&lt;</span><span class="nt">html:form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formLogins&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/infosLogin&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.action.DynaActionForm&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>          <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>              <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Login cherché<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>                <span class="p">&lt;</span><span class="nt">html:select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formLogins&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;cmbLogins&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>                      <span class="p">&lt;</span><span class="nt">html:options</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formLogins&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;tLogins&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>                  <span class="p">&lt;/</span><span class="nt">html:select</span><span class="p">&gt;</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>                <span class="p">&lt;</span><span class="nt">html:submit</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Chercher&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a>          <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>      <span class="p">&lt;/</span><span class="nt">html:form</span><span class="p">&gt;</span>
+<a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a>    <span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+<a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="752-infosjsp">7.5.2. <span style="color: #4f81bd">infos.jsp 视图</span></h3>
+<p>当成功调用 <strong>/infosLogin</strong> 操作时，将显示此视图。其代码如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-bean.tld&quot; prefix=&quot;bean&quot; %&gt;
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;titre&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">background</span><span class="o">=</span><span class="s">&quot;&lt;html:rewrite page=&quot;</span><span class="err">/</span><span class="na">images</span><span class="err">/</span><span class="na">standard</span><span class="err">.</span><span class="na">jpg</span><span class="err">&quot;</span><span class="p">/&gt;</span>&quot;&gt;
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;titre&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>login<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>pwd<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>uid<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>gid<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>id<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>dir<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>shell<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[0]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[1]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[2]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[3]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[4]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[5]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[6]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>            
+<a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>                                                                                                                                                                                                                
+<a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>                                      
+<a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a>    <span class="p">&lt;</span><span class="nt">html:link</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;/retourLogins.do&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a>            Retour au formulaire
+<a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a>        <span class="p">&lt;/</span><span class="nt">html:link</span><span class="p">&gt;</span>        
+<a id="__codelineno-33-29" name="__codelineno-33-29" href="#__codelineno-33-29"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-33-30" name="__codelineno-33-30" href="#__codelineno-33-30"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>此视图使用了一个名为 <strong>infosLoginBean 的</strong>对象，该对象由 <strong>/infosLogin</strong> 操作放入请求中。该对象有两个字段：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>String titre;                        // titre à afficher dans la vue
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>String[] infosLogin;        // tableau des informations à afficher dans la vue
+</code></pre></div>
+<p>在讲解 InfosLoginAction 类的代码时，我们将更详细地讨论这个类。</p>
+<h3 id="753-errorsjsp">7.5.3. <span style="color: #4f81bd">errors.jsp 视图</span></h3>
+<p>当 <strong>/init</strong> 或 <strong>/infosLogin</strong> 操作发生错误时，将显示此视图。其代码如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Application QuiEst - erreurs<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">background</span><span class="o">=</span><span class="s">&quot;&lt;html:rewrite page=&quot;</span><span class="err">/</span><span class="na">images</span><span class="err">/</span><span class="na">standard</span><span class="err">.</span><span class="na">jpg</span><span class="err">&quot;</span><span class="p">/&gt;</span>&quot;&gt;
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>Application QuiEst - Erreurs<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Les erreurs suivantes se sont produites<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>        <span class="p">&lt;</span><span class="nt">html:errors</span><span class="p">/&gt;</span>
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>    <span class="p">&lt;</span><span class="nt">html:link</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;/retourLogins.do&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>            Retour au formulaire
+<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>        <span class="p">&lt;/</span><span class="nt">html:link</span><span class="p">&gt;</span>    
+<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="76-java">7.6. <span style="color: #4f81bd">Java 类</span></h2>
+<p>web.xml 文件引用了一个 Java 类：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nt">&lt;web-app&gt;</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="nt">&lt;servlet&gt;</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">      </span><span class="nt">&lt;servlet-name&gt;</span>strutsquiest2<span class="nt">&lt;/servlet-name&gt;</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="nt">&lt;servlet-class&gt;</span>istia.st.struts.quiest.Quiest2ActionServlet<span class="nt">&lt;/servlet-class&gt;</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>....
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">  </span><span class="nt">&lt;/servlet&gt;</span>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>...
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div>
+<p><strong>struts-config.xml</strong> 配置文件引用了两个 Java 类：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/infosLogin&quot;</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.InfosLoginAction&quot;</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherInfos&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/infos.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/init&quot;</span>
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="w">            </span><span class="na">name=</span><span class="s">&quot;formLogins&quot;</span>
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a><span class="w">            </span><span class="na">validate=</span><span class="s">&quot;false&quot;</span><span class="w"> </span>
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a><span class="w">            </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span>
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;istia.st.struts.quiest.SetupLoginsAction&quot;</span>
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a><span class="w">      </span><span class="nt">&gt;</span>
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherLogins&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/logins.jsp&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;afficherErreurs&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/vues/erreurs.jsp&quot;</span><span class="nt">/&gt;</span><span class="w">            </span>
+<a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
+</code></pre></div>
+<h3 id="761-quiest2actionservlet">7.6.1. <span style="color: #4f81bd">Quiest2ActionServlet 类</span></h3>
+<p>Quest2ActionServlet 类继承自 <strong>ActionServlet</strong> 类，即 Struts 的控制器类。我们继承 <strong>ActionServlet</strong> 类是为了自定义其 <strong>init</strong> 方法。该方法仅在 Servlet 初始加载时执行一次，允许我们构建一个 <strong>users</strong> 类型的业务对象。该对象只需构建一次，而 <strong>init</strong> 方法是执行此构建操作的理想位置。 构建 <strong>users</strong> 对象需要两个文件：<strong>passwd</strong> 和 <strong>group</strong> 文件。这两个文件的位置作为参数在应用程序的 <strong>web.xml</strong> 文件中传递给 Servlet：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="w">    </span><span class="nt">&lt;servlet&gt;</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">      </span><span class="nt">&lt;servlet-name&gt;</span>strutsquiest2<span class="nt">&lt;/servlet-name&gt;</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="nt">&lt;servlet-class&gt;</span>istia.st.struts.quiest.Quiest2ActionServlet<span class="nt">&lt;/servlet-class&gt;</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">        </span><span class="nt">&lt;param-name&gt;</span>config<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">      </span><span class="nt">&lt;param-value&gt;</span>/WEB-INF/struts-config.xml<span class="nt">&lt;/param-value&gt;</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="w">    </span><span class="nt">&lt;/init-param&gt;</span>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="w">    </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="w">        </span><span class="nt">&lt;param-name&gt;</span>passwdFileName<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="w">      </span><span class="nt">&lt;param-value&gt;</span>data/passwd<span class="nt">&lt;/param-value&gt;</span>
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="w">    </span><span class="nt">&lt;/init-param&gt;</span>
+<a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="w">    </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a><span class="w">        </span><span class="nt">&lt;param-name&gt;</span>groupFileName<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a><span class="w">      </span><span class="nt">&lt;param-value&gt;</span>data/group<span class="nt">&lt;/param-value&gt;</span>
+<a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="w">    </span><span class="nt">&lt;/init-param&gt;</span><span class="w">        </span>
+<a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a><span class="w">  </span><span class="nt">&lt;/servlet&gt;</span>
+</code></pre></div>
+<p>Servlet 代码如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.quiest</span><span class="p">;</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.*</span><span class="p">;</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.struts.action.*</span><span class="p">;</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">istia.st.users.*</span><span class="p">;</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Quiest2ActionServlet</span>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="w">  </span><span class="kd">extends</span><span class="w"> </span><span class="n">ActionServlet</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="w">   </span><span class="c1">// servlet attributes</span>
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">ActionErrors</span><span class="w"> </span><span class="n">erreurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionErrors</span><span class="p">();</span>
+<a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">tLogins</span><span class="p">;</span>
+<a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a>
+<a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a><span class="w">   </span><span class="c1">//init</span>
+<a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a>
+<a id="__codelineno-39-19" name="__codelineno-39-19" href="#__codelineno-39-19"></a><span class="w">    </span><span class="c1">// don&#39;t forget to initialize the parent class</span>
+<a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a><span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">init</span><span class="p">();</span>
+<a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a>
+<a id="__codelineno-39-22" name="__codelineno-39-22" href="#__codelineno-39-22"></a><span class="w">     </span><span class="c1">// local variables</span>
+<a id="__codelineno-39-23" name="__codelineno-39-23" href="#__codelineno-39-23"></a><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">initParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;passwdFileName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;groupFileName&quot;</span><span class="p">};</span>
+<a id="__codelineno-39-24" name="__codelineno-39-24" href="#__codelineno-39-24"></a><span class="w">    </span><span class="n">Properties</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
+<a id="__codelineno-39-25" name="__codelineno-39-25" href="#__codelineno-39-25"></a>
+<a id="__codelineno-39-26" name="__codelineno-39-26" href="#__codelineno-39-26"></a><span class="w">    </span><span class="c1">// retrieve servlet initialization parameters</span>
+<a id="__codelineno-39-27" name="__codelineno-39-27" href="#__codelineno-39-27"></a><span class="w">    </span><span class="n">ServletConfig</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getServletConfig</span><span class="p">();</span>
+<a id="__codelineno-39-28" name="__codelineno-39-28" href="#__codelineno-39-28"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">servletPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="na">getServletContext</span><span class="p">().</span><span class="na">getRealPath</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">);</span>
+<a id="__codelineno-39-29" name="__codelineno-39-29" href="#__codelineno-39-29"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">initParams</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-30" name="__codelineno-39-30" href="#__codelineno-39-30"></a><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="na">getInitParameter</span><span class="p">(</span><span class="n">initParams</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-39-31" name="__codelineno-39-31" href="#__codelineno-39-31"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valeur</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-32" name="__codelineno-39-32" href="#__codelineno-39-32"></a><span class="w">        </span><span class="n">erreurs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ActionErrors</span><span class="p">.</span><span class="na">GLOBAL_ERROR</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionError</span><span class="p">(</span><span class="s">&quot;parametreManquant&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">initParams</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">));</span>
+<a id="__codelineno-39-33" name="__codelineno-39-33" href="#__codelineno-39-33"></a><span class="w">        </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-39-34" name="__codelineno-39-34" href="#__codelineno-39-34"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-39-35" name="__codelineno-39-35" href="#__codelineno-39-35"></a><span class="w">       </span><span class="c1">// the parameter</span>
+<a id="__codelineno-39-36" name="__codelineno-39-36" href="#__codelineno-39-36"></a><span class="w">      </span><span class="n">params</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="n">initParams</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">valeur</span><span class="p">);</span>
+<a id="__codelineno-39-37" name="__codelineno-39-37" href="#__codelineno-39-37"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">//for</span>
+<a id="__codelineno-39-38" name="__codelineno-39-38" href="#__codelineno-39-38"></a><span class="w">     </span><span class="c1">// return if there were initialization errors</span>
+<a id="__codelineno-39-39" name="__codelineno-39-39" href="#__codelineno-39-39"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">erreurs</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-40" name="__codelineno-39-40" href="#__codelineno-39-40"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-39-41" name="__codelineno-39-41" href="#__codelineno-39-41"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-42" name="__codelineno-39-42" href="#__codelineno-39-42"></a><span class="w">     </span><span class="c1">// create a users object</span>
+<a id="__codelineno-39-43" name="__codelineno-39-43" href="#__codelineno-39-43"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-44" name="__codelineno-39-44" href="#__codelineno-39-44"></a><span class="w">      </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">servletPath</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;passwdFileName&quot;</span><span class="p">),</span>
+<a id="__codelineno-39-45" name="__codelineno-39-45" href="#__codelineno-39-45"></a><span class="w">                    </span><span class="n">servletPath</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;groupFileName&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-39-46" name="__codelineno-39-46" href="#__codelineno-39-46"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-47" name="__codelineno-39-47" href="#__codelineno-39-47"></a><span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-48" name="__codelineno-39-48" href="#__codelineno-39-48"></a><span class="w">      </span><span class="n">erreurs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ActionErrors</span><span class="p">.</span><span class="na">GLOBAL_ERROR</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionError</span><span class="p">(</span><span class="s">&quot;usersException&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">getMessage</span><span class="p">()));</span>
+<a id="__codelineno-39-49" name="__codelineno-39-49" href="#__codelineno-39-49"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-39-50" name="__codelineno-39-50" href="#__codelineno-39-50"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">//catch</span>
+<a id="__codelineno-39-51" name="__codelineno-39-51" href="#__codelineno-39-51"></a><span class="w">     </span><span class="c1">// retrieve the list of logins</span>
+<a id="__codelineno-39-52" name="__codelineno-39-52" href="#__codelineno-39-52"></a><span class="w">    </span><span class="n">tLogins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="n">u</span><span class="p">.</span><span class="na">getUsersByLogin</span><span class="p">().</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-39-53" name="__codelineno-39-53" href="#__codelineno-39-53"></a><span class="w">    </span><span class="n">Enumeration</span><span class="w"> </span><span class="n">eLogins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="na">getUsersByLogin</span><span class="p">().</span><span class="na">keys</span><span class="p">();</span>
+<a id="__codelineno-39-54" name="__codelineno-39-54" href="#__codelineno-39-54"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tLogins</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-55" name="__codelineno-39-55" href="#__codelineno-39-55"></a><span class="w">      </span><span class="n">tLogins</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">eLogins</span><span class="p">.</span><span class="na">nextElement</span><span class="p">();</span>
+<a id="__codelineno-39-56" name="__codelineno-39-56" href="#__codelineno-39-56"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-57" name="__codelineno-39-57" href="#__codelineno-39-57"></a><span class="w">     </span><span class="c1">// sort logins</span>
+<a id="__codelineno-39-58" name="__codelineno-39-58" href="#__codelineno-39-58"></a><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">tLogins</span><span class="p">);</span>
+<a id="__codelineno-39-59" name="__codelineno-39-59" href="#__codelineno-39-59"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="c1">//init</span>
+<a id="__codelineno-39-60" name="__codelineno-39-60" href="#__codelineno-39-60"></a>
+<a id="__codelineno-39-61" name="__codelineno-39-61" href="#__codelineno-39-61"></a><span class="w">   </span><span class="c1">// servlet private info access method</span>
+<a id="__codelineno-39-62" name="__codelineno-39-62" href="#__codelineno-39-62"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="nf">getInfos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-63" name="__codelineno-39-63" href="#__codelineno-39-63"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">erreurs</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">tLogins</span><span class="p">};</span>
+<a id="__codelineno-39-64" name="__codelineno-39-64" href="#__codelineno-39-64"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-39-65" name="__codelineno-39-65" href="#__codelineno-39-65"></a><span class="p">}</span>
+</code></pre></div>
+<p>简而言<strong>之，init</strong> 方法的工作原理如下：</p>
+<ul>
+  <li>首先，调用父类（<b>ActionServlet</b>）的 <b>init</b> 方法，以便其正确初始化
+  </li>
+  <li>然后读取初始化参数。如果缺少任何参数，则填充私有 <b>ActionErrors</b> 对象的 <b>errors</b> 属性。
+  </li>
+  <li>如果初始化参数存在，则构建一个 <b>users</b> 对象。此构建过程可能会抛出异常。在这种情况下<b>，ActionErrors</b> 的 <b>errors</b> 属性会被填充。
+  </li>
+  <li>如果构造成功，则从创建的对象中检索所有登录记录，将其排序并存入数组，该数组存储在私有属性 <b>`String[] tLogins` </b>中。
+  </li>
+  <li>构造好的 <b>users</b> 对象将存储在私有属性 <b>users u </b>中。
+  </li>
+  <li>公共方法 <b>getInfos </b>将三个私有属性（u、errors、tLogins）检索到一个对象数组中。
+  </li>
+</ul>
+
+<h3 id="762-setuploginsaction">7.6.2. <span style="color: #4f81bd">SetupLoginsAction 类</span></h3>
+<p>此操作的目的是初始化 <strong>DynaActionForm</strong> 对象 <strong>formLogins</strong>。该对象被放置在会话中，此后不再需要重新初始化。因此，<strong>SetupLoginsAction</strong> 仅运行一次。其代码如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.quiest</span><span class="p">;</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.*</span><span class="p">;</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.*</span><span class="p">;</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.struts.action.*</span><span class="p">;</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
+<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SetupLoginsAction</span>
+<a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="w">  </span><span class="kd">extends</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>
+<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ActionForward</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="n">ActionMapping</span><span class="w"> </span><span class="n">mapping</span><span class="p">,</span><span class="w"> </span><span class="n">ActionForm</span><span class="w"> </span><span class="n">form</span><span class="p">,</span>
+<a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="w">                               </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>
+<a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="w">     </span><span class="c1">// prepares the form to be displayed</span>
+<a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="w">     </span><span class="c1">// retrieve info from the controller servlet</span>
+<a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a><span class="w">     </span><span class="c1">// infos=(ActionErrors errors, users u, String[] tLogins)</span>
+<a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a><span class="w">    </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">infos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">Quiest2ActionServlet</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="na">getServlet</span><span class="p">()).</span><span class="na">getInfos</span><span class="p">();</span>
+<a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a>
+<a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a><span class="w">     </span><span class="c1">// were there any initialization errors?</span>
+<a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a><span class="w">    </span><span class="n">ActionErrors</span><span class="w"> </span><span class="n">erreurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ActionErrors</span><span class="p">)</span><span class="w"> </span><span class="n">infos</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">erreurs</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">saveErrors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">erreurs</span><span class="p">);</span>
+<a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;afficherErreurs&quot;</span><span class="p">);</span>
+<a id="__codelineno-40-24" name="__codelineno-40-24" href="#__codelineno-40-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-40-25" name="__codelineno-40-25" href="#__codelineno-40-25"></a>
+<a id="__codelineno-40-26" name="__codelineno-40-26" href="#__codelineno-40-26"></a><span class="w">     </span><span class="c1">// put the logins in the form</span>
+<a id="__codelineno-40-27" name="__codelineno-40-27" href="#__codelineno-40-27"></a><span class="w">    </span><span class="n">DynaActionForm</span><span class="w"> </span><span class="n">formLogins</span><span class="o">=</span><span class="p">(</span><span class="n">DynaActionForm</span><span class="p">)</span><span class="w"> </span><span class="n">form</span><span class="p">;</span>
+<a id="__codelineno-40-28" name="__codelineno-40-28" href="#__codelineno-40-28"></a><span class="w">    </span><span class="n">formLogins</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&quot;tLogins&quot;</span><span class="p">,</span><span class="n">infos</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-40-29" name="__codelineno-40-29" href="#__codelineno-40-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;afficherLogins&quot;</span><span class="p">);</span>
+<a id="__codelineno-40-30" name="__codelineno-40-30" href="#__codelineno-40-30"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-40-31" name="__codelineno-40-31" href="#__codelineno-40-31"></a><span class="p">}</span>
+</code></pre></div>
+<p>与所有 Struts 动作一样，代码位于 <strong>execute</strong> 方法中。该方法：</p>
+<ul>
+  <li>从 Struts 控制器中检索该控制器通过其 <b>init</b> 方法存储的信息。此操作由 <b>Action</b> 类的 <b>getServlet</b>() 方法完成。
+  </li>
+  <li><b>这些信息</b>中包含控制器的 <b>ActionErrors</b> 属性。如果该错误列表不为空，则将其放入请求中，并显示 <b>errors.jsp</b> 视图。
+  </li>
+  <li>如果错误列表为空，则将控制器最初创建的登录列表赋值给 <b>formLogins </b>Bean 的 <b>tLogins</b> 字段。随后请求 <b>logins.jsp</b> 视图，该视图将显示登录列表。
+  </li>
+</ul>
+<h3 id="763-infosloginbean-infosloginaction">7.6.3. <span style="color: #4f81bd">InfosLoginBean 和 InfosLoginAction 类</span></h3>
+<p>InfosLoginAction 操作的目的是检索与用户所选登录名相关联的信息，并将其呈现给用户。这些信息将收集在一个类型为 <strong>InfosLoginBean</strong> 的对象中：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.quiest</span><span class="p">;</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InfosLoginBean</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="p">{</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">   </span><span class="c1">// bean holding the info needed for the info page</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">;</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">infosLogin</span><span class="p">;</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="w">  </span><span class="c1">// manufacturer</span>
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">InfosLoginBean</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">infosLogin</span><span class="p">){</span>
+<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">titre</span><span class="o">=</span><span class="n">titre</span><span class="p">;</span>
+<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">infosLogin</span><span class="o">=</span><span class="n">infosLogin</span><span class="p">;</span>
+<a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a>
+<a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a><span class="w">   </span><span class="c1">// getters</span>
+<a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitre</span><span class="p">(){</span>
+<a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">titre</span><span class="p">;</span>
+<a id="__codelineno-41-18" name="__codelineno-41-18" href="#__codelineno-41-18"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-41-19" name="__codelineno-41-19" href="#__codelineno-41-19"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="nf">getInfosLogin</span><span class="p">(){</span>
+<a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">infosLogin</span><span class="p">;</span>
+<a id="__codelineno-41-21" name="__codelineno-41-21" href="#__codelineno-41-21"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-41-22" name="__codelineno-41-22" href="#__codelineno-41-22"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getInfosLogin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){</span>
+<a id="__codelineno-41-23" name="__codelineno-41-23" href="#__codelineno-41-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">infosLogin</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-41-24" name="__codelineno-41-24" href="#__codelineno-41-24"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-41-25" name="__codelineno-41-25" href="#__codelineno-41-25"></a><span class="p">}</span>
+</code></pre></div>
+<p>前面的类是一个 Bean，即一个 Java 类，其中私有属性 <strong>T unAttribut</strong> 会自动关联两个私有方法：</p>
+<ul>
+  <li>void setUnAttribut(T value) { unAttribut = value; }
+  </li>
+  <li>T getUnAttribut(){ return unAttribut;}
+  </li>
+</ul>
+
+<p>请注意 <strong>get</strong> 和 <strong>set</strong> 方法的特殊语法。如果属性是一个数组 <strong>T[] unAttribut</strong>，我们可以为数组的元素创建 <strong>get</strong> 和 <strong>set</strong> 方法：</p>
+<ul>
+  <li>void setUnAttribut(T value, int i) { unAttribut[i] = value; }
+  </li>
+  <li>T getUnAttribut(int i) { return unAttribut[i]; }
+  </li>
+</ul>
+
+<p>为了更好地理解这一点，让我们看看 <strong>infos.jsp</strong> 视图的代码，该视图必须在 <strong>InfosLoginAction</strong> 操作之后发送：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-bean.tld&quot; prefix=&quot;bean&quot; %&gt;
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;titre&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">background</span><span class="o">=</span><span class="s">&quot;&lt;html:rewrite page=&quot;</span><span class="err">/</span><span class="na">images</span><span class="err">/</span><span class="na">standard</span><span class="err">.</span><span class="na">jpg</span><span class="err">&quot;</span><span class="p">/&gt;</span>&quot;&gt;
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;titre&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>login<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>pwd<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>uid<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>gid<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>id<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>dir<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>shell<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[0]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[1]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[2]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-42-19" name="__codelineno-42-19" href="#__codelineno-42-19"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[3]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-42-20" name="__codelineno-42-20" href="#__codelineno-42-20"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[4]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-42-21" name="__codelineno-42-21" href="#__codelineno-42-21"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[5]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-42-22" name="__codelineno-42-22" href="#__codelineno-42-22"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">bean:write</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;infosLoginBean&quot;</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;request&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;infosLogin[6]&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>            
+<a id="__codelineno-42-23" name="__codelineno-42-23" href="#__codelineno-42-23"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>                                                                                                                                                                                                                
+<a id="__codelineno-42-24" name="__codelineno-42-24" href="#__codelineno-42-24"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>                                      
+<a id="__codelineno-42-25" name="__codelineno-42-25" href="#__codelineno-42-25"></a>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a id="__codelineno-42-26" name="__codelineno-42-26" href="#__codelineno-42-26"></a>    <span class="p">&lt;</span><span class="nt">html:link</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;/retourLogins.do&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-27" name="__codelineno-42-27" href="#__codelineno-42-27"></a>            Retour au formulaire
+<a id="__codelineno-42-28" name="__codelineno-42-28" href="#__codelineno-42-28"></a>        <span class="p">&lt;/</span><span class="nt">html:link</span><span class="p">&gt;</span>        
+<a id="__codelineno-42-29" name="__codelineno-42-29" href="#__codelineno-42-29"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-42-30" name="__codelineno-42-30" href="#__codelineno-42-30"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>让我们来看以下标签：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nt">&lt;bean:write</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;infosLoginBean&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;request&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;titre&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>它指示系统写入请求（scope）中包含的 <strong>infosLoginBean</strong> 对象（name）的 <strong>title</strong> 字段（property）的值。待写入的值将通过 <strong>request.getAttribute(&quot;infosLoginBean&quot;).getTitre()</strong> 获取。因此，<strong>InfosLoginBean</strong> 类中必须存在 getTitre 方法。确实如此。该标签 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nt">&lt;bean:write</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;infosLoginBean&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;request&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;infosLogin[0]&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>该语句指示系统写入请求中 <strong>infosLoginBean</strong> 对象的 <strong>infosLogin[0]</strong> 元素的值。待写入的值将通过 <strong>request.getAttribute(&quot;infosLoginBean&quot;).getInfosLogin(0)</strong> 获取。因此<strong>，InfosLoginBean</strong> 类中必须存在 <strong>getInfosLogin(int i)</strong> 方法。该类确实包含此方法。</p>
+<p><strong>InfosLoginAction</strong> 类的目的是根据用户选择的登录信息构建上述 <strong>InfosLoginBean</strong> 对象。其代码如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.quiest</span><span class="p">;</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.*</span><span class="p">;</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.*</span><span class="p">;</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.struts.action.*</span><span class="p">;</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">istia.st.users.*</span><span class="p">;</span>
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>
+<a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InfosLoginAction</span>
+<a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="w">  </span><span class="kd">extends</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>
+<a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ActionForward</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="n">ActionMapping</span><span class="w"> </span><span class="n">mapping</span><span class="p">,</span><span class="w"> </span><span class="n">ActionForm</span><span class="w"> </span><span class="n">form</span><span class="p">,</span>
+<a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="w">                               </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>
+<a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="w">     </span><span class="c1">// should display login information</span>
+<a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a>
+<a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a><span class="w">     </span><span class="c1">// retrieve info from the controller servlet</span>
+<a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a><span class="w">     </span><span class="c1">// infos=(ActionErrors errors, users u, LoginBean[] tLogins)</span>
+<a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a><span class="w">    </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">infos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">Quiest2ActionServlet</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="na">getServlet</span><span class="p">()).</span><span class="na">getInfos</span><span class="p">();</span>
+<a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a>
+<a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a><span class="w">     </span><span class="c1">// were there any initialization errors?</span>
+<a id="__codelineno-45-22" name="__codelineno-45-22" href="#__codelineno-45-22"></a><span class="w">    </span><span class="n">ActionErrors</span><span class="w"> </span><span class="n">erreurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ActionErrors</span><span class="p">)</span><span class="w"> </span><span class="n">infos</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-45-23" name="__codelineno-45-23" href="#__codelineno-45-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">erreurs</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-24" name="__codelineno-45-24" href="#__codelineno-45-24"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">saveErrors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">erreurs</span><span class="p">);</span>
+<a id="__codelineno-45-25" name="__codelineno-45-25" href="#__codelineno-45-25"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;afficherErreurs&quot;</span><span class="p">);</span>
+<a id="__codelineno-45-26" name="__codelineno-45-26" href="#__codelineno-45-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-45-27" name="__codelineno-45-27" href="#__codelineno-45-27"></a>
+<a id="__codelineno-45-28" name="__codelineno-45-28" href="#__codelineno-45-28"></a><span class="w">     </span><span class="c1">// first retrieve this login</span>
+<a id="__codelineno-45-29" name="__codelineno-45-29" href="#__codelineno-45-29"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">DynaActionForm</span><span class="p">)</span><span class="w"> </span><span class="n">form</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;cmbLogins&quot;</span><span class="p">);</span>
+<a id="__codelineno-45-30" name="__codelineno-45-30" href="#__codelineno-45-30"></a>
+<a id="__codelineno-45-31" name="__codelineno-45-31" href="#__codelineno-45-31"></a><span class="w">    </span><span class="c1">// do we have anything?</span>
+<a id="__codelineno-45-32" name="__codelineno-45-32" href="#__codelineno-45-32"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">login</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-33" name="__codelineno-45-33" href="#__codelineno-45-33"></a><span class="w">      </span><span class="c1">// not normal - the login form is returned</span>
+<a id="__codelineno-45-34" name="__codelineno-45-34" href="#__codelineno-45-34"></a><span class="w">            </span><span class="n">DynaActionForm</span><span class="w"> </span><span class="n">formLogins</span><span class="o">=</span><span class="p">(</span><span class="n">DynaActionForm</span><span class="p">)</span><span class="w"> </span><span class="n">form</span><span class="p">;</span>
+<a id="__codelineno-45-35" name="__codelineno-45-35" href="#__codelineno-45-35"></a><span class="w">            </span><span class="n">formLogins</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&quot;tLogins&quot;</span><span class="p">,</span><span class="n">infos</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-45-36" name="__codelineno-45-36" href="#__codelineno-45-36"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;afficherLogins&quot;</span><span class="p">);</span>
+<a id="__codelineno-45-37" name="__codelineno-45-37" href="#__codelineno-45-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-45-38" name="__codelineno-45-38" href="#__codelineno-45-38"></a>
+<a id="__codelineno-45-39" name="__codelineno-45-39" href="#__codelineno-45-39"></a><span class="w">     </span><span class="c1">// we have a login - we&#39;re looking for it</span>
+<a id="__codelineno-45-40" name="__codelineno-45-40" href="#__codelineno-45-40"></a><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">infosLogin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">users</span><span class="p">)</span><span class="w"> </span><span class="n">infos</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">).</span><span class="na">getUsersByLogin</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">login</span><span class="p">);</span>
+<a id="__codelineno-45-41" name="__codelineno-45-41" href="#__codelineno-45-41"></a>
+<a id="__codelineno-45-42" name="__codelineno-45-42" href="#__codelineno-45-42"></a><span class="w">     </span><span class="c1">// have we found?</span>
+<a id="__codelineno-45-43" name="__codelineno-45-43" href="#__codelineno-45-43"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">infosLogin</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-44" name="__codelineno-45-44" href="#__codelineno-45-44"></a><span class="w">      </span><span class="c1">// login not found - error page displayed</span>
+<a id="__codelineno-45-45" name="__codelineno-45-45" href="#__codelineno-45-45"></a><span class="w">      </span><span class="n">ActionErrors</span><span class="w"> </span><span class="n">erreurs2</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ActionErrors</span><span class="p">();</span>
+<a id="__codelineno-45-46" name="__codelineno-45-46" href="#__codelineno-45-46"></a><span class="w">      </span><span class="n">erreurs2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ActionErrors</span><span class="p">.</span><span class="na">GLOBAL_ERROR</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionError</span><span class="p">(</span><span class="s">&quot;loginInconnu&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">login</span><span class="p">));</span>
+<a id="__codelineno-45-47" name="__codelineno-45-47" href="#__codelineno-45-47"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">saveErrors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">erreurs2</span><span class="p">);</span>
+<a id="__codelineno-45-48" name="__codelineno-45-48" href="#__codelineno-45-48"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;afficherErreurs&quot;</span><span class="p">);</span>
+<a id="__codelineno-45-49" name="__codelineno-45-49" href="#__codelineno-45-49"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-45-50" name="__codelineno-45-50" href="#__codelineno-45-50"></a>
+<a id="__codelineno-45-51" name="__codelineno-45-51" href="#__codelineno-45-51"></a><span class="w">     </span><span class="c1">// the login has been found - we put the information found in the query</span>
+<a id="__codelineno-45-52" name="__codelineno-45-52" href="#__codelineno-45-52"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="o">=</span><span class="s">&quot;Application QuiEst - login[&quot;</span><span class="o">+</span><span class="n">login</span><span class="o">+</span><span class="s">&quot;]&quot;</span><span class="p">;</span>
+<a id="__codelineno-45-53" name="__codelineno-45-53" href="#__codelineno-45-53"></a><span class="w">    </span><span class="n">InfosLoginBean</span><span class="w"> </span><span class="n">infosLoginBean</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InfosLoginBean</span><span class="p">(</span><span class="n">titre</span><span class="p">,</span><span class="n">infosLogin</span><span class="p">);</span>
+<a id="__codelineno-45-54" name="__codelineno-45-54" href="#__codelineno-45-54"></a><span class="w">    </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;infosLoginBean&quot;</span><span class="p">,</span><span class="n">infosLoginBean</span><span class="p">);</span>
+<a id="__codelineno-45-55" name="__codelineno-45-55" href="#__codelineno-45-55"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;afficherInfos&quot;</span><span class="p">);</span>
+<a id="__codelineno-45-56" name="__codelineno-45-56" href="#__codelineno-45-56"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-45-57" name="__codelineno-45-57" href="#__codelineno-45-57"></a>
+<a id="__codelineno-45-58" name="__codelineno-45-58" href="#__codelineno-45-58"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>execute</strong> 方法的工作原理如下：</p>
+<ul>
+  <li>它会检索 Struts 控制器在初始化过程中收集的信息。如果控制器检测到任何错误，执行将在此处停止，并提示用户查看这些错误。
+  </li>
+  <li>我们验证是否存在登录用户。如果用户通过登录选择表单提交，则存在登录用户。然而，用户也可能直接在浏览器中输入该操作的 URL 而未传递任何参数。如果不存在登录用户，我们将重新显示登录用户列表。
+  </li>
+  <li>如果存在登录信息，我们将检索与<b>用户</b>业务类相关联的信息。如果该类无法找到正在搜索的登录信息，则显示错误页面。否则，将创建一个 <b>InfosLoginBean</b> 对象来存储 <b>infos.jsp</b> 视图所需的信息。该对象被放入请求中，随后显示 <b>infos.jsp</b> 页面。
+  </li>
+</ul>
+
+<h2 id="77">7.7. <span style="color: #4f81bd">部署</span></h2>
+<p>应用程序的目录结构如下：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012B000000577637973F.png" width="299" height="87" style="display:inline-block; margin:4px;width:7.909cm;height:2.302cm;" class="odt-zoomable" data-zoom-src="images/100000000000012B000000577637973F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010E000000540147A734.png" width="270" height="84" style="display:inline-block; margin:4px;width:7.142cm;height:2.223cm;" class="odt-zoomable" data-zoom-src="images/100000000000010E000000540147A734.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012E000000536F159173.png" width="302" height="83" style="display:inline-block; margin:4px;width:7.989cm;height:2.196cm;" class="odt-zoomable" data-zoom-src="images/100000000000012E000000536F159173.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011C0000005644E66EE4.png" width="284" height="86" style="display:inline-block; margin:4px;width:7.512cm;height:2.275cm;" class="odt-zoomable" data-zoom-src="images/100000000000011C0000005644E66EE4.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000148000000C85353D3C8.png" width="328" height="200" style="display:inline-block; margin:4px;width:8.677cm;height:5.292cm;" class="odt-zoomable" data-zoom-src="images/1000000000000148000000C85353D3C8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BA000000990D242A8A.png" width="442" height="153" style="display:inline-block; margin:4px;width:11.693cm;height:4.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BA000000990D242A8A.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016A000000D6F1FF40CE.png" width="362" height="214" style="display:inline-block; margin:4px;width:9.576cm;height:5.66cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000D6F1FF40CE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<h2 id="78">7.8. <span style="color: #4f81bd">结论</span></h2>
+<p>我们在一个实际应用中使用了 Struts 并运用了业务类。我们还演示了必须特别关注客户端发送的请求，且不应对其性质做任何假设。请求可以是任何类型，每个应用程序都必须首先验证其有效性。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本教程由 <strong>Serge Tahé</strong> 编写，根据
+<em>知识共享 署名-非商业性使用-
+相同方式共享 3.0 未移植</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

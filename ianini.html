@@ -1,0 +1,1151 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通过示例了解 Struts 1.x">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/ianini.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="strutspersonne-ingonghengu.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1. 一般信息 - 通过示例了解 Struts 1.x</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "通过示例了解 Struts 1.x";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="通过示例了解 Struts 1.x" class="md-header__button md-logo" aria-label="通过示例了解 Struts 1.x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            通过示例了解 Struts 1.x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. 一般信息
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-struts1x-dec-2003" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="通过示例了解 Struts 1.x" class="md-nav__button md-logo" aria-label="通过示例了解 Struts 1.x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    通过示例了解 Struts 1.x
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-struts1x-dec-2003" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 一般信息
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ianini.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 一般信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. 目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. MVC 模型
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-servlet-jsp-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. 基于 Servlet 和 JSP 页面的 MVC 开发方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-struts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. STRUTS 开发方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. STRUTS 开发方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4.1. 开发方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-struts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4.2. STRUTS 开发工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-struts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. 部署 Struts 应用程序
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. strutspersonne 应用程序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="onghiiuiiaoanehui.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 控制器对表单的处理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ongaiiaoanehiong.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 动态表单的使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uouanhenginguehueongaiiaoan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 具有完整性约束的动态表单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html-iaoan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. HTML 表单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-quiest-ingonghengu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.  QuiEst 应用程序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="huangianhaian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 创建插件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hionghuuuan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 使用数据源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 附录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">1. <span style="color: #365f91"><strong><span style="color: #365f91">一般信息</span></strong></span></h1>
+<p>文档的PDF版本可在此处获取 |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBIB9bi_Y5oR6cYG13c2QneAUcq3GKuJ1QAxeVcgFrrmPQ?e=jPMBe8">HERE</a>|。</p>
+<h2 id="11">1.1. <span style="color: #4f81bd">目标</span></h2>
+<p>本文将探讨一个名为 <strong>Struts 的</strong>开发框架。Jakarta Struts 是 Apache 软件基金会（www.apache.org）的一个项目，旨在为基于 MVC（模型-视图-控制器）架构的 Java Web 应用程序开发提供标准框架。 </p>
+<h2 id="12-mvc">1.2. <span style="color: #4f81bd">MVC 模型</span></h2>
+<p>MVC 模型旨在将展示层、处理层和数据访问层进行分离。遵循该模型的 Web 应用程序将具有如下结构：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000363000000855375987C.png" width="434" height="67" style="display:inline-block; margin:4px;width:11.471cm;height:1.76cm;" class="odt-zoomable" data-zoom-src="images/1000000000000363000000855375987C.png" /></td></tr></table>
+
+<p>这种架构被称为三层架构：</p>
+<ul>
+<li>用户界面是 V（视图）</li>
+<li>应用程序逻辑是 C（控制器）</li>
+<li>数据源是 M（模型）</li>
+</ul>
+<p><strong>用户界面</strong>通常是网页浏览器，但也可能是通过网络向 Web 服务发送 HTTP 请求并格式化接收结果的独立应用程序。<strong>应用逻辑</strong>由处理用户请求的脚本组成。 <strong>数据源</strong>通常是数据库，但也可能是简单的平面文件、LDAP目录、远程Web服务等。保持这三个实体之间高度的独立性符合开发者的最佳利益，这样如果其中一个发生变化，另外两个就不必改变，或者只需进行最小的调整。 </p>
+<p>当将此模型应用于 Servlet 和 JSP 页面时，将形成以下架构：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E200000213F96D6913.png" width="625" height="265" style="display:inline-block; margin:4px;width:16.536cm;height:7.024cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E200000213F96D6913.png" /></td></tr></table>
+
+<p>在 [应用逻辑] 模块中，我们区分</p>
+<ul>
+<li>Servlet（作为应用程序的入口点，也称为<strong>控制器</strong>）</li>
+<li>[业务类] 模块，其中包含应用程序逻辑所需的 Java 类</li>
+<li>[数据访问类] 模块，包含用于检索 Servlet 所需数据的 Java 类，通常是持久化数据（数据库、文件、Web 服务等）</li>
+<li>JSP 页面块，构成应用程序的视图。 </li>
+</ul>
+<h2 id="13-servlet-jsp-mvc">1.3. <span style="color: #4f81bd">基于 Servlet 和 JSP 页面的 MVC 开发方法</span></h2>
+<p>我们已定义了一种遵循上述 MVC 模型的 Java Web 应用程序开发方法。我们将在此对其进行回顾。</p>
+<ol>
+<li>我们将首先定义应用程序的所有视图。这些视图即呈现给用户的网页。因此，在设计视图时，我们将采用用户的视角。视图主要有三种类型：<ul>
+<li>输入表单，用于从用户处获取信息。该表单通常包含一个按钮，用于将输入的信息发送至服务器。</li>
+<li>响应页面，仅用于向用户提供信息。该页面通常包含一个链接，允许用户在另一个页面上继续使用应用程序。</li>
+<li>混合页面：Servlet 已向客户端发送了一个包含其生成的信息的页面。客户端将使用该页面向 Servlet 提供额外信息。</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+  <li>每个视图都会生成一个 JSP 页面。针对每种视图：
+    <ul>
+      <li>我们将设计页面的布局
+      </li>
+      <li>我们将确定其中哪些部分是动态的：
+        <ul>
+          <li>供用户使用的信息，必须由Servlet作为参数传递给JSP视图
+          </li>
+          <li>必须传输给 Servlet 进行处理的输入数据。该数据必须是 HTML 表单的一部分。
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<ol start="3">
+  <li>我们可以绘制每个视图的I/O流程图 
+  </li>
+</ol>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002EC0000006DC9254038.png" width="374" height="55" style="display:inline-block; margin:4px;width:9.895cm;height:1.443cm;" class="odt-zoomable" data-zoom-src="images/10000000000002EC0000006DC9254038.png" /></td></tr></table>
+
+<ol>
+    <ul>
+      <li>输入是指 Servlet 必须通过请求或会话提供给 JSP 页面的数据。 
+      </li>
+      <li>输出是指 JSP 页面必须提供给 Servlet 的数据。这些数据属于 HTML 表单的一部分，Servlet 将通过调用 <b>request.getParameter(...) </b>等操作来获取它们。
+      </li>
+    </ul>
+</ol>
+
+<ol>
+  <li>我们将为每个视图编写 Java/JSP 代码。这些代码通常采用以下形式：
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">&lt;</span>%@ page ... %&gt;    // importations de classes le plus souvent
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">&lt;</span>%!
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    // variables d&#39;instance de la page JSP (=globales)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    // nécessaire que si la page JSP a des méthodes partageant des variables (rare)    
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ...    
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>%&gt;
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="err">&lt;</span>%
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    // récupération des données envoyées par la servlet
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    // soit dans la requête (request) soit dans la session (session)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ...
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>%&gt;
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>...
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        // on cherchera ici à minimiser le code java
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol start="5">
+  <li>接下来我们可以进行初步测试。下面介绍的部署方法专用于 Tomcat 服务器：
+  </li>
+</ol>
+
+<ol>
+    <ul>
+      <li>必须在 Tomcat 的 <b>server.xml</b> 文件中创建应用上下文。我们可以先测试该上下文。设 <b>C </b>为该上下文，<b>DC </b>为与其关联的文件夹。我们将创建一个<b>名为 test.html </b>的静态文件，并将其放置在 <b>DC</b> 文件夹中。启动 Tomcat 后，我们在浏览器中访问 URL<b> http://localhost:8080/DC/test.html</b>。
+      </li>
+      <li>每个 JSP 页面均可进行测试。若某个 JSP 页面名为 <b>formulaire.jsp</b>，我们将在浏览器中请求 URL<b> http://localhost:8080/DC/formulaire.jsp</b>。该 JSP 页面期望从调用它的 Servlet 接收参数值。 在此，我们直接调用该页面，因此它不会收到预期的参数。为了确保仍能进行测试，我们将使用常量在 JSP 页面中手动初始化预期的参数。这些初步测试旨在验证 JSP 页面的语法是否正确。
+      </li>
+    </ul>
+</ol>
+
+<ol start="6">
+  <li>接下来，我们编写 Servlet 代码。它包含两个不同的方法：
+  </li>
+</ol>
+
+<ol>
+    <ul>
+      <li><b>init</b> 方法，用于：
+        <ul>
+          <li>从 <b>web.xml</b> 文件中检索应用程序的配置参数
+          </li>
+          <li>可能创建后续需要使用的业务类实例
+          </li>
+          <li>处理任何初始化错误列表，并将这些错误返回给应用程序的后续用户。此错误处理甚至可能包括向应用程序管理员发送电子邮件，以通知其系统故障
+          </li>
+        </ul>
+      </li>
+      <li><b>doGet </b>或 <b>doPost</b> 方法，具体取决于 Servlet 如何从客户端接收参数。如果 Servlet 处理多个表单，建议每个表单都发送能够唯一标识自身的信息。 这可以通过表单中类型为 <b>&lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;...&quot;&gt; </b>的隐藏属性来实现。Servlet 可以先读取该参数的值，然后将请求的处理委托给负责处理此类请求的私有内部方法。
+      </li>
+      <li>应尽可能避免在 Servlet 中放置业务逻辑，这并非其设计初衷。 Servlet 充当一种团队领导者（控制器）的角色，它接收来自客户端（Web 客户端）的请求，并将其交由最合适的实体（业务类）执行。编写 Servlet 时，您将定义待创建的业务类的接口（构造函数、方法）。这适用于需要创建这些业务类的情况。如果它们已经存在，则 Servlet 必须适配现有的接口。
+      </li>
+      <li>Servlet 代码将被编译。
+      </li>
+    </ul>
+</ol>
+
+<ol start="7">
+  <li>我们将编写 Servlet 所需业务类的骨架。例如，如果 Servlet 使用类型为 <b>proxyArticles</b> 的对象，且该类必须包含一个返回字符串列表（ArrayList）的 <b>getCodes</b> 方法，那么我们最初可以简单地编写：
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">ArrayList</span><span class="w"> </span><span class="nf">getCodes</span><span class="p">(){</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">codes</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;code1&quot;</span><span class="p">,</span><span class="s">&quot;code2&quot;</span><span class="p">,</span><span class="s">&quot;code3&quot;</span><span class="p">};</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">ArrayList</span><span class="w"> </span><span class="n">aCodes</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">codes</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">aCodes</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">codes</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">aCodes</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+  <li>现在我们可以开始测试该 Servlet 了。
+  </li>
+</ol>
+
+<ol>
+    <ul>
+      <li>必须创建应用程序的 <b>web.xml</b> 配置文件。该文件必须包含 Servlet 的 <b>init</b> 方法所需的所有信息（&lt;init-param&gt;）。此外，我们还需设置访问主 Servlet 的 URL（&lt;servlet-mapping&gt;）。
+      </li>
+      <li>所有必要的类（Servlet、业务类）都放置在 <b>WEB-INF/classes</b> 目录下。
+      </li>
+      <li>所有必要的类库（.jar）都放置在 <b>WEB-INF/lib </b>目录下<b>。</b>这些类库可能包含业务类、JDBC 驱动程序等。
+      </li>
+      <li>JSP视图放置在应用程序根目录或专用文件夹中。其他资源（HTML、图片、音频、视频等）亦同。
+      </li>
+      <li>完成上述配置后，需对应用程序进行测试并修正初始错误。本阶段结束时，应用程序架构即可投入运行。由于 Tomcat 本身不提供调试工具，此测试阶段可能较为棘手。为此，需要将 Tomcat 集成到开发工具中（如 JBuilder Developer、Sun One Studio 等）。 您可以使用 <b>System.out.println(&quot;....&quot;)</b> 语句，这些语句会输出到 Tomcat 控制台。首先需要检查的是 <b>init</b> 方法是否成功从 <b>web.xml</b> 文件中读取了所有数据。为此，我们可以将这些参数的值输出到 Tomcat 窗口中。同样地，我们将验证 <b>doGet </b>和 <b>doPost</b> 方法是否正确地从应用程序的各个 HTML 表单中获取了参数。
+      </li>
+    </ul>
+</ol>
+
+<p>编写 Servlet 所需的业务类。这通常涉及标准 Java 类的开发，这类类通常独立于任何 Web 应用程序。首先需在该环境之外进行测试，例如通过控制台应用程序。业务类编写完成后，可将其集成到 Web 应用程序的部署架构中，并测试其在该架构中的正确集成。此过程将针对每个业务类重复进行。</p>
+<h2 id="14-struts">1.4. <span style="color: #4f81bd">STRUTS 开发方法</span></h2>
+<p>STRUTS 方法论的创建者旨在为基于 Java 编写的 Web 应用程序定义一种遵循 MVC 架构的标准开发方法。STRUTS 项目包含两个方面：</p>
+<ul>
+  <li>开发方法。我们将看到，它与上述针对 Servlet 和 JSP 页面的开发方法非常相似
+  </li>
+  <li>支持该开发方法的工具。这些工具是可在 Apache 基金会网站（www.apache.org）上获取的 Java 类库。
+  </li>
+</ul>
+<h3 id="141">1.4.1. <span style="color: #4f81bd">开发方法</span></h3>
+<p>STRUTS 采用的 MVC 架构如下：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000565000002389752E5C0.png" width="643" height="264" style="display:inline-block; margin:4px;width:17cm;height:6.992cm;" class="odt-zoomable" data-zoom-src="images/1000000000000565000002389752E5C0.png" /></td></tr></table>
+
+<ul>
+  <li>控制器是应用程序的核心。所有客户端请求都需经过它。它是由 STRUTS 提供的一个通用 Servlet。在某些情况下，您可能需要对其进行扩展。对于简单的情况，则无需如此。这个通用 Servlet 通常从一个名为 <b>struts-config.xml </b>的文件中获取所需的信息。
+  </li>
+  <li>如果客户端请求包含表单参数，这些参数会被放入一个 <b>Bean</b> 对象中。如果一个类遵循我们稍后将讨论的构造规则，则该类被视为 <b>Bean</b> 类型。随时间创建的 <b>Bean</b> 对象存储在客户端的会话或请求中。此设置是可配置的。如果它们已经创建，则无需重新创建。
+  </li>
+  <li>在 <b>struts</b>-config<b>.html</b> 配置文件中，程序需要处理的每个 URL（因此不对应于可直接请求的 JSP 视图）都与特定信息相关联：
+    <ul>
+      <li>负责处理该请求的<b> Action 类型类的名称</b>。同样，实例化的 <b>Action</b> 对象也可存储在会话或请求中。
+      </li>
+      <li>如果请求的 URL 包含参数（例如表单提交给控制器时），则需指定负责存储表单数据的 <b>Bean</b> 的名称。
+      </li>
+    </ul>
+  </li>
+  <li>凭借配置文件提供的这些信息，控制器在收到客户端的 URL 请求时，能够确定是否需要创建 Bean 以及具体创建哪个 Bean。一旦实例化，该 Bean 即可验证其存储的数据（源自表单）是否有效。 控制器会自动调用该 Bean 中的 <b>`validate`</b> 方法。该 Bean 由开发人员构建，因此开发人员将验证表单数据有效性的代码放置在 `<b>validate</b>` 方法中。如果发现数据无效，控制器将不再继续执行后续操作，而是将控制权传递给配置文件中指定的视图。至此，交互过程即告完成。 请注意，开发者可以选择不进行表单有效性检查。这同样在 <b>struts-config.html</b> 文件中配置。在这种情况下，控制器不会调用 Bean 的 <b>validate</b> 方法。
+  </li>
+  <li>如果 Bean 的数据正确，或者未进行验证，或者不存在 Bean，控制器将控制权传递给与该 URL 关联的 <b>Action</b> 对象。它通过调用该对象的 <b>execute</b> 方法来实现这一点，并向其传递可能已构建的 Bean 的引用。这就是开发人员执行所需操作的地方：他们可能需要调用业务类或数据访问类。 处理结束时，<b>Action</b>对象将控制器应发送给客户端的视图名称返回给控制器。
+  </li>
+  <li>控制器发送此响应。与客户端的交互至此完成。
+  </li>
+</ul>
+
+<p>STRUTS 开发方法论开始成形：</p>
+<ul>
+  <li>定义视图。我们将表单视图与其他视图区分开来。 
+    <ul>
+      <li>每个表单视图都会在 <b>struts-config.</b>xml 文件中生成一个定义。该文件中定义了以下信息：
+        <ul>
+          <li>将包含表单数据的 Bean 类的名称，以及是否需要对数据进行验证的指示。如果需要验证且数据被判定为无效，则必须指定在此情况下要发回给客户端的视图。
+          </li>
+          <li>负责处理表单的 <b>Action</b> 类的名称。
+          </li>
+          <li>处理请求后可能发送给客户端的所有视图的名称。<b>Action</b> 类将根据处理结果从中选择一个。
+          </li>
+        </ul>
+      </li>
+      <li>每个视图对应一个 JSP 页面。我们将看到，在视图（特别是表单视图）中，我们有时会使用 Struts 专用的标签库。
+      </li>
+    </ul>
+  </li>
+  <li>编写与表单视图对应的 JavaBean 类
+  </li>
+  <li>编写负责处理表单的 <b>Action</b> 类
+  </li>
+  <li>编写业务逻辑或数据访问类
+  </li>
+</ul>
+
+<h3 id="142-struts">1.4.2. <span style="color: #4f81bd">STRUTS 开发工具</span></h3>
+<p>Struts 项目是 Apache 软件基金会旗下的项目之一。其中部分项目被归类在 <strong>Jakarta</strong> 项目组下，可通过网址 <strong>http://jakarta.apache.org</strong> 访问：</p>
+<p><img src="images/10000000000002C8000000D4911DDA01.png" width="680" height="202" style="width:17.988cm;height:5.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C8000000D4911DDA01.png" /></p>
+<p>建议您阅读此页面。其中许多项目对 Java 开发者颇具参考价值。若点击上方的 <strong>Struts</strong> 链接，将跳转至该项目的主页：</p>
+<p><img src="images/10000000000003B7000000BD16CDB975.png" width="680" height="135" style="width:17.988cm;height:3.575cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B7000000BD16CDB975.png" /></p>
+<p>同样，建议您阅读该主页。要下载 Struts Java 库，请点击上方的<strong>“二进制文件</strong>”链接：</p>
+<p><img src="images/10000000000001280000009E44DCBC46.png" width="296" height="158" style="width:7.83cm;height:4.18cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001280000009E44DCBC46.png" /></p>
+<p>Windows 用户请使用 1.1.zip 链接；Unix 用户请使用 1.1.tar.gz 链接（2003 年 11 月）。解压 1.1.zip 文件后，您将看到以下目录结构：</p>
+<p><img src="images/10000000000001210000009C6783922C.png" width="289" height="156" style="width:7.645cm;height:4.128cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001210000009C6783922C.png" /></p>
+<p>该目录结构包含 Struts 开发所需的 Java 类库。这些类库存储在 .jar 或 .war 文件中，其作用类似于 .zip 文件，可使用相同的工具进行解压。大部分必要的类库位于上方的 <strong>lib</strong> 文件夹中：</p>
+<p><img src="images/1000000000000155000001C6FB537612.png" width="341" height="454" style="width:9.021cm;height:12.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000155000001C6FB537612.png" /></p>
+<p>除了 .jar 类库外，还有 .dtd（文档类型定义）文件，其中包含 XML 文件的验证规则。XML 文件可以在其内容中引用此类 DTD 文件。分析 XML 文件内容的程序（称为<strong>解析器</strong>）将使用引用 DTD 文件中的验证规则来确定该 XML 文件在语法上是否正确。 例如<strong>，struts-config_1_1.</strong>dtd 文件定义了用于构建 Struts 1.1 版本 <strong>struts-config.xml</strong> 配置文件的规则。</p>
+<p>现在，让我们看看在 Tomcat 服务器上部署 Struts 应用程序时，应将 Struts 目录结构中的各个元素放置在何处。</p>
+<h2 id="15-struts">1.5. <span style="color: #4f81bd">部署 Struts 应用程序</span></h2>
+<p>Struts 应用程序与其他 Web 应用程序一样，因此遵循其运行容器的部署规则。在此，我们将一个名为 <strong>strutspersonne</strong> 的应用程序部署在 Tomcat 4.x 服务器上。Tomcat 5.x 的部署流程见附录。本文将遵循 Tomcat 4.x 的部署规则：</p>
+<ol>
+  <li>我们在 Tomcat 的 <b>server.xml</b> 配置文件中定义 <b>strutspersonne</b> 上下文：
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">                </span><span class="nt">&lt;Context</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/strutspersonne&quot;</span><span class="w"> </span><span class="na">docBase=</span><span class="s">&quot;e:/data/serge/web/struts/personne&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>完成上述操作后，如有必要，请重启 Tomcat 以使其生效。我们可以通过访问 URL <strong>http://localhost:8080/strutspersonne</strong> 来验证该上下文的有效性：</p>
+<p><img src="images/10000000000001BD000000D7528F00B9.png" width="445" height="215" style="width:11.772cm;height:5.689cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BD000000D7528F00B9.png" /></p>
+<p>如果未显示错误页面，则表示上下文配置正确。</p>
+<ol start="2">
+  <li>我们在与 <b>strutspersonne</b> 上下文关联的物理文件夹中创建 <b>WEB-INF</b> 子文件夹。
+  </li>
+  <li>在应用程序的 WEB-INF 文件夹中，我们定义应用程序的 <b>web.xml</b> 配置文件：
+  </li>
+</ol>
+
+<p><img src="images/10000000000001360000004DABBDF95D.png" width="310" height="77" style="width:8.2cm;height:2.037cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001360000004DABBDF95D.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">&lt;!DOCTYPE web-app</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="cp">    PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cp">    &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot;&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">&lt;web-app&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&lt;servlet&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&lt;servlet-name&gt;</span>action<span class="nt">&lt;/servlet-name&gt;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">&lt;servlet-class&gt;</span>org.apache.struts.action.ActionServlet<span class="nt">&lt;/servlet-class&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">&lt;init-param&gt;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">&lt;param-name&gt;</span>config<span class="nt">&lt;/param-name&gt;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">&lt;param-value&gt;</span>/WEB-INF/struts-config.xml<span class="nt">&lt;/param-value&gt;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">&lt;/init-param&gt;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nt">&lt;/servlet&gt;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="nt">&lt;servlet-mapping&gt;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">      </span><span class="nt">&lt;servlet-name&gt;</span>action<span class="nt">&lt;/servlet-name&gt;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="nt">&lt;url-pattern&gt;</span>*.do<span class="nt">&lt;/url-pattern&gt;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="nt">&lt;/servlet-mapping&gt;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div>
+<ul>
+  <li>该应用程序的控制器（Servlet）类是一个名为 <b>ActionServlet</b> 的预定义 Struts 类。它位于 <b>struts.jar</b> 文件中。为了确保 Tomcat 能找到该类，我们将 <b>struts.jar</b> 放置在 <b>&lt;tomcat&gt;\common\lib</b> 文件夹中，这是 Tomcat 搜索类时会检索的文件夹之一。 实际上，我们将把位于 <b>&lt;struts&gt;\lib</b> 文件夹中的所有 .jar 文件都放置在此处，其中 <b>&lt;struts&gt; </b>是 Struts 目录树的根文件夹。 
+  </li>
+</ul>
+
+<p><img src="images/1000000000000169000000C999526481.png" width="361" height="201" style="width:9.55cm;height:5.316cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000169000000C999526481.png" /></p>
+<ul>
+  <li>我们还将把位于 <b>&lt;struts&gt;\contrib\struts-el\lib</b> 目录下的 <b>struts-el.jar </b>和 <b>jstl.jar</b> 文件也放置到该位置：
+  </li>
+</ul>
+
+<p><img src="images/100000000000017B000000E499EBD4BD.png" width="379" height="228" style="width:10.026cm;height:6.031cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017B000000E499EBD4BD.png" /></p>
+<ul>
+  <li>在此，我们可以访问 Web 服务器。但情况并非总是如此。如果您将 Web/Java 应用程序部署在非您自行管理的 Web 容器中，最好让应用程序包含其所需的所有库。这些库必须放置在 <b>WEB-INF/lib</b> 文件夹中，该文件夹需由您自行创建。
+  </li>
+  <li>我们注意到控制器需要某些信息，这些信息通常位于与 <b>web.xml</b> 同一文件夹中的 <b>struts-config.</b>xml 文件中。实际上，该文件的名称是可以配置的。正是前面提到的 <b>config</b> 参数设置了这个名称。
+  </li>
+  <li><b>&lt;servlet-mapping&gt;</b> 标签表明，所有以 <b>.do</b> 结尾的 URL 都将用于访问该控制器。此映射是 Struts 所必需的。随后，这些 URL 将由控制器进行过滤，控制器仅接受其 <b>struts-config.xml</b> 配置文件中声明的 URL
+  </li>
+</ul>
+
+<p>目前，我们的 <strong>web.xml</strong> 文件已足够使用。</p>
+<ol>
+  <li>我们将向 <b>strutspersonne</b> 应用程序请求 URL <b>/main.do</b>。根据前面的 <b>web.xml</b> 文件，该 URL 将被传递给 <b>org.apache.struts.action </b>servlet<b>。ActionServlet</b> 类将被实例化，并调用其 <b>init</b> 方法。该方法会尝试读取由 <b>config</b> 参数定义的配置文件。因此，该文件必须存在。我们创建以下 <b>struts-config.xml</b> 文件：
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">&lt;!DOCTYPE struts-config PUBLIC</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cp">          &quot;-//Apache Software Foundation//DTD Struts Configuration 1.1//EN&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cp">          &quot;http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd&quot;&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">&lt;struts-config&gt;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">&lt;action-mappings&gt;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">&lt;action</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">          </span><span class="na">path=</span><span class="s">&quot;/main&quot;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">          </span><span class="na">parameter=</span><span class="s">&quot;/main.html&quot;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">          </span><span class="na">type=</span><span class="s">&quot;org.apache.struts.actions.ForwardAction&quot;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="nt">/&gt;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nt">&lt;/struts-config&gt;</span>
+</code></pre></div>
+<p>请注意<strong>，struts-config.xml</strong> 的 DTD 文件与 <strong>web.xml</strong> 的 DTD 文件不同，这表明它们的结构并不相同。对于控制器必须处理的每个 URL，我们需要定义一个 <strong>&lt;action&gt;</strong> 标签。该标签用于告知控制器在收到针对该 URL 的请求时应执行什么操作。在此，我们指定以下元素：</p>
+<ol>
+  <li><b>path=&quot;/main&quot;</b>：定义由 <b>&lt;action&gt;</b> 标签配置的 URL 名称。后缀<b> .do </b>是隐含的。
+  </li>
+  <li><b>type=&quot;org.apache.struts.actions.ForwardAction&quot;</b>：定义必须处理该请求的 <b>Action</b> 类名称。此处我们使用 Struts 中预定义的 <b>Action</b> 类。该类本身不执行任何操作，而是将客户端的请求转发至 <b>parameter</b> 属性中指定的 URL。
+  </li>
+  <li><b>parameter=&quot;/main.html&quot;</b>：请求应转发到的 URL 名称。此处是一个静态 HTML 文件。
+  </li>
+</ol>
+
+<p>总而言之，当用户请求 URL <strong>/main.do 时，</strong>将被重定向至 URL <strong>/main.html</strong>。</p>
+<ol>
+  <li><b>main.html</b> 文件内容如下：
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Application strutspersonne<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>      Application strutspersonne active ....
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>该文件位于 <strong>strutspersonne/views</strong> 应用程序文件夹中：</p>
+<p><img src="images/10000000000001340000006A304F9E8B.png" width="308" height="106" style="width:8.147cm;height:2.805cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001340000006A304F9E8B.png" /></p>
+<p>可通过 URL <strong>http://localhost:8080/strutspersonne/main.html</strong> 直接访问：</p>
+<p><img src="images/100000000000021B00000075CAF57BC4.png" width="539" height="117" style="width:14.259cm;height:3.096cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021B00000075CAF57BC4.png" /></p>
+<p>在此情况下，应用程序的 Struts 控制器<strong>并未介入</strong>，因为它仅在请求 <strong>*.do</strong> 格式的 URL 时才会介入。然而，本次我们请求的是 URL <strong>/vues/main.html</strong>。</p>
+<ol>
+  <li>之前创建的 <b>struts-config.xml</b> 文件必须与 <b>web.xml</b> 文件放在同一个 WEB-INF 文件夹中：
+  </li>
+</ol>
+
+<p><img src="images/10000000000001360000004DABBDF95D.png" width="310" height="77" style="width:8.2cm;height:2.037cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001360000004DABBDF95D.png" /></p>
+<ol>
+  <li>现在，我们将通过访问 URL <b>/main.do</b> 来验证 <b>strutspersonne</b> 应用程序控制器是否运行正常（如有必要，请先重启 Tomcat）。
+  </li>
+</ol>
+
+<p><img src="images/10000000000001DE00000074F290CE3D.png" width="478" height="116" style="width:12.645cm;height:3.069cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DE00000074F290CE3D.png" /></p>
+<p>在此，由于我们请求了一个 <strong>*.do</strong> 格式的 URL，Struts 控制器介入了处理。我们成功获取了预期的页面（<strong>main.html</strong>）。现在，我们已经具备了应用程序运行所需的基本组件：<strong>strutspersonne</strong> 上下文、<strong>web.xml</strong> 和 <strong>struts-config.xml</strong> 配置文件，以及 Struts 库。</p>
+<p>如果我们请求的是 <strong>/toto.do</strong> 这样的 URL，会发生什么情况？根据 strutspersonne 应用程序的 <strong>web.xml</strong> 文件，Struts 控制器会被调用以处理该请求。随后它会检查 <strong>struts-config.html</strong> 配置文件，并发现其中没有针对 URL <strong>/toto</strong> 的配置。那么它会怎么做呢？让我们试一试：</p>
+<p><img src="images/10000000000002C80000014D10E10263.png" width="680" height="318" style="width:17.988cm;height:8.414cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C80000014D10E10263.png" /></p>
+<p>我们得到一个错误页面，这似乎很正常。现在我们可以开始编写应用程序了。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本教程由 <strong>Serge Tahé</strong> 编写，根据
+<em>知识共享 署名-非商业性使用-
+相同方式共享 3.0 未移植</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
