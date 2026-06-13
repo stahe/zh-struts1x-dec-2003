@@ -12,10 +12,10 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/strutspersonne-ingonghengu.html">
+        <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/struts-enuaningonghengu.html">
       
       
-        <link rel="prev" href="ianini.html">
+        <link rel="prev" href="aihu.html">
       
       
         <link rel="next" href="onghiiuiiaoanehui.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>2. strutspersonne 应用程序 - 通过示例了解 Struts 1.x</title>
+        <title>2. Struts 人员应用程序 - 通过示例了解 Struts 1.x</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-strutspersonne" class="md-skip">
+        <a href="#2-struts" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. strutspersonne 应用程序
+              2. Struts 人员应用程序
             
           </span>
         </div>
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ianini.html" class="md-nav__link">
+      <a href="aihu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -346,7 +348,7 @@
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -357,14 +359,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="strutspersonne-ingonghengu.html" class="md-nav__link md-nav__link--active">
+      <a href="struts-enuaningonghengu.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -435,10 +437,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#241-errorspersonnejsp" class="md-nav__link">
+  <a href="#241-erreurspersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.1. errors.personne.jsp 视图
+        2.4.1. 视图 erreurs.personne.jsp
       
     </span>
   </a>
@@ -446,10 +448,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#242-errorspersonjsp" class="md-nav__link">
+  <a href="#242-erreurspersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.2. 测试 errors.person.jsp 视图
+        2.4.2. 视图测试 erreurs.personne.jsp
       
     </span>
   </a>
@@ -457,10 +459,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#243-responsepersonnejsp" class="md-nav__link">
+  <a href="#243-reponsepersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.3. response.personne.jsp 视图
+        2.4.3. 视图 reponse.personne.jsp
       
     </span>
   </a>
@@ -468,10 +470,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#244-responsepersonnejsp" class="md-nav__link">
+  <a href="#244-reponsepersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.4. 测试 response.personne.jsp 视图
+        2.4.4. 测试视图 reponse.personne.jsp
       
     </span>
   </a>
@@ -482,7 +484,7 @@
   <a href="#245-formulairepersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.5. formulaire.personne.jsp 视图
+        2.4.5. 视图 formulaire.personne.jsp
       
     </span>
   </a>
@@ -490,10 +492,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#246-formulairepersonnejsp-bean" class="md-nav__link">
+  <a href="#246-bean-formulairepersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.6. 与 formulaire.personne.jsp 表单关联的 Bean
+        2.4.6. 与表单关联的 Bean formulaire.personne.jsp
       
     </span>
   </a>
@@ -504,7 +506,7 @@
   <a href="#247-formulairepersonnejsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.7. 测试 formulaire.personne.jsp 视图
+        2.4.7. 测试视图 formulaire.personne.jsp
       
     </span>
   </a>
@@ -612,14 +614,14 @@
   
   
     <li class="md-nav__item">
-      <a href="html-iaoan.html" class="md-nav__link">
+      <a href="iaoan-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. HTML 表单
+    6. 表单 HTML
   
 
     
@@ -693,14 +695,14 @@
   
   
     <li class="md-nav__item">
-      <a href="hionghuuuan.html" class="md-nav__link">
+      <a href="ionghuuuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. 使用数据源
+    9. 利用数据源
   
 
     
@@ -757,121 +759,121 @@
 
 
 
-<h1 id="2-strutspersonne">2. <span style="color: #365f91">strutspersonne 应用程序</span></h1>
-<p>我们已使用传统方法（Servlet 和 JSP 页面）实现了一个<strong>“person</strong>”应用程序。现在，我们将通过这个应用程序来介绍 Struts。</p>
+<h1 id="2-struts">2. <span style="color: #365f91">Struts 人员应用程序</span></h1>
+<p>我们之前曾采用经典方法（Servlet 和 JSP 页面）处理过一个<strong>人员管理</strong>应用程序。现在，我们将通过这个应用程序来介绍 Struts。</p>
 <h2 id="21">2.1. <span style="color: #4f81bd">应用程序的工作原理</span></h2>
-<p>让我们回顾一下我们开发的“person”应用程序是如何工作的。它由以下部分组成：</p>
+<p>在此回顾一下我们之前开发的<strong>“person”</strong>应用程序的工作原理。它由以下部分组成：</p>
 <ul>
-  <li>一个<b>主 </b>Servlet。它负责处理所有应用程序逻辑。
+  <li>一个<b>主</b>Servlet。它负责处理应用程序的所有业务逻辑。
   </li>
-  <li>三个 JSP 页面：<b>formulaire.personne.jsp</b>、<b>reponse.personne.jsp </b>和 <b>erreurs.personne.jsp</b>
+  <li>三个页面：JSP、<b>formulaire.personne.jsp</b>、<b>reponse.personne.jsp</b>、<b>erreurs.personne.jsp</b>
   </li>
 </ul>
 
-<p>该应用程序的工作原理如下。可通过 URL <strong>http://localhost:8080/personne/main</strong> 访问。访问该 URL 时，将显示由 <strong>formulaire.personne.jsp</strong> 页面提供的表单：</p>
-<p><img src="images/1000000000000181000000EE943A5129.png" width="385" height="238" style="width:10.185cm;height:6.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000181000000EE943A5129.png" /></p>
-<p>用户填写表单并点击 [提交] 按钮。[重置] 按钮用于将文档恢复至初始接收时的状态。[删除] 按钮为标准<strong>按钮</strong>。用户必须提供有效的姓名和年龄。若未满足此条件，系统将通过 JSP 页面 <strong>erreurs.personne.jsp</strong> 向用户返回错误页面。以下是一些示例：</p>
-<p><strong>对话 #1</strong></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>请求
+<p>该应用程序的工作原理如下。可通过 URL <strong>http://localhost:8080/personne/main</strong> 访问。在该 URL 下，会显示由页面 <strong>formulaire.personne.jsp</strong> 提供的表单：</p>
+<p><img src="images/1000000000000181000000EE943A5129.png" width="385" height="238" style="width:10.185cm;height:6.297cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000181000000EE943A5129.png" /></p>
+<p>用户填写表单后，点击<strong>提交</strong>按钮 [Envoyer]。<strong>重置</strong>按钮 [Rétablir] 用于将文档恢复至接收时的初始状态。 按钮 [Effacer] 属于<strong>普通按钮</strong>类型。用户必须提供有效的姓名和年龄。若未满足此条件，系统将通过页面 JSP <strong>erreurs.personne.jsp</strong> 向用户发送错误页面。以下为示例：</p>
+<p><strong>交互示例 1</strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>demande
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>回复
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>réponse
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011C000000F7CB15923D.png" width="284" height="247" style="display:inline-block; margin:4px;width:7.512cm;height:6.533cm;" class="odt-zoomable" data-zoom-src="images/100000000000011C000000F7CB15923D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019E0000008BA0C7AA85.png" width="414" height="139" style="display:inline-block; margin:4px;width:10.952cm;height:3.678cm;" class="odt-zoomable" data-zoom-src="images/100000000000019E0000008BA0C7AA85.png" /></td></tr></table>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011C000000F7CB15923D.png" width="284" height="247" style="display:inline-block; margin:4px;width:7.512cm;height:6.535cm;" class="odt-zoomable" data-zoom-src="images/100000000000011C000000F7CB15923D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019E0000008BA0C7AA85.png" width="414" height="139" style="display:inline-block; margin:4px;width:10.952cm;height:3.678cm;" class="odt-zoomable" data-zoom-src="images/100000000000019E0000008BA0C7AA85.png" /></td></tr></table>
 
-<p>如果您点击[返回表单]链接，您将看到表单处于您离开时的状态：</p>
-<p><strong>交流 #2</strong></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>请求
+<p>如果点击链接 [Retour au formulaire]，会发现该页面仍保持着我们离开时的状态：</p>
+<p><strong>第2次交换</strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>demande
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>响应
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>réponse
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019700000097ECADF2E2.png" width="407" height="151" style="display:inline-block; margin:4px;width:10.767cm;height:3.995cm;" class="odt-zoomable" data-zoom-src="images/100000000000019700000097ECADF2E2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000B3BA43B161.png" width="257" height="179" style="display:inline-block; margin:4px;width:6.8cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000B3BA43B161.png" /></td></tr></table>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019700000097ECADF2E2.png" width="407" height="151" style="display:inline-block; margin:4px;width:10.767cm;height:3.995cm;" class="odt-zoomable" data-zoom-src="images/100000000000019700000097ECADF2E2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000101000000B3BA43B161.png" width="257" height="179" style="display:inline-block; margin:4px;width:6.8cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000B3BA43B161.png" /></td></tr></table>
 
-<p>如果用户提交了有效数据，应用程序将通过 JSP 页面 <strong>response.personne.jsp</strong> 发送响应。</p>
-<p><strong>对话 #1</strong></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>请求
+<p>如果用户发送了正确的数据，应用程序将通过页面 JSP <strong>reponse.personne.jsp</strong> 向其发送响应。</p>
+<p><strong>交换 1</strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>demande
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>回复
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>réponse
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F6000000B4C2BD6142.png" width="246" height="180" style="display:inline-block; margin:4px;width:6.509cm;height:4.763cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000B4C2BD6142.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DB000000AE9A49ACD9.png" width="219" height="174" style="display:inline-block; margin:4px;width:5.794cm;height:4.604cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DB000000AE9A49ACD9.png" /></td></tr></table>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F6000000B4C2BD6142.png" width="246" height="180" style="display:inline-block; margin:4px;width:6.509cm;height:4.763cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000B4C2BD6142.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DB000000AE9A49ACD9.png" width="219" height="174" style="display:inline-block; margin:4px;width:5.794cm;height:4.604cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DB000000AE9A49ACD9.png" /></td></tr></table>
 
-<p>如果您点击[返回表单]链接，您将看到表单处于您离开时的状态：</p>
-<p><strong>交流 #2</strong></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>请求
+<p>如果点击链接 [Retour au formulaire]，会发现它仍处于我们离开时的状态：</p>
+<p><strong>第2次交换</strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>demande
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>响应
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>réponse
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DC000000B87D1CA95C.png" width="220" height="184" style="display:inline-block; margin:4px;width:5.821cm;height:4.868cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DC000000B87D1CA95C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000102000000BFE8C1AA58.png" width="258" height="191" style="display:inline-block; margin:4px;width:6.826cm;height:5.054cm;" class="odt-zoomable" data-zoom-src="images/1000000000000102000000BFE8C1AA58.png" /></td></tr></table>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DC000000B87D1CA95C.png" width="220" height="184" style="display:inline-block; margin:4px;width:5.821cm;height:4.868cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DC000000B87D1CA95C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000102000000BFE8C1AA58.png" width="258" height="191" style="display:inline-block; margin:4px;width:6.826cm;height:5.054cm;" class="odt-zoomable" data-zoom-src="images/1000000000000102000000BFE8C1AA58.png" /></td></tr></table>
 
 <h2 id="22-struts">2.2. <span style="color: #4f81bd">应用程序的 Struts 架构</span></h2>
 <p>我们将采用以下 Struts 架构：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005340000027B494721AE.png" width="643" height="306" style="display:inline-block; margin:4px;width:17cm;height:8.103cm;" class="odt-zoomable" data-zoom-src="images/10000000000005340000027B494721AE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005340000027B494721AE.png" width="643" height="306" style="display:inline-block; margin:4px;width:17cm;height:8.105cm;" class="odt-zoomable" data-zoom-src="images/10000000000005340000027B494721AE.png" /></td></tr></table>
 
 <ul>
-  <li>将有三个视图 
+  <li>将包含三个视图 
   </li>
-  <li>控制器将由 Struts 提供
+  <li>控制器将采用Struts提供的控制器
   </li>
-  <li><b>FormBean </b>是负责存储视图 <b>form.person.jsp</b> 提交的表单值的类
+  <li><b>FormulaireBean </b>是负责存储由视图 <b>formulaire.personne.jsp</b> 呈现的表单值的类
   </li>
-  <li><b>FormAction</b> 类负责处理 <b>FormBean</b> 的值，并指定要发送的响应页面： 
+  <li><b>FormulaireAction </b>是负责处理 <b>FormulaireBean</b> 的值并指定要发送的响应页面的类： 
     <ul>
-      <li>如果表单数据有误，则显示 <b>errors.person.jsp</b> 视图
+      <li>若表单数据有误，则返回视图 <b>erreurs.personne.jsp</b>
       </li>
-      <li>否则，将返回 <b>response.personne.jsp</b> 视图
+      <li>否则，则返回视图 <b>reponse.personne.jsp</b>
       </li>
     </ul>
   </li>
 </ul>
 
-<p>对于开发人员而言，任务包括编写以下代码：</p>
+<p>对于开发人员而言，工作内容是编写以下代码：</p>
 <ul>
   <li>三个视图
   </li>
-  <li>与表单关联的<b> FormBean</b>
+  <li>与表单关联的 <b>FormulaireBean</b> Bean
   </li>
-  <li>负责处理表单的 <b>FormAction</b> 类
+  <li>负责处理表单的 <b>FormulaireAction</b> 类
   </li>
 </ul>
 
 <h2 id="23-struts">2.3. <span style="color: #4f81bd">编译 Struts 应用程序所需的类</span></h2>
-<p>为了编译应用程序所需的类，我们将使用 JBuilder。JBuilder 配合使用的 JDK 并不包含 Struts 应用程序所需的类。我们可以按以下方式配置 JBuilder：</p>
+<p>为了编译我们应用程序所需的类，我们将使用JBuilder。该工具使用的是JDK，其中并不包含Struts应用程序所需的类。我们可以按以下方式配置JBuilder：</p>
 <ul>
-<li>工具 / 配置 JDK</li>
+<li>选项 Tools（工具）/Configure JDKs（配置 JDK）</li>
 </ul>
 <p><img src="images/10000000000001A3000001AA2F602FA8.png" width="419" height="426" style="width:11.084cm;height:11.269cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A3000001AA2F602FA8.png" /></p>
 <ul>
-<li>使用 [添加] 按钮将 Struts 提供的 .jar 文件添加到 JBuilder 的类库中。如果您已将 Struts 压缩包解压到本地磁盘，可以将 <strong>&lt;struts&gt;/lib</strong> 文件夹中的所有 .jar 文件添加到 JBuilder 中：</li>
+<li>使用“[Add/Ajouter]”按钮，将Struts提供的.jar文件添加到JBuilder的类库中。如果已将Struts压缩包解压到磁盘上，则可以将<strong>&lt;struts&gt;/lib</strong>文件夹中的所有.jar文件添加到JBuilder中：</li>
 </ul>
 <p><img src="images/100000000000016F0000011E3E8ECBF9.png" width="367" height="286" style="width:9.708cm;height:7.565cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016F0000011E3E8ECBF9.png" /></p>
-<p>您可以将上述所有 .jar 文件添加到 JBuilder 的归档中。我们已经看到，Tomcat 也需要访问 Struts 归档。对于 Tomcat 4.x，您可以将 Struts .jar 文件放置在 <strong>&lt;tomcat4&gt;\common\lib</strong> 中。对于 Tomcat 5.x，您可以将它们放置在 <strong>&lt;tomcat5&gt;\shared\lib</strong> 中。 随后，您可以配置 JBuilder，使其在与 Tomcat 相同的位置查找 Struts .jar 文件。这就是前面提到的展示 JBuilder .jar 文件的屏幕截图中所做的操作。这些文件是从 <strong>&lt;tomcat5&gt;\shared\lib 目录中</strong>获取的<strong>。</strong></p>
-<p>因此，如果 JBuilder 在编译类时报告无法找到 Struts 类，请检查以下两点：</p>
+<p>可以将上述所有 .jar 文件添加到 JBuilder 的项目库中。 我们之前已经提到，Tomcat 同样需要访问 Struts 的文件。对于 Tomcat 4.x，可以将 Struts 的 .jar 文件放置在 <strong>&lt;tomcat4&gt;\common\lib 目录</strong>下。对于 Tomcat 5.x，则可将其放置在 <strong>&lt;tomcat5&gt;\shared\lib 目录下</strong>。 随后可以设置让 JBuilder 在与 Tomcat 相同的位置查找 Struts 的 .jar 文件。这正是上文展示 JBuilder .jar 文件的屏幕截图中所做的操作。这些文件是从 <strong>&lt;tomcat5&gt;\shared\lib</strong> 目录中获取的<strong>。</strong></p>
+<p>因此，如果在编译某个类时，JBuilder提示找不到某个Struts类，请检查以下两点：</p>
 <ul>
   <li>类名的拼写
   </li>
-  <li>JBuilder所使用的.jar文件。所有Struts .jar文件都必须包含在内。
+  <li>JBuilder所使用的.jar文件。所有Struts的.jar文件都应包含在内。
   </li>
 </ul>
 
 <h2 id="24-strutspersonne">2.4. <span style="color: #4f81bd">strutspersonne 应用程序的视图</span></h2>
 <p>该应用程序的三个视图如下：</p>
 <ul>
-  <li><b>form.person.jsp</b>：显示用于输入姓名和年龄的表单
+  <li><b>formulaire.personne.jsp</b>：显示用于输入个人姓名和年龄的表单
   </li>
-  <li><b>response.personne.jsp</b>：若输入值有效，则显示这些值
+  <li><b>reponse.personne.jsp</b>：若输入值有效，则显示这些值
   </li>
-  <li><b>errors.person.jsp</b>：显示任何错误
+  <li><b>erreurs.personne.jsp</b>：若存在错误，则显示错误信息
   </li>
 </ul>
 
-<h3 id="241-errorspersonnejsp">2.4.1. <span style="color: #4f81bd">errors.personne.jsp 视图</span></h3>
+<h3 id="241-erreurspersonnejsp">2.4.1. <span style="color: #4f81bd">视图 erreurs.personne.jsp</span></h3>
 <p>该视图用于显示错误列表，定义如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -888,61 +890,61 @@
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>此代码中有两个新特性：</p>
+<p>该代码中有两处新内容：</p>
 <ol>
-  <li>出现了 <b>&lt;html:XX/&gt;</b> 标签，这些并非 HTML 标签。您可以创建 JSP 标签库，当 JSP 页面转换为 Servlet 时，这些标签会被转换为 Java 代码。
+  <li>出现了 <b>&lt;html:XX/&gt;</b> 标签，而这些并非 HTML 标签。 实际上，我们可以创建 JSP 标签库，当将页面 JSP 转换为 Servlet 时，这些标签会被转换为 Java 代码。
   </li>
-  <li>JSP 页面必须声明其使用的标签库。此处通过以下代码行进行声明： 
+  <li>JSP页面必须声明其使用的标签库。此处通过以下代码行进行声明 
   </li>
 </ol>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
 </code></pre></div>
-<p>这一行提供了两条信息：</p>
+<p>该行提供了两项信息：</p>
 <ul>
-  <li><b>uri</b>：控制库使用规则的文件位置。<b>struts-html.tld</b> 文件包含在 Struts 发行版中。在上例中，该文件位于 WEB-INF 文件夹内。
+  <li><b>uri</b>：管理库使用规则的文件位置。文件 <b>struts-html.tld</b> 包含在 Struts 发行版中。在上例中，该文件将放置在 WEB-INF 文件夹内。
   </li>
-  <li><b>prefix</b>：代码中用于修饰库标签的前缀标识符。这可避免同时使用多个标签库时可能出现的命名冲突。两个不同的库中可能存在名称相同的标签。通过为每个库指定不同的前缀，即可消除任何歧义。
+  <li><b>prefix</b>：代码中用于为库标签添加前缀的标识符。这有助于避免在同时使用多个标签库时可能出现的命名冲突。不同库中可能存在同名的标签。通过为每个库指定不同的前缀，可以消除所有歧义。
   </li>
 </ul>
 
 <ul>
-  <li>&lt;<b>html:errors</b>&gt; 标签用于显示 Struts 控制器发送给它的错误列表。
+  <li>&lt;<b>html:errors</b>&gt; 标签用于显示 Struts 控制器传递给它的错误列表。
   </li>
   <li>&lt;<b>html:link</b>&gt; 标签生成一个指向 <b>/C/page</b> 的链接，其中
     <ul>
-      <li><b>C</b> 代表应用程序上下文
+      <li><b>C </b>是应用程序的上下文
       </li>
-      <li><b>page </b>是该标签的 page 属性中指定的 URL
+      <li><b>page </b>是标签 page 属性中指定的 URL
       </li>
     </ul>
   </li>
 </ul>
 
-<p>该</p>
+<p>标签</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>    <span class="p">&lt;</span><span class="nt">html:link</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;/formulaire.do&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>            Retour au formulaire
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        <span class="p">&lt;/</span><span class="nt">html:link</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>将生成以下 HTML 代码：</p>
+<p>标签将生成以下代码 HTML：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/C/formulaire.do&quot;</span><span class="p">&gt;</span>Retour au formulaire<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>其中 <strong>C</strong> 是应用程序上下文</p>
-<h3 id="242-errorspersonjsp">2.4.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">测试 errors.person.jsp 视图</span></strong></span></h3>
+<p>其中 <strong>C</strong> 是应用程序的上下文</p>
+<h3 id="242-erreurspersonnejsp">2.4.2. <span style="color: #4f81bd">视图测试 erreurs.personne.jsp</span></h3>
 <ul>
-  <li><b>errors.person.jsp</b> 文件位于 <b>strutspersonne</b> 应用程序的 <b>views</b> 文件夹中：
+  <li>文件 <b>erreurs.personne.jsp</b> 位于 <b>strutspersonne</b> 应用程序的 <b>views</b> 文件夹中：
   </li>
 </ul>
 
 <p><img src="images/1000000000000153000000457E445417.png" width="339" height="69" style="width:8.968cm;height:1.826cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000153000000457E445417.png" /></p>
 <ul>
-  <li><b>struts-html.tld</b> 文件取自 Struts 发行版（<b>&lt;struts&gt;/lib</b>）并放置在 <b>WEB-INF 目录下</b>：
+  <li>文件 <b>struts-html.tld</b> 取自 Struts 发行版（<b>&lt;struts&gt;/lib</b>），并放置在 <b>WEB-INF</b> 中：
   </li>
 </ul>
 
 <p><img src="images/100000000000013A0000005CC82C53BC.png" width="314" height="92" style="width:8.306cm;height:2.434cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013A0000005CC82C53BC.png" /></p>
 <ul>
-  <li>对 <b>struts-config.xml</b> 文件进行了如下修改：
+  <li>文件 <b>struts-config.xml</b> 被修改如下：
   </li>
 </ul>
 
@@ -967,14 +969,14 @@
 <a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
 <a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>我们在配置文件中创建了一个新的 URL <strong>/errors</strong>，由 Struts 控制器进行处理。URL <strong>/errors.do</strong> 将被重定向到视图 <strong>/views/errors.person.jsp</strong>。<strong>struts-config.xml</strong> 文件位于 WEB-INF 文件夹中。</p>
+<p>我们在配置文件中创建了一个新的 URL /errors，供 Struts 控制器处理。 URL <strong>/erreurs.do</strong> 将被重定向到视图 <strong>/vues/erreurs.personne.jsp</strong>。 文件 <strong>struts-config.xml</strong> 被放置在文件夹 WEB-INF 中。</p>
 <ul>
-  <li>我们重启 Tomcat 以使新的 <b>struts-config.xml</b> 文件生效，然后请求 URL<b> http://localhost:8080/strutspersonne/erreurs.do</b>：
+  <li>我们重启 Tomcat 以使新文件 <b>struts-config.xml</b> 生效，然后访问网址<b> http://localhost:8080/strutspersonne/erreurs.do</b>：
   </li>
 </ul>
 
 <p><img src="images/1000000000000208000000A366AB9994.png" width="520" height="163" style="width:13.757cm;height:4.313cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000208000000A366AB9994.png" /></p>
-<p><strong>&lt;html:errors/&gt;</strong> 标签未输出任何内容。这是正常的；<strong>ForwardAction</strong> 并未生成该标签所期望的错误列表。尽管如此，上述响应表明我们的 JSP 视图至少在语法上是正确的；否则，我们会收到一个错误页面。让我们检查浏览器收到的 HTML 代码（查看/源代码）：</p>
+<p><strong>&lt;html:errors/&gt;</strong> 标签未输出任何内容。这是正常的，因为 <strong>ForwardAction</strong> 操作并未生成该标签所期望的错误列表。 不过，上述响应表明我们的视图 JSP 至少在语法上是正确的，否则我们会看到一个错误页面。让我们检查浏览器接收到的代码 HTML（查看/源代码）：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Personne - erreurs<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -985,17 +987,17 @@
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>请注意由 &lt;<strong>html:link</strong>&gt; 标签生成的链接。链接中已自动包含 <strong>/strutspersonne</strong> 上下文。这使得应用程序可以在不同上下文之间迁移（例如更换机器）时，无需修改由 &lt;<strong>html:link</strong>&gt; 生成的链接。</p>
-<h3 id="243-responsepersonnejsp">2.4.3. <span style="color: #4f81bd">response.personne.jsp 视图</span></h3>
-<p>该视图用于确认表单中输入的值，内容如下：</p>
+<p>请注意由 &lt;<strong>html:link</strong>&gt; 标签生成的链接。上下文 <strong>/strutspersonne</strong> 已自动包含在链接中。这使得应用程序可以在不同上下文之间迁移（例如更换机器）时，无需修改由 &lt;<strong>html:link</strong>&gt; 生成的链接。</p>
+<h3 id="243-reponsepersonnejsp">2.4.3. <span style="color: #4f81bd">视图 reponse.personne.jsp</span></h3>
+<p>该视图用于确认表单中输入的值，如下所示：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="err">&lt;</span>%
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    // on récupère les données nom, age
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  //String nom=(String)request.getAttribute(&quot;nom&quot;);
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>     // 获取姓名、年龄数据
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  //String 姓名 = (String)request.getAttribute(&quot;姓名&quot;);
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  String nom=&quot;jean&quot;;
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  //String age=(String)request.getAttribute(&quot;age&quot;); 
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>   //String age=(String)request.getAttribute(&quot;age&quot;); 
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>  String age=&quot;24&quot;; 
 <a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>%&gt;
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
@@ -1023,16 +1025,16 @@
 <a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>该页面显示两项信息：[name] 和 [age]，这些信息将由控制器通过预定义的<strong>请求</strong>对象传递给它。在此，我们进行了一项测试，即控制器将无法设置 [name] 和 [age] 的值。因此，我们使用任意值初始化这两项信息。此外，此处的表单返回链接也是通过 &lt;<strong>html:link</strong>&gt; 标签生成的。</p>
-<h3 id="244-responsepersonnejsp">2.4.4. <span style="color: #4f81bd">测试 response.personne.jsp 视图</span></h3>
+<p>该页面显示两条信息 [nom] 和 [age]，这些信息将由控制器通过预定义的 <strong>request</strong> 对象传递给它。 在此，我们进行一项测试，其中控制器将无法设置 [nom] 和 [age] 的值。因此，我们使用任意值初始化这两个信息。此外，此处的表单返回链接也是由 &lt;<strong>html:link</strong>&gt; 标签生成的。</p>
+<h3 id="244-reponsepersonnejsp">2.4.4. <span style="color: #4f81bd">测试视图 reponse.personne.jsp</span></h3>
 <ul>
-  <li><b>reponse.personne.jsp</b> 文件位于 <b>strutspersonne</b> 应用程序的 <b>views</b> 文件夹中：
+  <li>文件 <b>reponse.personne.jsp</b> 位于 <b>strutspersonne</b> 应用程序的 <b>views</b> 文件夹中：
   </li>
 </ul>
 
 <p><img src="images/100000000000015F0000004EBBDF68D5.png" width="351" height="78" style="width:9.285cm;height:2.064cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015F0000004EBBDF68D5.png" /></p>
 <ul>
-  <li><b>struts-config.xml</b> 文件的修改如下：
+  <li>文件 <b>struts-config.xml</b> 已按以下方式修改：
   </li>
 </ul>
 
@@ -1062,16 +1064,16 @@
 <a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
 <a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>我们在配置文件中创建了一个新的 URL <strong>/reponse</strong>，由 Struts 控制器处理。URL <strong>/reponse.do</strong> 将重定向到视图 <strong>/vues/reponse.personne.jsp</strong>。<strong>struts-config.xml</strong> 文件位于 WEB-INF 文件夹中。</p>
+<p>我们在配置文件中创建了一个新的 URL /reponse，供 Struts 控制器处理。 URL <strong>/reponse.do</strong> 将被重定向到视图 <strong>/vues/reponse.personne.jsp</strong>。 文件 <strong>struts-config.xml</strong> 被放置在文件夹 WEB-INF 中。</p>
 <ul>
-  <li>重启 Tomcat 以使新的 <b>struts-config.xml</b> 文件生效，随后访问 URL<b> http://localhost:8080/strutspersonne/erreurs.do</b>：
+  <li>我们重启 Tomcat 以使新文件 <b>struts-config.xml</b> 生效，然后访问网址<b> http://localhost:8080/strutspersonne/erreurs.do</b>：
   </li>
 </ul>
 
-<p><img src="images/100000000000020A000001025729052F.png" width="522" height="258" style="width:13.809cm;height:6.824cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020A000001025729052F.png" /></p>
-<p>结果完全符合预期。</p>
-<h3 id="245-formulairepersonnejsp">2.4.5. <span style="color: #4f81bd">formulaire.personne.jsp 视图</span></h3>
-<p>该视图显示用于输入用户姓名和年龄的表单。其 JSP 代码如下：</p>
+<p><img src="images/100000000000020A000001025729052F.png" width="522" height="258" style="width:13.809cm;height:6.826cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020A000001025729052F.png" /></p>
+<p>结果与预期一致。</p>
+<h3 id="245-formulairepersonnejsp">2.4.5. <span style="color: #4f81bd">视图 formulaire.personne.jsp</span></h3>
+<p>该视图展示了用于输入用户姓名和年龄的表单。其代码 JSP 如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-html.tld&quot; prefix=&quot;html&quot; %&gt;
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -1116,64 +1118,64 @@
 <a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>我们看到<strong>错误</strong>视图中使用了 <strong>struts-html.tld</strong> 标签库。出现了新的标签：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<p>我们再次看到了在<strong>错误</strong>视图中使用的 <strong>struts-html.tld</strong> 标签库。出现了新的标签：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>html:form
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">既用于生成 HTML 标签 &lt;<b>form</b>&gt;，也用于向将处理此表单的控制器提供信息：</div><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">既用于生成标签 HTML &lt;<b>form</b>&gt;，也用于向负责处理此表单的控制器提供信息：</div><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>action
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">表单值将被发送到的 URL</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">表单值将被发送到的 URL</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>name
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">HTML 表单的名称。这也是将用于存储表单值的 Bean 的名称</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">表单名称 HTML。这也是将存储该表单值的 Bean 的名称</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>type
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">必须实例化以获取表单存储 Bean 的类名称</div></td></tr></table><div style="margin:0 0 0.5em 0">请注意，未指定用于将表单参数（GET/POST）发送至控制器的具体方法。可通过 <b>method</b> 属性进行指定。若该属性缺失，则默认使用 <b>POST</b> 方法。</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">用于获取表单存储 Bean 所需实例化的类名</div></td></tr></table><div style="margin:0 0 0.5em 0">需要注意的是，将表单参数（GET/POST）发送至控制器的方法并未明确指定。 可以通过 <b>method</b> 属性来指定。如果未指定该属性，则默认使用方法 <b>POST</b>。</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>html:text
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用于生成 <b>&lt;input type=&quot;text&quot; value=&quot;...&quot;&gt;</b> 标签：</div><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>属性
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">用于生成 <b>&lt;input type=&quot;text&quot; value=&quot;...&quot;&gt;</b> 标签：</div><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>property
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">表单 Bean 中将与输入字段关联的字段名称。当表单提交至服务器（客户端 → 服务器）时，Bean 字段将获取输入字段的值。当表单显示（服务器 → 客户端）时，Bean 字段中包含的值将显示在输入字段中。</div></td></tr></table></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">表示表单 Bean 中将与输入框关联的字段名称。当表单提交至服务器（客户端 → 服务器）时，Bean 字段将取输入框的值。当显示表单（服务器 → 客户端）时，Bean 字段中的值将显示在输入框中。</div></td></tr></table></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>html:submit
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用于生成 HTML 标签 &lt;<b>input type=&quot;submit&quot;</b>...&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">用于生成 HTML &lt;<b>input type=&quot;submit&quot;</b>...&gt; 标签</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>html:reset
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用于生成 HTML 标签 &lt;<b>input type=&quot;reset&quot;</b>...&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">用于生成标签 HTML &lt;<b>input type=&quot;reset&quot;</b>...&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>html:button
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">用于生成 HTML 标签 &lt;<b>input type=&quot;button&quot;</b>...&gt;</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">用于生成标签 HTML &lt;<b>input type=&quot;button&quot;</b>...&gt;</div></td></tr></table>
 
-<h3 id="246-formulairepersonnejsp-bean">2.4.6. <span style="color: #4f81bd">与 formulaire.personne.jsp 表单关联的 Bean</span></h3>
+<h3 id="246-bean-formulairepersonnejsp">2.4.6. <span style="color: #4f81bd">与表单关联的 Bean formulaire.personne.jsp</span></h3>
 <ul>
-  <li>在 Struts 中，每个表单都必须关联一个 Bean，该 Bean 负责存储表单的值并在当前会话中维护这些值。Bean 是一个必须遵循特定语法的 Java 类。与表单关联的 Bean 必须继承 Struts 库中定义的 <b>ActionForm</b> 类：
+  <li>在 Struts 中，每个表单都必须关联一个 Bean，该 Bean 负责存储表单的值并将其保存在当前会话中。Bean 是一个必须遵循特定语法的 Java 类。与表单关联的 Bean 必须继承 Struts 库中定义的 <b>ActionForm</b> 类：
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FormulaireBean</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ActionForm</span><span class="w"> </span><span class="p">{</span>
 </code></pre></div>
 <ul>
-  <li>Bean 的属性名称必须与表单字段（即表单中 <b>&lt;html:text&gt;</b> 标签的 <b>property</b> 属性）相对应。根据前一个表单的代码，该 Bean 因此必须包含两个名为 <b>name </b>和 <b>age </b>的字段。
+  <li>Bean 的属性名称必须与表单字段（即表单中 <b>html:text</b> 标签的 <b>property</b> 属性）相对应。根据前面的表单代码，该 Bean 必须包含两个名为 <b>nom </b>和 <b>age </b>的字段。
   </li>
   <li>对于表单中的每个字段 XX，Bean 必须定义两个方法：
     <ul>
-      <li>public void <b>setXX</b>(Type value)：用于为 XX 属性赋值
+      <li>public void <b>setXX</b>(Type 值)：用于将值赋给属性 XX
       </li>
-      <li>public <b>getXX</b>(Value type)：用于获取 XX 字段的值
+      <li>public void <b>getXX</b>()：用于获取字段 XX 的值
       </li>
     </ul>
   </li>
 </ul>
 
-<p>与前一个表单关联的 Bean 可以如下所示：</p>
+<p>与上述表单关联的 Bean 可能如下所示：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.personne</span><span class="p">;</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.struts.action.ActionForm</span><span class="p">;</span>
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FormulaireBean</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ActionForm</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">   </span><span class="c1">// name</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">   </span><span class="c1">// 姓名</span>
 <a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNom</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
@@ -1182,7 +1184,7 @@
 <a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
 <a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>
-<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">   </span><span class="c1">// age</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">   </span><span class="c1">// 年龄</span>
 <a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
@@ -1192,12 +1194,12 @@
 <a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="p">}</span>
 </code></pre></div>
-<p>我们将使用 JBuilder 编译此类。</p>
-<h3 id="247-formulairepersonnejsp">2.4.7. <span style="color: #4f81bd">测试 formulaire.personne.jsp 视图</span></h3>
-<p><strong>formulaire.personne.jsp</strong> 文件位于 <strong>strutspersonne</strong> 应用程序的 <strong>views</strong> 文件夹中：</p>
+<p>我们将使用JBuilder来编译该类。</p>
+<h3 id="247-formulairepersonnejsp">2.4.7. <span style="color: #4f81bd">测试视图 formulaire.personne.jsp</span></h3>
+<p>文件 <strong>formulaire.personne.jsp</strong> 已放置在 <strong>strutspersonne</strong> 应用程序的 <strong>views</strong> 文件夹中：</p>
 <p><img src="images/100000000000015E0000005D985EE8CF.png" width="350" height="93" style="width:9.259cm;height:2.461cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015E0000005D985EE8CF.png" /></p>
 <ul>
-  <li><b>struts-config.xml</b> 文件的修改如下：
+  <li>文件 <b>struts-config.xml</b> 修改如下：
   </li>
 </ul>
 
@@ -1232,20 +1234,20 @@
 <a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
 <a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>在配置文件中，我们创建了一个新的 URL <strong>/form</strong>，由 Struts 控制器处理。URL <strong>/form.do</strong> 将重定向到视图 <strong>/views/form.person.jsp</strong>。<strong>struts-config.xml</strong> 文件位于 WEB-INF 文件夹中。</p>
+<p>我们在配置文件中创建了一个新的 URL /表单，供 Struts 控制器处理。 URL <strong>/formulaire.do</strong> 将被重定向到视图 <strong>/vues/formulaire.personne.jsp</strong>。 文件 <strong>struts-config.xml</strong> 被放置在文件夹 WEB-INF 中。</p>
 <ul>
-  <li>我们将 <b>FormulaireBean</b> 类放置在 <b>WEB-INF/classes</b> 目录下：
+  <li>我们将类 <b>FormulaireBean</b> 放置在 <b>WEB-INF/classes</b> 中：
   </li>
 </ul>
 
 <p><img src="images/10000000000001FF00000066D8ACF269.png" width="511" height="102" style="width:13.518cm;height:2.699cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FF00000066D8ACF269.png" /></p>
 <ul>
-  <li>重启 Tomcat 以使新的 <b>struts-config.xml</b> 文件生效，然后访问 URL<b> http://localhost:8080/strutspersonne/formulaire.do</b>：
+  <li>我们重启 Tomcat 以便新文件 <b>struts-config.xml</b> 生效，然后访问网址<b> http://localhost:8080/strutspersonne/formulaire.do</b>：
   </li>
 </ul>
 
-<p><img src="images/1000000000000191000000FB1E91DDC5.png" width="401" height="251" style="width:10.608cm;height:6.639cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000191000000FB1E91DDC5.png" /></p>
-<p>表单显示正常。我们可能好奇，散布在表单 JSP 代码中的 <strong>&lt;html:XX&gt;</strong> 标签是如何被“转换”的：</p>
+<p><img src="images/1000000000000191000000FB1E91DDC5.png" width="401" height="251" style="width:10.608cm;height:6.641cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000191000000FB1E91DDC5.png" /></p>
+<p>我们成功获取了表单。出于好奇，我们可以查看散布在表单代码 JSP 中的 <strong>&lt;html:XX&gt;</strong> 标签是如何被“翻译”的：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;pragma&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no-cache&quot;</span><span class="p">&gt;</span> 
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1291,9 +1293,9 @@
 <a id="__codelineno-29-43" name="__codelineno-29-43" href="#__codelineno-29-43"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-29-44" name="__codelineno-29-44" href="#__codelineno-29-44"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>在生成的表单中，[重置]和[清除]按钮可以正常工作。[提交]按钮会重定向到 URL <strong>/strutspersonne/main.do</strong>。根据应用程序的 <strong>web.xml</strong> 文件，Struts 控制器将处理此请求。根据 <strong>struts-config.html</strong> 文件，控制器必须将请求重定向到视图 <strong>/vues/main.html</strong>。让我们试一试：</p>
+<p>在生成的表单中，[恢复] 和 [Effacer] 按钮均可正常使用。<strong>提交</strong>按钮 [Envoyer] 跳转至 URL <strong>/strutspersonne/main.do</strong>。 根据应用程序中的 <strong>web.xml</strong> 文件，Struts 控制器将处理该请求。根据 <strong>struts-config.html</strong> 文件，控制器应将请求重定向至 <strong>/vues/main.html</strong> 视图。让我们试一试：</p>
 <p><img src="images/10000000000002060000009339E6DD43.png" width="518" height="147" style="width:13.704cm;height:3.889cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002060000009339E6DD43.png" /></p>
-<p>一切运行如预期。我们仍需实际处理表单值，即编写一个 <strong>Action</strong> 类，将表单数据写入 <strong>FormBean</strong> 对象中。</p>
+<p>一切如预期进行。接下来我们需要真正处理表单的值，即 c.a.d。编写一个 <strong>Action</strong> 类型的类，该类将接收表单数据并将其存储在 <strong>FormulaireBean</strong> 对象中。</p>
 
 
 

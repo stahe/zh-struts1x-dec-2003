@@ -12,13 +12,13 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/ianini.html">
+        <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/aihu.html">
       
       
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="strutspersonne-ingonghengu.html">
+        <link rel="next" href="struts-enuaningonghengu.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>1. 一般信息 - 通过示例了解 Struts 1.x</title>
+        <title>1. 概述 - 通过示例了解 Struts 1.x</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. 一般信息
+              1. 概述
             
           </span>
         </div>
@@ -319,7 +321,7 @@
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -330,14 +332,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="ianini.html" class="md-nav__link md-nav__link--active">
+      <a href="aihu.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -385,10 +387,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-servlet-jsp-mvc" class="md-nav__link">
+  <a href="#13-servletmvc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.3. 基于 Servlet 和 JSP 页面的 MVC 开发方法
+        1.3. 基于Servlet和页面的MVC开发方法
       
     </span>
   </a>
@@ -399,12 +401,12 @@
   <a href="#14-struts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.4. STRUTS 开发方法
+        1.4. STRUTS开发方法
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1.4. STRUTS 开发方法">
+    <nav class="md-nav" aria-label="1.4. STRUTS开发方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -422,7 +424,7 @@
   <a href="#142-struts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.4.2. STRUTS 开发工具
+        1.4.2. STRUTS开发工具
       
     </span>
   </a>
@@ -460,14 +462,14 @@
   
   
     <li class="md-nav__item">
-      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+      <a href="struts-enuaningonghengu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -568,14 +570,14 @@
   
   
     <li class="md-nav__item">
-      <a href="html-iaoan.html" class="md-nav__link">
+      <a href="iaoan-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. HTML 表单
+    6. 表单 HTML
   
 
     
@@ -649,14 +651,14 @@
   
   
     <li class="md-nav__item">
-      <a href="hionghuuuan.html" class="md-nav__link">
+      <a href="ionghuuuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. 使用数据源
+    9. 利用数据源
   
 
     
@@ -713,51 +715,65 @@
 
 
 
-<h1 id="1">1. <span style="color: #365f91"><strong><span style="color: #365f91">一般信息</span></strong></span></h1>
-<p>文档的PDF版本可在此处获取 |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBIB9bi_Y5oR6cYG13c2QneAUcq3GKuJ1QAxeVcgFrrmPQ?e=jPMBe8">HERE</a>|。</p>
+<h1 id="1">1. <span style="color: #365f91">概述</span></h1>
+<p>该文档的PDF版本可在此处获取 |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBIB9bi_Y5oR6cYG13c2QneAUcq3GKuJ1QAxeVcgFrrmPQ?e=t3K6tG">HERE</a>|。</p>
 <h2 id="11">1.1. <span style="color: #4f81bd">目标</span></h2>
-<p>本文将探讨一个名为 <strong>Struts 的</strong>开发框架。Jakarta Struts 是 Apache 软件基金会（www.apache.org）的一个项目，旨在为基于 MVC（模型-视图-控制器）架构的 Java Web 应用程序开发提供标准框架。 </p>
+<p>本文旨在介绍一种名为<strong>STRUTS</strong>的开发方法。 Jakarta Struts 是 Apache 软件基金会（www.apache.org）的一个项目，旨在提供一个符合所谓 MVC 架构（模型-视图-控制器）的 Java Web 应用程序标准开发框架。 </p>
 <h2 id="12-mvc">1.2. <span style="color: #4f81bd">MVC 模型</span></h2>
-<p>MVC 模型旨在将展示层、处理层和数据访问层进行分离。遵循该模型的 Web 应用程序将具有如下结构：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000363000000855375987C.png" width="434" height="67" style="display:inline-block; margin:4px;width:11.471cm;height:1.76cm;" class="odt-zoomable" data-zoom-src="images/1000000000000363000000855375987C.png" /></td></tr></table>
+<p>MVC 模型旨在分离展示层、处理层和数据访问层。遵循该模型的 Web 应用程序将采用以下架构：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000363000000855375987C.png" width="434" height="67" style="display:inline-block; margin:4px;width:11.471cm;height:1.76cm;" class="odt-zoomable" data-zoom-src="images/1000000000000363000000855375987C.png" /></td></tr></table>
 
-<p>这种架构被称为三层架构：</p>
+<p>此类架构被称为三层架构：</p>
 <ul>
-<li>用户界面是 V（视图）</li>
-<li>应用程序逻辑是 C（控制器）</li>
-<li>数据源是 M（模型）</li>
+  <li>用户界面是 V（视图）
+  </li>
+  <li>应用逻辑是 C（控制器）
+  </li>
+  <li>数据源是 M（模型）
+  </li>
 </ul>
-<p><strong>用户界面</strong>通常是网页浏览器，但也可能是通过网络向 Web 服务发送 HTTP 请求并格式化接收结果的独立应用程序。<strong>应用逻辑</strong>由处理用户请求的脚本组成。 <strong>数据源</strong>通常是数据库，但也可能是简单的平面文件、LDAP目录、远程Web服务等。保持这三个实体之间高度的独立性符合开发者的最佳利益，这样如果其中一个发生变化，另外两个就不必改变，或者只需进行最小的调整。 </p>
-<p>当将此模型应用于 Servlet 和 JSP 页面时，将形成以下架构：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E200000213F96D6913.png" width="625" height="265" style="display:inline-block; margin:4px;width:16.536cm;height:7.024cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E200000213F96D6913.png" /></td></tr></table>
 
-<p>在 [应用逻辑] 模块中，我们区分</p>
+<p><strong>用户界面</strong>通常是网页浏览器，但也可能是通过网络向Web服务发送请求HTTP并格式化其返回结果的独立应用程序。<strong>应用逻辑</strong>由处理用户请求的脚本组成。 数据源通常是数据库，但也可能是简单的平面文件、目录 LDAP、远程 Web 服务等。开发人员应确保这三个实体之间保持高度独立，以便其中一个发生变化时，另外两个无需或只需少量调整。 </p>
+<p>当尝试将此模型应用于 Servlet 和 JSP 页面时，将形成以下架构：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004E200000213F96D6913.png" width="625" height="266" style="display:inline-block; margin:4px;width:16.536cm;height:7.026cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E200000213F96D6913.png" /></td></tr></table>
+
+<p>在[Logique Applicative]模块中，我们可以区分出</p>
 <ul>
-<li>Servlet（作为应用程序的入口点，也称为<strong>控制器</strong>）</li>
-<li>[业务类] 模块，其中包含应用程序逻辑所需的 Java 类</li>
-<li>[数据访问类] 模块，包含用于检索 Servlet 所需数据的 Java 类，通常是持久化数据（数据库、文件、Web 服务等）</li>
-<li>JSP 页面块，构成应用程序的视图。 </li>
+  <li>作为应用程序入口点的Servlet（也称为<b>控制器）</b>
+  </li>
+  <li>[Classes métier]模块，其中包含应用程序逻辑所需的Java类。
+  </li>
+  <li>[Classes d&#x27;accès aux données] 模块，其中包含获取 Servlet 所需数据的 Java 类，通常是持久化数据（BD、文件、WEB 服务等）
+  </li>
+  <li>JSP 页面模块，构成应用程序的视图。 
+  </li>
 </ul>
-<h2 id="13-servlet-jsp-mvc">1.3. <span style="color: #4f81bd">基于 Servlet 和 JSP 页面的 MVC 开发方法</span></h2>
-<p>我们已定义了一种遵循上述 MVC 模型的 Java Web 应用程序开发方法。我们将在此对其进行回顾。</p>
+
+<h2 id="13-servletmvc">1.3. <span style="color: #4f81bd">基于Servlet和页面的MVC开发方法</span></h2>
+<p>我们已定义了一套符合前述 MVC 模型的 Java Web 应用程序开发流程。在此重申该流程。</p>
 <ol>
-<li>我们将首先定义应用程序的所有视图。这些视图即呈现给用户的网页。因此，在设计视图时，我们将采用用户的视角。视图主要有三种类型：<ul>
-<li>输入表单，用于从用户处获取信息。该表单通常包含一个按钮，用于将输入的信息发送至服务器。</li>
-<li>响应页面，仅用于向用户提供信息。该页面通常包含一个链接，允许用户在另一个页面上继续使用应用程序。</li>
-<li>混合页面：Servlet 已向客户端发送了一个包含其生成的信息的页面。客户端将使用该页面向 Servlet 提供额外信息。</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-  <li>每个视图都会生成一个 JSP 页面。针对每种视图：
+  <li>首先，我们将定义应用程序的所有视图。这些视图即呈现给用户的网页。因此，在设计视图时，我们将站在用户的角度出发。视图主要分为三类：
     <ul>
-      <li>我们将设计页面的布局
+      <li>用于收集用户信息的输入表单。该表单通常配有一个按钮，用于将输入的信息发送至服务器。
       </li>
-      <li>我们将确定其中哪些部分是动态的：
+      <li>响应页面，仅用于向用户提供信息。该页面通常包含一个链接，允许用户通过其他页面继续操作应用程序。
+      </li>
+      <li>混合页面：Servlet向客户端发送了一个包含其生成的信息的页面。该页面将用于客户端向Servlet提供其他信息。
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<ol start="2">
+  <li>每个视图都会生成一个 JSP 页面。对于每个页面：
+    <ul>
+      <li>将绘制页面的外观
+      </li>
+      <li>确定其动态部分：
         <ul>
-          <li>供用户使用的信息，必须由Servlet作为参数传递给JSP视图
+          <li>需由 Servlet 作为参数提供给视图 JSP 的用户信息
           </li>
-          <li>必须传输给 Servlet 进行处理的输入数据。该数据必须是 HTML 表单的一部分。
+          <li>需提交给 Servlet 进行处理的输入数据。这些数据应属于表单 HTML 的一部分。
           </li>
         </ul>
       </li>
@@ -766,85 +782,85 @@
 </ol>
 
 <ol start="3">
-  <li>我们可以绘制每个视图的I/O流程图 
+  <li>我们可以将每个视图的输入/输出进行示意图化 
   </li>
 </ol>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002EC0000006DC9254038.png" width="374" height="55" style="display:inline-block; margin:4px;width:9.895cm;height:1.443cm;" class="odt-zoomable" data-zoom-src="images/10000000000002EC0000006DC9254038.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002EC0000006DC9254038.png" width="374" height="55" style="display:inline-block; margin:4px;width:9.895cm;height:1.443cm;" class="odt-zoomable" data-zoom-src="images/10000000000002EC0000006DC9254038.png" /></td></tr></table>
 
 <ol>
     <ul>
-      <li>输入是指 Servlet 必须通过请求或会话提供给 JSP 页面的数据。 
+      <li>输入是指 Servlet 需通过请求 (request) 或会话 (session) 提供给页面 JSP 的数据。 
       </li>
-      <li>输出是指 JSP 页面必须提供给 Servlet 的数据。这些数据属于 HTML 表单的一部分，Servlet 将通过调用 <b>request.getParameter(...) </b>等操作来获取它们。
+      <li>输出是页面 JSP 需提供给 Servlet 的数据。它们属于表单 HTML 的一部分，Servlet 将通过 <b>request.getparameter(...)</b> 类型的操作获取这些数据。
       </li>
     </ul>
 </ol>
 
-<ol>
-  <li>我们将为每个视图编写 Java/JSP 代码。这些代码通常采用以下形式：
+<ol start="4">
+  <li>我们将编写每个视图的 Java/JSP 代码。该代码通常采用以下形式：
   </li>
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">&lt;</span>%@ page ... %&gt;    // importations de classes le plus souvent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">&lt;</span>%@ page ... %&gt;    // 最常用的类导入
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">&lt;</span>%!
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    // variables d&#39;instance de la page JSP (=globales)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    // nécessaire que si la page JSP a des méthodes partageant des variables (rare)    
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     // 页面实例变量 JSP（=全局变量）
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     // 仅当页面 JSP 包含共享变量的方法时才需要（很少见）     
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ...    
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>%&gt;
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="err">&lt;</span>%
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    // récupération des données envoyées par la servlet
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    // soit dans la requête (request) soit dans la session (session)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     // 获取由Servlet发送的数据
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     // 无论是请求（request）还是会话（session）中的数据
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ...
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>%&gt;
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>...
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        // on cherchera ici à minimiser le code java
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>         // 此处将致力于简化 Java 代码
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 <ol start="5">
-  <li>接下来我们可以进行初步测试。下面介绍的部署方法专用于 Tomcat 服务器：
+  <li>接下来可以进行初步测试。下面介绍的部署方法适用于 Tomcat 服务器：
   </li>
 </ol>
 
 <ol>
     <ul>
-      <li>必须在 Tomcat 的 <b>server.xml</b> 文件中创建应用上下文。我们可以先测试该上下文。设 <b>C </b>为该上下文，<b>DC </b>为与其关联的文件夹。我们将创建一个<b>名为 test.html </b>的静态文件，并将其放置在 <b>DC</b> 文件夹中。启动 Tomcat 后，我们在浏览器中访问 URL<b> http://localhost:8080/DC/test.html</b>。
+      <li>应用上下文必须在 Tomcat 的 <b>server.xml</b> 文件中创建。我们可以先测试该上下文。设该上下文为<b> C</b>，与其关联的文件夹为 <b>DC</b>。 我们将构建一个静态文件 <b>test.html</b>，并将其放置在 <b>DC</b> 文件夹中。 启动 Tomcat 后，通过浏览器访问 URL<b> http://localhost:8080/DC/test.html</b>。
       </li>
-      <li>每个 JSP 页面均可进行测试。若某个 JSP 页面名为 <b>formulaire.jsp</b>，我们将在浏览器中请求 URL<b> http://localhost:8080/DC/formulaire.jsp</b>。该 JSP 页面期望从调用它的 Servlet 接收参数值。 在此，我们直接调用该页面，因此它不会收到预期的参数。为了确保仍能进行测试，我们将使用常量在 JSP 页面中手动初始化预期的参数。这些初步测试旨在验证 JSP 页面的语法是否正确。
+      <li>每个 JSP 页面均可进行测试。如果某个 JSP 页面名为 formulaire.jsp， 则需通过浏览器访问 URL<b> http://localhost:8080/DC/formulaire.jsp</b>。页面 JSP 需要从调用它的 Servlet 获取参数值。 由于此处是直接调用，因此它不会收到预期的参数。为了仍能进行测试，我们将在页面 JSP 中使用常量自行初始化预期的参数。这些初步测试可验证页面 JSP 的语法是否正确。
       </li>
     </ul>
 </ol>
 
 <ol start="6">
-  <li>接下来，我们编写 Servlet 代码。它包含两个不同的方法：
+  <li>接下来编写 Servlet 的代码。该 Servlet 包含两个截然不同的方法：
   </li>
 </ol>
 
 <ol>
     <ul>
-      <li><b>init</b> 方法，用于：
+      <li><b>init</b> 方法用于：
         <ul>
-          <li>从 <b>web.xml</b> 文件中检索应用程序的配置参数
+          <li>从应用程序的 <b>web.xml</b> 文件中获取配置参数
           </li>
-          <li>可能创建后续需要使用的业务类实例
+          <li>根据需要创建后续将要使用的业务类实例
           </li>
-          <li>处理任何初始化错误列表，并将这些错误返回给应用程序的后续用户。此错误处理甚至可能包括向应用程序管理员发送电子邮件，以通知其系统故障
+          <li>管理可能出现的初始化错误列表，该列表将反馈给应用程序的未来用户。此错误处理甚至可延伸至向应用程序管理员发送电子邮件，以通知其系统故障
           </li>
         </ul>
       </li>
-      <li><b>doGet </b>或 <b>doPost</b> 方法，具体取决于 Servlet 如何从客户端接收参数。如果 Servlet 处理多个表单，建议每个表单都发送能够唯一标识自身的信息。 这可以通过表单中类型为 <b>&lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;...&quot;&gt; </b>的隐藏属性来实现。Servlet 可以先读取该参数的值，然后将请求的处理委托给负责处理此类请求的私有内部方法。
+      <li>调用方法 <b>doGet </b>或 doPost，具体取决于 Servlet 从客户端接收参数的方式。如果 Servlet 处理多个表单，建议每个表单都发送一条可唯一标识其身份的信息。 这可以通过表单中的隐藏字段实现，例如 <b>&lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;...&quot;&gt;</b>。Servlet 可以先读取该参数的值，然后将请求的处理委托给负责处理此类请求的内部私有方法。
       </li>
-      <li>应尽可能避免在 Servlet 中放置业务逻辑，这并非其设计初衷。 Servlet 充当一种团队领导者（控制器）的角色，它接收来自客户端（Web 客户端）的请求，并将其交由最合适的实体（业务类）执行。编写 Servlet 时，您将定义待创建的业务类的接口（构造函数、方法）。这适用于需要创建这些业务类的情况。如果它们已经存在，则 Servlet 必须适配现有的接口。
+      <li>应尽可能避免在Servlet中放置业务代码。这不是Servlet的设计初衷。Servlet更像是一个团队负责人（控制器），它接收来自客户（Web客户端）的请求，并将其分派给最合适的执行者（业务类）来处理。 编写 Servlet 时，需确定待实现业务类接口（构造函数、方法）。此步骤仅适用于需新建业务类的情况。若业务类已存在，则 Servlet 应适配现有接口。
       </li>
-      <li>Servlet 代码将被编译。
+      <li>Servlet的代码将被编译。
       </li>
     </ul>
 </ol>
 
-<ol start="7">
-  <li>我们将编写 Servlet 所需业务类的骨架。例如，如果 Servlet 使用类型为 <b>proxyArticles</b> 的对象，且该类必须包含一个返回字符串列表（ArrayList）的 <b>getCodes</b> 方法，那么我们最初可以简单地编写：
+<ol>
+  <li>编写 Servlet 所需业务类的骨架。 例如，如果Servlet使用类型<b>为proxyArticles的</b>对象，且该类必须包含一个<b>名为getCodes</b>的方法，该方法返回一个字符串列表（ArrayList），那么我们最初只需编写如下代码：
   </li>
 </ol>
 
@@ -858,114 +874,115 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
-  <li>现在我们可以开始测试该 Servlet 了。
+  <li>接下来可以进行Servlet的测试。
   </li>
 </ol>
 
 <ol>
     <ul>
-      <li>必须创建应用程序的 <b>web.xml</b> 配置文件。该文件必须包含 Servlet 的 <b>init</b> 方法所需的所有信息（&lt;init-param&gt;）。此外，我们还需设置访问主 Servlet 的 URL（&lt;servlet-mapping&gt;）。
+      <li>必须创建应用程序的配置文件 <b>web.xml</b>。该文件应包含 Servlet 的 <b>init</b> 方法所需的所有信息（&lt;init-param&gt;）。此外，需通过 URL 设置访问主 Servlet 的映射（&lt;servlet-mapping&gt;）。
       </li>
       <li>所有必要的类（Servlet、业务类）都放置在 <b>WEB-INF/classes</b> 目录下。
       </li>
-      <li>所有必要的类库（.jar）都放置在 <b>WEB-INF/lib </b>目录下<b>。</b>这些类库可能包含业务类、JDBC 驱动程序等。
+      <li>所有必要的类库（.jar）都放置在 <b>WEB-INF/lib</b> 目录下<b>。</b>这些类库可能包含业务类、JDBC 驱动程序等。
       </li>
-      <li>JSP视图放置在应用程序根目录或专用文件夹中。其他资源（HTML、图片、音频、视频等）亦同。
+      <li>视图文件（JSP）放置在应用程序根目录或独立文件夹中。其他资源（HTML、图片、音频、视频等）也按此方式处理
       </li>
-      <li>完成上述配置后，需对应用程序进行测试并修正初始错误。本阶段结束时，应用程序架构即可投入运行。由于 Tomcat 本身不提供调试工具，此测试阶段可能较为棘手。为此，需要将 Tomcat 集成到开发工具中（如 JBuilder Developer、Sun One Studio 等）。 您可以使用 <b>System.out.println(&quot;....&quot;)</b> 语句，这些语句会输出到 Tomcat 控制台。首先需要检查的是 <b>init</b> 方法是否成功从 <b>web.xml</b> 文件中读取了所有数据。为此，我们可以将这些参数的值输出到 Tomcat 窗口中。同样地，我们将验证 <b>doGet </b>和 <b>doPost</b> 方法是否正确地从应用程序的各个 HTML 表单中获取了参数。
+      <li>完成上述步骤后，对应用程序进行测试并修正初期错误。本阶段结束时，应用程序架构即可投入运行。鉴于 Tomcat 本身不提供调试工具，此测试阶段可能较为棘手。为此，需将 Tomcat 集成到开发工具中（如 JBuilder Developer、Sun One Studio 等）。 可借助 <b>System.out.println(&quot;....&quot;)</b> 指令，该指令会在 Tomcat 窗口中输出信息。首先需验证 <b>init</b> 方法是否正确获取了来自 <b>web.xml</b> 文件的所有数据。 为此，可以将这些数据的值写入 Tomcat 窗口。同样地，需验证 <b>doGet </b>和 <b>doPost</b> 方法是否正确获取了应用程序中各个 HTML 表单的参数。
       </li>
     </ul>
 </ol>
 
-<p>编写 Servlet 所需的业务类。这通常涉及标准 Java 类的开发，这类类通常独立于任何 Web 应用程序。首先需在该环境之外进行测试，例如通过控制台应用程序。业务类编写完成后，可将其集成到 Web 应用程序的部署架构中，并测试其在该架构中的正确集成。此过程将针对每个业务类重复进行。</p>
-<h2 id="14-struts">1.4. <span style="color: #4f81bd">STRUTS 开发方法</span></h2>
-<p>STRUTS 方法论的创建者旨在为基于 Java 编写的 Web 应用程序定义一种遵循 MVC 架构的标准开发方法。STRUTS 项目包含两个方面：</p>
+<p>编写Servlet所需的业务类。这通常是经典的Java类开发，大多与任何Web应用程序无关。首先，将在该环境之外对其进行测试，例如使用控制台应用程序。当业务类编写完成后，可以将其集成到Web应用程序的部署架构中，并测试其在该架构中的正确集成情况。 每个业务类都将按照此流程进行处理。</p>
+<h2 id="14-struts">1.4. <span style="color: #4f81bd">STRUTS开发方法</span></h2>
+<p>STRUTS方法论的制定者旨在为基于Java开发的Web应用程序定义一种符合MVC架构的标准化开发方法。STRUTS项目包含两个方面：</p>
 <ul>
-  <li>开发方法。我们将看到，它与上述针对 Servlet 和 JSP 页面的开发方法非常相似
+  <li>开发方法。我们将看到，它与上述针对 JSP Servlet 和页面的描述非常接近
   </li>
-  <li>支持该开发方法的工具。这些工具是可在 Apache 基金会网站（www.apache.org）上获取的 Java 类库。
+  <li>支持该开发方法的工具。这些工具是Apache基金会网站上提供的Java类库（www.apache.org）。
   </li>
 </ul>
+
 <h3 id="141">1.4.1. <span style="color: #4f81bd">开发方法</span></h3>
-<p>STRUTS 采用的 MVC 架构如下：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000565000002389752E5C0.png" width="643" height="264" style="display:inline-block; margin:4px;width:17cm;height:6.992cm;" class="odt-zoomable" data-zoom-src="images/1000000000000565000002389752E5C0.png" /></td></tr></table>
+<p>STRUTS 采用的架构如下：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000565000002389752E5C0.png" width="643" height="264" style="display:inline-block; margin:4px;width:17cm;height:6.99cm;" class="odt-zoomable" data-zoom-src="images/1000000000000565000002389752E5C0.png" /></td></tr></table>
 
 <ul>
-  <li>控制器是应用程序的核心。所有客户端请求都需经过它。它是由 STRUTS 提供的一个通用 Servlet。在某些情况下，您可能需要对其进行扩展。对于简单的情况，则无需如此。这个通用 Servlet 通常从一个名为 <b>struts-config.xml </b>的文件中获取所需的信息。
+  <li>控制器是应用程序的核心。所有客户端请求均通过它处理。这是一个由 STRUTS 提供的通用 Servlet。 在某些情况下，可能需要对其进行派生。对于简单的情况，则无需如此。该通用Servlet通常从一个名为<b>struts-config.xml的</b>文件中获取所需信息。
   </li>
-  <li>如果客户端请求包含表单参数，这些参数会被放入一个 <b>Bean</b> 对象中。如果一个类遵循我们稍后将讨论的构造规则，则该类被视为 <b>Bean</b> 类型。随时间创建的 <b>Bean</b> 对象存储在客户端的会话或请求中。此设置是可配置的。如果它们已经创建，则无需重新创建。
+  <li>如果客户端请求包含表单参数，这些参数会被放入一个 <b>Bean</b> 对象中。如果一个类遵循稍后将介绍的构造规则，则被称为 <b>Bean</b> 类。随着时间推移创建的这些 <b>Bean</b> 对象会被存储在会话或客户端请求中。这一点是可以配置的。如果它们已被创建，则无需重新创建。
   </li>
-  <li>在 <b>struts</b>-config<b>.html</b> 配置文件中，程序需要处理的每个 URL（因此不对应于可直接请求的 JSP 视图）都与特定信息相关联：
+  <li>在配置文件 <b>struts-config.html </b>中，对于每个需要通过程序处理的 URL（因此不对应于可直接请求的 JSP 视图），会关联以下信息：
     <ul>
-      <li>负责处理该请求的<b> Action 类型类的名称</b>。同样，实例化的 <b>Action</b> 对象也可存储在会话或请求中。
+      <li>负责处理该请求的 <b>Action 类名称</b>。同样，实例化的 <b>Action</b> 对象可保存在会话或请求中。
       </li>
-      <li>如果请求的 URL 包含参数（例如表单提交给控制器时），则需指定负责存储表单数据的 <b>Bean</b> 的名称。
+      <li>如果请求的 URL 带有参数（例如向控制器提交表单的情况），则会指定负责存储表单信息的 <b>Bean</b> 的名称。
       </li>
     </ul>
   </li>
-  <li>凭借配置文件提供的这些信息，控制器在收到客户端的 URL 请求时，能够确定是否需要创建 Bean 以及具体创建哪个 Bean。一旦实例化，该 Bean 即可验证其存储的数据（源自表单）是否有效。 控制器会自动调用该 Bean 中的 <b>`validate`</b> 方法。该 Bean 由开发人员构建，因此开发人员将验证表单数据有效性的代码放置在 `<b>validate</b>` 方法中。如果发现数据无效，控制器将不再继续执行后续操作，而是将控制权传递给配置文件中指定的视图。至此，交互过程即告完成。 请注意，开发者可以选择不进行表单有效性检查。这同样在 <b>struts-config.html</b> 文件中配置。在这种情况下，控制器不会调用 Bean 的 <b>validate</b> 方法。
+  <li>凭借配置文件提供的这些信息，当控制器接收到客户端发来的 URL 请求时，便能确定是否需要创建 Bean 以及具体创建哪个 Bean。一旦实例化，该 Bean 即可验证其存储的表单数据是否有效。 控制器会自动调用该 Bean 中的 <b>validate</b> 方法。Bean 由开发人员构建，因此开发人员需在 <b>validate</b> 方法中编写验证表单数据有效性的代码。若数据被判定为无效，控制器将不再继续处理，而是将控制权移交给配置文件中指定的视图。至此，交互流程结束。 需要注意的是，开发人员可以要求不验证表单的有效性。他在文件 <b>struts-config.html</b> 中也这样做了。在这种情况下，控制器不会调用 Bean 的 <b>validate</b> 方法。
   </li>
-  <li>如果 Bean 的数据正确，或者未进行验证，或者不存在 Bean，控制器将控制权传递给与该 URL 关联的 <b>Action</b> 对象。它通过调用该对象的 <b>execute</b> 方法来实现这一点，并向其传递可能已构建的 Bean 的引用。这就是开发人员执行所需操作的地方：他们可能需要调用业务类或数据访问类。 处理结束时，<b>Action</b>对象将控制器应发送给客户端的视图名称返回给控制器。
+  <li>如果 Bean 数据正确，或者未进行验证，或者不存在 Bean，控制器将控制权移交给与 URL 关联的 <b>Action</b> 类型对象。 它通过调用该对象的<b>execute方法</b>来实现，并将可能已构建的Bean引用传递给该方法。此时开发者需要完成相应的工作：可能需要调用业务类或数据访问类。处理完成后，<b>Action对象</b>将控制器应发送给客户端的视图名称返回给控制器。
   </li>
-  <li>控制器发送此响应。与客户端的交互至此完成。
+  <li>控制器发送该响应。与客户端的交互至此结束。
   </li>
 </ul>
 
-<p>STRUTS 开发方法论开始成形：</p>
+<p>STRUTS开发方法论初具雏形：</p>
 <ul>
-  <li>定义视图。我们将表单视图与其他视图区分开来。 
+  <li>视图的定义。需区分表单视图与其他视图。 
     <ul>
-      <li>每个表单视图都会在 <b>struts-config.</b>xml 文件中生成一个定义。该文件中定义了以下信息：
+      <li>每个表单视图都会在文件 <b>struts-config.xml</b> 中生成一个定义。其中定义了以下信息：
         <ul>
-          <li>将包含表单数据的 Bean 类的名称，以及是否需要对数据进行验证的指示。如果需要验证且数据被判定为无效，则必须指定在此情况下要发回给客户端的视图。
+          <li>将包含表单数据的 <b>Bean</b> 类名称，以及是否需要对数据进行验证的标记。如果需要验证且数据被判定为无效，则需在此处指定应作为响应发送给客户端的视图。
           </li>
-          <li>负责处理表单的 <b>Action</b> 类的名称。
+          <li>负责处理表单的<b>Action</b>类名称。
           </li>
-          <li>处理请求后可能发送给客户端的所有视图的名称。<b>Action</b> 类将根据处理结果从中选择一个。
+          <li>所有在请求处理完成后可能作为响应发送给客户端的视图名称。<b>Action类</b>将根据处理结果从中选择一个。
           </li>
         </ul>
       </li>
-      <li>每个视图对应一个 JSP 页面。我们将看到，在视图（特别是表单视图）中，我们有时会使用 Struts 专用的标签库。
+      <li>每个视图对应一个 JSP 页面。我们将看到，在视图中（特别是表单视图），有时会使用 Struts 专有的标签库。
       </li>
     </ul>
   </li>
   <li>编写与表单视图对应的 JavaBean 类
   </li>
-  <li>编写负责处理表单的 <b>Action</b> 类
+  <li>编写负责处理表单的<b>Action</b>类
   </li>
-  <li>编写业务逻辑或数据访问类
+  <li>编写业务类或数据访问类（如有）
   </li>
 </ul>
 
-<h3 id="142-struts">1.4.2. <span style="color: #4f81bd">STRUTS 开发工具</span></h3>
-<p>Struts 项目是 Apache 软件基金会旗下的项目之一。其中部分项目被归类在 <strong>Jakarta</strong> 项目组下，可通过网址 <strong>http://jakarta.apache.org</strong> 访问：</p>
+<h3 id="142-struts">1.4.2. <span style="color: #4f81bd">STRUTS开发工具</span></h3>
+<p>STRUTS项目是Apache软件基金会（Apache Software Foundation）的项目之一。该基金会多个项目<strong>统称为Jakarta</strong>，可在<strong>http://jakarta.apache.org上</strong>获取：</p>
 <p><img src="images/10000000000002C8000000D4911DDA01.png" width="680" height="202" style="width:17.988cm;height:5.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C8000000D4911DDA01.png" /></p>
-<p>建议您阅读此页面。其中许多项目对 Java 开发者颇具参考价值。若点击上方的 <strong>Struts</strong> 链接，将跳转至该项目的主页：</p>
+<p>建议阅读此页面。其中许多项目对 Java 开发者颇具价值。若点击上文的 <strong>Struts</strong> 链接，将跳转至该项目的首页：</p>
 <p><img src="images/10000000000003B7000000BD16CDB975.png" width="680" height="135" style="width:17.988cm;height:3.575cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B7000000BD16CDB975.png" /></p>
-<p>同样，建议您阅读该主页。要下载 Struts Java 库，请点击上方的<strong>“二进制文件</strong>”链接：</p>
+<p>同样，建议您阅读首页内容。要下载Struts的Java库，请点击上方的<strong>“Binaries”</strong>链接：</p>
 <p><img src="images/10000000000001280000009E44DCBC46.png" width="296" height="158" style="width:7.83cm;height:4.18cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001280000009E44DCBC46.png" /></p>
-<p>Windows 用户请使用 1.1.zip 链接；Unix 用户请使用 1.1.tar.gz 链接（2003 年 11 月）。解压 1.1.zip 文件后，您将看到以下目录结构：</p>
+<p>Windows用户请使用链接1.1.zip，Unix用户请使用1.1.tar.gz（2003年11月版）。解压文件1.1.zip后，将得到以下目录结构：</p>
 <p><img src="images/10000000000001210000009C6783922C.png" width="289" height="156" style="width:7.645cm;height:4.128cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001210000009C6783922C.png" /></p>
-<p>该目录结构包含 Struts 开发所需的 Java 类库。这些类库存储在 .jar 或 .war 文件中，其作用类似于 .zip 文件，可使用相同的工具进行解压。大部分必要的类库位于上方的 <strong>lib</strong> 文件夹中：</p>
+<p>在此目录结构中，包含 STRUTS 开发所需的 Java 类库。这些类库存储在 .jar 或 .war 文件中，其作用类似于 .zip 文件，可使用相同的工具进行解压。大部分所需的类库位于上述 <strong>lib</strong> 文件夹中：</p>
 <p><img src="images/1000000000000155000001C6FB537612.png" width="341" height="454" style="width:9.021cm;height:12.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000155000001C6FB537612.png" /></p>
-<p>除了 .jar 类库外，还有 .dtd（文档类型定义）文件，其中包含 XML 文件的验证规则。XML 文件可以在其内容中引用此类 DTD 文件。分析 XML 文件内容的程序（称为<strong>解析器</strong>）将使用引用 DTD 文件中的验证规则来确定该 XML 文件在语法上是否正确。 例如<strong>，struts-config_1_1.</strong>dtd 文件定义了用于构建 Struts 1.1 版本 <strong>struts-config.xml</strong> 配置文件的规则。</p>
-<p>现在，让我们看看在 Tomcat 服务器上部署 Struts 应用程序时，应将 Struts 目录结构中的各个元素放置在何处。</p>
+<p>除 .jar 类库外，还包含 .dtd（文档类型定义）文件，其中定义了 XML 文件的有效性规则。XML 文件的内容中可引用此类 DTD 文件。 分析 XML 文件内容的程序（称为<strong>解析器</strong>）将使用被引用的 DTD 文件中的有效性规则，来判断 XML 文件的语法是否正确。 例如，文件 <strong>struts-config_1_1.dtd</strong> 规定了 Struts 1.1 版本配置文件 <strong>struts-config.xml</strong> 的构建规则。</p>
+<p>现在让我们看看应将 Struts 目录树中的各个元素放置在何处，以便在 Tomcat 服务器上部署一个 Struts 应用程序。</p>
 <h2 id="15-struts">1.5. <span style="color: #4f81bd">部署 Struts 应用程序</span></h2>
-<p>Struts 应用程序与其他 Web 应用程序一样，因此遵循其运行容器的部署规则。在此，我们将一个名为 <strong>strutspersonne</strong> 的应用程序部署在 Tomcat 4.x 服务器上。Tomcat 5.x 的部署流程见附录。本文将遵循 Tomcat 4.x 的部署规则：</p>
+<p>Struts 应用程序与其他 Web 应用程序并无二致。因此，它遵循其运行所在容器的部署规则。 在此，我们将一个名为 <strong>strutspersonne</strong> 的应用程序部署在 Tomcat 4.x 版本服务器上。附录中提供了 Tomcat 5.x 版本的部署方法。本文遵循 Tomcat 部署规则 4.x：</p>
 <ol>
-  <li>我们在 Tomcat 的 <b>server.xml</b> 配置文件中定义 <b>strutspersonne</b> 上下文：
+  <li>我们在 Tomcat 的配置文件 <b>server.xml</b> 中定义 <b>strutspersonne</b> 上下文：
   </li>
 </ol>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">                </span><span class="nt">&lt;Context</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/strutspersonne&quot;</span><span class="w"> </span><span class="na">docBase=</span><span class="s">&quot;e:/data/serge/web/struts/personne&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>完成上述操作后，如有必要，请重启 Tomcat 以使其生效。我们可以通过访问 URL <strong>http://localhost:8080/strutspersonne</strong> 来验证该上下文的有效性：</p>
+<p>完成上述操作后，可能需要重启 Tomcat 以便其应用新的上下文。可通过访问 URL <strong>http://localhost:8080/strutspersonne</strong> 来验证上下文是否有效：</p>
 <p><img src="images/10000000000001BD000000D7528F00B9.png" width="445" height="215" style="width:11.772cm;height:5.689cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BD000000D7528F00B9.png" /></p>
-<p>如果未显示错误页面，则表示上下文配置正确。</p>
+<p>如果未出现错误页面，则说明上下文配置正确。</p>
 <ol start="2">
-  <li>我们在与 <b>strutspersonne</b> 上下文关联的物理文件夹中创建 <b>WEB-INF</b> 子文件夹。
+  <li>我们在与 <b>strutspersonne</b> 上下文关联的物理文件夹中，创建子文件夹 <b>WEB-INF</b>。
   </li>
-  <li>在应用程序的 WEB-INF 文件夹中，我们定义应用程序的 <b>web.xml</b> 配置文件：
+  <li>在应用程序的 WEB-INF 文件夹中，我们定义应用程序的配置文件 <b>web.xml</b>：
   </li>
 </ol>
 
@@ -994,29 +1011,29 @@
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nt">&lt;/web-app&gt;</span>
 </code></pre></div>
 <ul>
-  <li>该应用程序的控制器（Servlet）类是一个名为 <b>ActionServlet</b> 的预定义 Struts 类。它位于 <b>struts.jar</b> 文件中。为了确保 Tomcat 能找到该类，我们将 <b>struts.jar</b> 放置在 <b>&lt;tomcat&gt;\common\lib</b> 文件夹中，这是 Tomcat 搜索类时会检索的文件夹之一。 实际上，我们将把位于 <b>&lt;struts&gt;\lib</b> 文件夹中的所有 .jar 文件都放置在此处，其中 <b>&lt;struts&gt; </b>是 Struts 目录树的根文件夹。 
+  <li>该应用程序的控制器（Servlet）类是 Struts 的预定义类，名为 <b>ActionServlet</b>。它位于文件 <b>struts.jar</b> 中。 为了让 Tomcat 能找到该类，我们将 <b>struts.jar</b> 放置在 <b>&lt;tomcat&gt;\common\lib</b> 文件夹中，这是 Tomcat 在搜索类时会遍历的文件夹之一。 实际上，我们将把 <b>&lt;struts&gt;\lib</b> 文件夹中找到的所有 .jar 文件都放置在此处，其中 <b>&lt;struts&gt; </b>是 Struts 目录树的根目录。 
   </li>
 </ul>
 
-<p><img src="images/1000000000000169000000C999526481.png" width="361" height="201" style="width:9.55cm;height:5.316cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000169000000C999526481.png" /></p>
+<p><img src="images/1000000000000169000000C999526481.png" width="361" height="201" style="width:9.55cm;height:5.318cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000169000000C999526481.png" /></p>
 <ul>
-  <li>我们还将把位于 <b>&lt;struts&gt;\contrib\struts-el\lib</b> 目录下的 <b>struts-el.jar </b>和 <b>jstl.jar</b> 文件也放置到该位置：
+  <li>还将把位于 <b>&lt;struts&gt;\contrib\struts-el\lib</b> 目录下的 <b>struts-el.jar </b>和 <b>jstl.jar</b> 文件放入该目录：
   </li>
 </ul>
 
-<p><img src="images/100000000000017B000000E499EBD4BD.png" width="379" height="228" style="width:10.026cm;height:6.031cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017B000000E499EBD4BD.png" /></p>
+<p><img src="images/100000000000017B000000E499EBD4BD.png" width="379" height="228" style="width:10.026cm;height:6.033cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017B000000E499EBD4BD.png" /></p>
 <ul>
-  <li>在此，我们可以访问 Web 服务器。但情况并非总是如此。如果您将 Web/Java 应用程序部署在非您自行管理的 Web 容器中，最好让应用程序包含其所需的所有库。这些库必须放置在 <b>WEB-INF/lib</b> 文件夹中，该文件夹需由您自行创建。
+  <li>在此，我们可以访问 Web 服务器。但并非总是如此。 如果将 Web/Java 应用程序部署到非自管型的 Web 容器中，建议让应用程序自带所需的所有库。此时，这些库应放置在需要创建的 <b>WEB-INF/lib</b> 文件夹中。
   </li>
-  <li>我们注意到控制器需要某些信息，这些信息通常位于与 <b>web.xml</b> 同一文件夹中的 <b>struts-config.</b>xml 文件中。实际上，该文件的名称是可以配置的。正是前面提到的 <b>config</b> 参数设置了这个名称。
+  <li>我们提到控制器需要一些信息，这些信息通常位于与 <b>web.xml</b> 位于同一文件夹中的 <b>struts-config.xml</b> 文件中。实际上，该文件的名称是可以配置的。上文中的 <b>config</b> 参数用于确定该名称。
   </li>
-  <li><b>&lt;servlet-mapping&gt;</b> 标签表明，所有以 <b>.do</b> 结尾的 URL 都将用于访问该控制器。此映射是 Struts 所必需的。随后，这些 URL 将由控制器进行过滤，控制器仅接受其 <b>struts-config.xml</b> 配置文件中声明的 URL
+  <li><b>&lt;servlet-mapping&gt;</b>标签表明，所有以<b>.do</b>后缀结尾的URL文件都将调用该控制器。这种映射是Struts所必需的。 随后，这些 URL 请求将由控制器进行过滤，控制器仅接受在其配置文件 <b>struts-config.xml</b> 中声明的 URL 请求
   </li>
 </ul>
 
-<p>目前，我们的 <strong>web.xml</strong> 文件已足够使用。</p>
-<ol>
-  <li>我们将向 <b>strutspersonne</b> 应用程序请求 URL <b>/main.do</b>。根据前面的 <b>web.xml</b> 文件，该 URL 将被传递给 <b>org.apache.struts.action </b>servlet<b>。ActionServlet</b> 类将被实例化，并调用其 <b>init</b> 方法。该方法会尝试读取由 <b>config</b> 参数定义的配置文件。因此，该文件必须存在。我们创建以下 <b>struts-config.xml</b> 文件：
+<p>目前，我们的 <strong>web.xml</strong> 文件已足够。</p>
+<ol start="5">
+  <li>我们将向 <b>strutspersonne</b> 应用程序请求 URL <b>/main.do</b>。 根据之前的 <b>web.xml</b> 文件，该 URL 将被传递给 <b>org.apache.struts.action</b> Servlet<b>。 ActionServlet</b> 类将被实例化，并调用其 <b>init</b> 方法。该方法会尝试读取由 <b>config</b> 参数定义的配置文件，因此该文件必须存在。我们创建以下 <b>struts-config.xml</b> 文件：
   </li>
 </ol>
 
@@ -1036,19 +1053,19 @@
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nt">&lt;/action-mappings&gt;</span>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>请注意<strong>，struts-config.xml</strong> 的 DTD 文件与 <strong>web.xml</strong> 的 DTD 文件不同，这表明它们的结构并不相同。对于控制器必须处理的每个 URL，我们需要定义一个 <strong>&lt;action&gt;</strong> 标签。该标签用于告知控制器在收到针对该 URL 的请求时应执行什么操作。在此，我们指定以下元素：</p>
+<p>请注意，DTD 文件中的 <strong>struts-config.xml</strong> 与 <strong>web.xml</strong> 文件中的并不相同，这表明它们的结构不同。 对于控制器需要处理的每个 URL，我们都需要定义一个 <strong>&lt;action&gt;</strong> 标签。该标签用于告知控制器在被请求此 URL 时应执行什么操作。在此，我们指定了以下内容：</p>
 <ol>
-  <li><b>path=&quot;/main&quot;</b>：定义由 <b>&lt;action&gt;</b> 标签配置的 URL 名称。后缀<b> .do </b>是隐含的。
+  <li><b>path=&quot;/main&quot;</b>：定义由<b>&lt;action&gt;</b>标签配置的URL的名称。后缀<b>.</b>do是隐含的。
   </li>
-  <li><b>type=&quot;org.apache.struts.actions.ForwardAction&quot;</b>：定义必须处理该请求的 <b>Action</b> 类名称。此处我们使用 Struts 中预定义的 <b>Action</b> 类。该类本身不执行任何操作，而是将客户端的请求转发至 <b>parameter</b> 属性中指定的 URL。
+  <li><b>type=&quot;org.apache.struts.actions.ForwardAction&quot;</b>：定义处理该请求的<b>Action类</b>名称。此处使用Struts中预定义的<b>Action类</b>。该类本身不执行任何操作，仅将客户端的请求转发至<b>parameter属性</b>中指定的URL。
   </li>
-  <li><b>parameter=&quot;/main.html&quot;</b>：请求应转发到的 URL 名称。此处是一个静态 HTML 文件。
+  <li><b>parameter=&quot;/main.html&quot;</b>：请求应转发到的 URL 的名称。此处是一个静态的 HTML 文件。
   </li>
 </ol>
 
-<p>总而言之，当用户请求 URL <strong>/main.do 时，</strong>将被重定向至 URL <strong>/main.html</strong>。</p>
-<ol>
-  <li><b>main.html</b> 文件内容如下：
+<p>简而言之，当用户请求 URL <strong>/main.do</strong> 时，将获得 URL <strong>/main.html</strong>。</p>
+<ol start="5">
+  <li><b>main.html</b>文件内容如下：
   </li>
 </ol>
 
@@ -1061,27 +1078,27 @@
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>该文件位于 <strong>strutspersonne/views</strong> 应用程序文件夹中：</p>
+<p>该文件位于 <strong>strutspersonne/vues</strong> 应用程序文件夹中：</p>
 <p><img src="images/10000000000001340000006A304F9E8B.png" width="308" height="106" style="width:8.147cm;height:2.805cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001340000006A304F9E8B.png" /></p>
-<p>可通过 URL <strong>http://localhost:8080/strutspersonne/main.html</strong> 直接访问：</p>
+<p>可以通过 URL 直接调用它<strong>http://localhost:8080/strutspersonne/main.html</strong>：</p>
 <p><img src="images/100000000000021B00000075CAF57BC4.png" width="539" height="117" style="width:14.259cm;height:3.096cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021B00000075CAF57BC4.png" /></p>
-<p>在此情况下，应用程序的 Struts 控制器<strong>并未介入</strong>，因为它仅在请求 <strong>*.do</strong> 格式的 URL 时才会介入。然而，本次我们请求的是 URL <strong>/vues/main.html</strong>。</p>
+<p>在此情况下，应用程序的 Struts 控制器<strong>并未介入</strong>，因为它仅在请求 <strong>*.do</strong> 类型的 URL 时才会介入。而此处请求的是 URL <strong>/vues/main.html</strong>。</p>
 <ol>
-  <li>之前创建的 <b>struts-config.xml</b> 文件必须与 <b>web.xml</b> 文件放在同一个 WEB-INF 文件夹中：
+  <li>之前生成的文件 <b>struts-config.xml</b> 应放置在与文件 <b>web.xml</b> 相同的文件夹 WEB-INF 中：
   </li>
 </ol>
 
 <p><img src="images/10000000000001360000004DABBDF95D.png" width="310" height="77" style="width:8.2cm;height:2.037cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001360000004DABBDF95D.png" /></p>
 <ol>
-  <li>现在，我们将通过访问 URL <b>/main.do</b> 来验证 <b>strutspersonne</b> 应用程序控制器是否运行正常（如有必要，请先重启 Tomcat）。
+  <li>现在，我们将通过请求 URL <b>/main.do</b> 来验证 <b>strutspersonne</b> 应用程序控制器是否正常运行，如有必要，请先重启 Tomcat。
   </li>
 </ol>
 
 <p><img src="images/10000000000001DE00000074F290CE3D.png" width="478" height="116" style="width:12.645cm;height:3.069cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DE00000074F290CE3D.png" /></p>
-<p>在此，由于我们请求了一个 <strong>*.do</strong> 格式的 URL，Struts 控制器介入了处理。我们成功获取了预期的页面（<strong>main.html</strong>）。现在，我们已经具备了应用程序运行所需的基本组件：<strong>strutspersonne</strong> 上下文、<strong>web.xml</strong> 和 <strong>struts-config.xml</strong> 配置文件，以及 Struts 库。</p>
-<p>如果我们请求的是 <strong>/toto.do</strong> 这样的 URL，会发生什么情况？根据 strutspersonne 应用程序的 <strong>web.xml</strong> 文件，Struts 控制器会被调用以处理该请求。随后它会检查 <strong>struts-config.html</strong> 配置文件，并发现其中没有针对 URL <strong>/toto</strong> 的配置。那么它会怎么做呢？让我们试一试：</p>
-<p><img src="images/10000000000002C80000014D10E10263.png" width="680" height="318" style="width:17.988cm;height:8.414cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C80000014D10E10263.png" /></p>
-<p>我们得到一个错误页面，这似乎很正常。现在我们可以开始编写应用程序了。</p>
+<p>在此，由于我们请求了 <strong>*.do</strong> 类型的 URL，因此 Struts 控制器已介入处理。我们确实获得了预期的页面（<strong>main.html</strong>）。 至此，我们已掌握应用程序运行的基础要素：<strong>strutspersonne上下</strong>文、配置文件web.xml和struts-config.xml，以及Struts库。</p>
+<p>如果我们请求的是 <strong>/toto.do</strong> 类型的 URL 会发生什么？根据 strutspersonne 应用程序的 <strong>web.xml</strong> 文件，此时将调用 Struts 控制器来处理它。 该控制器随后会查阅其配置文件 struts-config.html，却找不到针对 URL <strong>/toto</strong> 的任何配置。那么它会怎么做呢？让我们试一试：</p>
+<p><img src="images/10000000000002C80000014D10E10263.png" width="680" height="318" style="width:17.988cm;height:8.412cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C80000014D10E10263.png" /></p>
+<p>我们得到了一页错误信息，这似乎很正常。现在我们可以开始编写应用程序了。</p>
 
 
 

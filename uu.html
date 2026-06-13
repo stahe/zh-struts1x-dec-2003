@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://stahe.github.io/zh-struts1x-dec-2003/uu.html">
       
       
-        <link rel="prev" href="hionghuuuan.html">
+        <link rel="prev" href="ionghuuuan.html">
       
       
       
@@ -54,6 +54,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -301,14 +303,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ianini.html" class="md-nav__link">
+      <a href="aihu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -328,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+      <a href="struts-enuaningonghengu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -436,14 +438,14 @@
   
   
     <li class="md-nav__item">
-      <a href="html-iaoan.html" class="md-nav__link">
+      <a href="iaoan-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. HTML 表单
+    6. 表单 HTML
   
 
     
@@ -517,14 +519,14 @@
   
   
     <li class="md-nav__item">
-      <a href="hionghuuuan.html" class="md-nav__link">
+      <a href="ionghuuuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. 使用数据源
+    9. 利用数据源
   
 
     
@@ -607,7 +609,7 @@
   <a href="#101-tomcat-5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.1. 配置 Tomcat 5
+        10.1. Tomcat 5 的配置
       
     </span>
   </a>
@@ -640,16 +642,16 @@
 
 
 <h1 id="10">10. <span style="color: #365f91">附录</span></h1>
-<h2 id="101-tomcat-5">10.1. <span style="color: #4f81bd">配置 Tomcat 5</span></h2>
-<p>前面的示例使用的是 Tomcat 4.x Web 服务器。如果您使用的是 Tomcat 5.x，则 <strong>strutspersonne</strong> 应用程序的配置会略有不同：</p>
+<h2 id="101-tomcat-5">10.1. <span style="color: #4f81bd">Tomcat 5 的配置</span></h2>
+<p>前面的示例使用的是 Tomcat 4.x Web 服务器。如果使用 Tomcat <strong>5.x，strutspersonne</strong> 应用程序的配置将略有不同：</p>
 <ul>
-  <li>首先，上下文不再在 <b>&lt;tomcat5&gt;/conf/server.xml</b> 文件中创建，而是位于 <b>&lt;tomcat5&gt;/conf/Catalina/localhost</b> 文件夹中的 <b>strutspersonne.xml</b> 文件中：
+  <li>首先，上下文的创建不在 <b>&lt;tomcat5&gt;/conf/server.xml</b> 文件中进行，而是在位于 <b>&lt;tomcat5&gt;/conf/Catalina/localhost</b> 文件夹中的 <b>strutspersonne.xml</b> 文件中进行：
   </li>
 </ul>
 
-<p><img src="images/100000000000017000000100C0361CD4.png" width="368" height="256" style="width:9.735cm;height:6.772cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017000000100C0361CD4.png" /></p>
+<p><img src="images/100000000000017000000100C0361CD4.png" width="368" height="256" style="width:9.735cm;height:6.773cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017000000100C0361CD4.png" /></p>
 <ul>
-  <li><b>strutspersonne.xml</b> 文件的内容（实际上文件名可以是任意名称）如下：
+  <li>文件 <b>strutspersonne.xml</b> 的内容（实际上其文件名可能任意）如下：
   </li>
 </ul>
 
@@ -657,7 +659,7 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;/Context&gt;</span>
 </code></pre></div>
 <ul>
-<li>Struts 的 .jar 文件位于 <strong>&lt;tomcat5&gt;/shared/lib</strong>：</li>
+<li>Struts 的 .jar 文件位于 <strong>&lt;tomcat5&gt;/shared/lib</strong> 目录下：</li>
 </ul>
 <p><img src="images/100000000000015D000000E70E200FE6.png" width="349" height="231" style="width:9.232cm;height:6.112cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000E70E200FE6.png" /></p>
 

@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ianini.html" class="md-nav__link">
+      <a href="aihu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+      <a href="struts-enuaningonghengu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -447,7 +449,7 @@
   <a href="#41" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1. 声明动态表单
+        4.1. 动态表单的声明
       
     </span>
   </a>
@@ -458,7 +460,7 @@
   <a href="#42-dynaactionform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.2. 编写与动态表单关联的 DynaActionForm 类
+        4.2. 编写与动态表单关联的类 DynaActionForm
       
     </span>
   </a>
@@ -466,10 +468,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-formaction" class="md-nav__link">
+  <a href="#43-formulaireaction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.3. 新的 FormAction 类
+        4.3. 新类 FormulaireAction
       
     </span>
   </a>
@@ -514,7 +516,7 @@
   <a href="#443" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.4.3. 编译类
+        4.4.3. 类编译
       
     </span>
   </a>
@@ -601,14 +603,14 @@
   
   
     <li class="md-nav__item">
-      <a href="html-iaoan.html" class="md-nav__link">
+      <a href="iaoan-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. HTML 表单
+    6. 表单 HTML
   
 
     
@@ -682,14 +684,14 @@
   
   
     <li class="md-nav__item">
-      <a href="hionghuuuan.html" class="md-nav__link">
+      <a href="ionghuuuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. 使用数据源
+    9. 利用数据源
   
 
     
@@ -747,16 +749,16 @@
 
 
 <h1 id="4">4. <span style="color: #365f91">动态表单的使用</span></h1>
-<h2 id="41">4.1. <span style="color: #4f81bd">声明动态表单</span></h2>
-<p>我们已经看到，Struts 使用 <strong>ActionForm</strong> 对象来存储由应用程序中各个 Servlet 处理的 HTML 表单的值。对于应用程序中的每个表单，我们需要创建一个继承自 <strong>ActionForm</strong> 的类。这很快就会变得繁琐，因为对于每个字段 xx，我们都必须编写两个方法：<strong>setXx</strong> 和 <strong>getXx</strong>。Struts 提供了使用表单的选项 </p>
+<h2 id="41">4.1. <span style="color: #4f81bd">动态表单的声明</span></h2>
+<p>我们已经看到，Struts 使用 <strong>ActionForm</strong> 对象来存储由应用程序中不同 Servlet 处理的 HTML 表单的值。 对于应用程序中的每个表单，我们需要构建一个从 <strong>ActionForm</strong> 派生的类。这很快会变得相当繁琐，因为对于每个字段 xx，我们都需要编写两个方法 <strong>setXx</strong> 和 <strong>getXx</strong>。Struts 允许我们使用表单 </p>
 <ul>
   <li>，其结构在 struts-config.xml 文件的 &lt;form-beans&gt; 部分中声明
   </li>
-  <li>，这些表单将由 Struts 环境根据声明的结构动态创建
+  <li>中声明的结构，这些表单将由 Struts 环境根据声明的结构动态生成
   </li>
 </ul>
 
-<p>因此，在 <strong>strutspersonne</strong> 应用程序中用于存储姓名和年龄值的类可以定义如下：</p>
+<p>因此，用于存储 <strong>strutspersonne</strong> 应用程序中姓名和年龄值的类可以定义如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="p">&lt;</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="p">&lt;</span><span class="nt">form-bean</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;frmPersonne&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.actions.DynaActionForm&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String&quot;</span> <span class="na">initial</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
@@ -764,7 +766,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;/</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>对于表单中的每个字段，我们定义一个带有两个属性的 &lt;<strong>form-property</strong>&gt; 标签：</p>
+<p>对于表单的每个字段，我们定义一个带有两个属性的 &lt;<strong>form-property</strong>&gt; 标签：</p>
 <ul>
   <li><b>name</b>：字段名称
   </li>
@@ -772,7 +774,7 @@
   </li>
 </ul>
 
-<p>由于 Web 客户端提交的表单值均为字符串，因此最常用的类型是：单值字段使用 <strong>java.lang.</strong>String，多值字段（如同名复选框、多选列表等）使用 <strong>java.lang.String[]</strong>。 DynactionForm 类与 ActionForm 类一样，其 <strong>validate</strong> 方法默认不执行任何操作。若要让它检查表单参数的有效性，必须继承该类并自行编写 <strong>validate</strong> 方法。因此，表单声明将如下所示：</p>
+<p>由于Web客户端提交的表单值均为字符串，因此最常用的类型是：单选字段使用java.lang.String，多选字段（同名复选框、多选列表等）<strong>使用java.lang.String[]</strong>。 类 <strong>DynactionForm</strong> 与类 <strong>ActionForm</strong> 一样，其 <strong>validate</strong> 方法默认不执行任何操作。若要使其验证表单参数的有效性，需继承该类并自行编写 <strong>validate</strong> 方法。因此，表单的声明如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    <span class="p">&lt;</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        <span class="p">&lt;</span><span class="nt">form-bean</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;frmPersonne&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;istia.st.struts.personne.PersonneDynaForm&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String&quot;</span> <span class="na">initial</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
@@ -780,52 +782,52 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">&lt;/</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>我们需要自己编写 <strong>istia.st.struts.personne.PersonneDynaForm</strong> 类。</p>
-<h2 id="42-dynaactionform">4.2. <span style="color: #4f81bd">编写与动态表单关联的 DynaActionForm 类</span></h2>
-<p>在上文中，我们将类 <strong>istia.st.struts.personne.PersonneDynaForm</strong> 与表单 (name, age) 关联起来。现在我们将编写该类：</p>
+<p><strong>istia.st.struts.personne.PersonneDynaForm</strong> 类需由我们编写。</p>
+<h2 id="42-dynaactionform">4.2. <span style="color: #4f81bd">编写与动态表单关联的类 DynaActionForm</span></h2>
+<p>在上文中，我们已将类 <strong>istia.st.struts.personne.PersonneDynaForm</strong> 关联到表单（姓名、年龄）。现在我们编写该类：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.personne</span><span class="p">;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.*</span><span class="p">;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.struts.action.*</span><span class="p">;</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PersonneDynaForm</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">DynaActionForm</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">   </span><span class="c1">// validation</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">   </span><span class="c1">// 验证</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ActionErrors</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="n">ActionMapping</span><span class="w"> </span><span class="n">mapping</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="c1">// error management</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="c1">// 错误处理</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">ActionErrors</span><span class="w"> </span><span class="n">erreurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionErrors</span><span class="p">();</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">     </span><span class="c1">// name must be non-empty</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">     </span><span class="c1">// 姓名字段不能为空</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">);</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">nom</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="n">erreurs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;nomvide&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionError</span><span class="p">(</span><span class="s">&quot;personne.formulaire.nom.vide&quot;</span><span class="p">));</span>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">     </span><span class="c1">// age must be non-empty</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">     </span><span class="c1">// 年龄字段不能为空</span>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">);</span>
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">age</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">      </span><span class="n">erreurs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;agevide&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionError</span><span class="p">(</span><span class="s">&quot;personne.formulaire.age.vide&quot;</span><span class="p">));</span>
 <a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">      </span><span class="c1">// age must be a positive integer</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">      </span><span class="c1">// 年龄必须为正整数</span>
 <a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">age</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;^\\s*\\d+\\s*$&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="n">erreurs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;ageincorrect&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActionError</span><span class="p">(</span><span class="s">&quot;personne.formulaire.age.incorrect&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">));</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="c1">// return the list of errors</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="c1">// 返回错误列表</span>
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">      </span><span class="p">}</span>
 <a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">//if</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">     </span><span class="c1">// return the error list</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">     </span><span class="c1">// 返回错误列表</span>
 <a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">erreurs</span><span class="p">;</span>
 <a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="p">}</span><span class="c1">//class</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="p">}</span><span class="c1">//类</span>
 </code></pre></div>
-<p>请注意以下几点：</p>
+<p>需要注意的要点如下：</p>
 <ul>
   <li>该类继承自 <b>DynaActionForm</b>
   </li>
-  <li>DynaActionForm 类的 <b>validate</b> 方法已被重写。当 Struts 控制器调用该方法时，会构建 <b>PersonneDynaForm</b> 对象。该对象包含一个字典，其键为表单字段 <b>name </b>和 <b>age</b>，值则为这些字段的实际值。要在 <b>DynaActionForm</b> 方法中访问字段，请使用 <b>Object get(String fieldName)</b> 方法。 要为字段设置值，请使用 <b>void set(String fieldName, Object value)</b> 方法。完整的说明请参阅 <b>DynaActionForm</b> 类的定义。
+  <li><b>DynaActionForm</b> 类的 <b>validate</b> 方法已被重写。当该方法由 Struts 控制器执行时，会构建 <b>PersonneDynaForm</b> 对象。该对象包含一个字典，其键为表单字段 <b>name </b>和 age，值为这些字段的实际值。 要在 <b>DynaActionForm</b> 的方法中访问某个字段，需使用 <b>Object get(String nomDuChamp)</b> 方法。若要为字段设置值，可使用 <b>void set(String nomDuChamp, Object 值)</b> 方法。 完整的定义请参阅 <b>DynaActionForm</b> 类的定义。
   </li>
-  <li>一旦获取了表单中 name 和 age 字段的值<b>，validate</b> 方法就与表单关联到 <b>ActionForm</b> 对象时编写的方法并无二致。
+  <li>获取表单中 nom 和 age 字段的值后，<b>validate</b> 方法与表单关联 <b>ActionForm</b> 对象时编写的方法并无二致。
   </li>
 </ul>
 
-<h2 id="43-formaction">4.3. <span style="color: #4f81bd">新的 FormAction 类</span></h2>
+<h2 id="43-formulaireaction">4.3. <span style="color: #4f81bd">新类 FormulaireAction</span></h2>
 <p>配置文件定义了以下 <strong>/main</strong> 操作：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>...
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;form-beans&gt;</span>
@@ -846,7 +848,7 @@
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">            </span><span class="nt">&lt;forward</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;reponse&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/reponse.do&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="nt">&lt;/action&gt;</span>
 </code></pre></div>
-<p>此定义与 <strong>strutspersonne</strong> 应用程序中的定义相同。<strong>/main</strong> 动作由 <strong>FormulaireAction</strong> 类型的对象实现。该对象以前通过 <strong>FormulaireBean</strong> 类型的对象接收 <strong>frmPersonne</strong> 表单的值。现在，它通过 <strong>PersonneDynaForm</strong> 类型的对象接收这些值。因此，必须重写该类：</p>
+<p>此定义与<strong>strutspersonne</strong>应用程序中的定义相同。<strong>/main</strong>操作由类型<strong>为FormulaireAction的</strong>对象执行。该对象通过类型为<strong>FormulaireBean的</strong>对象接收来自表<strong>单frmPersonne的</strong>值。 现在，它通过类型为 <strong>PersonneDynaForm</strong> 的对象接收这些值。因此需要重写该类：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.personne</span><span class="p">;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.struts.action.Action</span><span class="p">;</span>
@@ -864,41 +866,41 @@
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ActionForward</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="n">ActionMapping</span><span class="w"> </span><span class="n">mapping</span><span class="p">,</span><span class="w"> </span><span class="n">ActionForm</span><span class="w"> </span><span class="n">form</span><span class="p">,</span>
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">           </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">     </span><span class="c1">// we have a valid form, otherwise we wouldn&#39;t have got here</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">     </span><span class="c1">// 表单有效，否则不会到达此处</span>
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="n">PersonneDynaForm</span><span class="w"> </span><span class="n">formulaire</span><span class="o">=</span><span class="p">(</span><span class="n">PersonneDynaForm</span><span class="p">)</span><span class="n">form</span><span class="p">;</span>
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">,</span><span class="n">formulaire</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">));</span>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="n">formulaire</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">));</span>
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;reponse&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">  </span><span class="p">}</span><span class="c1">//execute</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">  </span><span class="p">}</span><span class="c1">//执行</span>
 <a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">}</span>
 </code></pre></div>
-<p>请注意以下几点：</p>
+<p>需要注意的要点如下：</p>
 <ul>
-  <li>我们必须导入包含表单数据的 PersonneDynaForm 类，才能访问其定义
+  <li>我们必须导入包含表单数据的类 <b>PersonneDynaForm</b>，才能访问其定义
   </li>
-  <li><b>execute</b> 方法使用 <b>[DynaActionForm].get</b> 方法获取表单参数的值。
+  <li><b>execute方法</b>通过<b>[DynaActionForm].get方法</b>获取表单参数的值。
   </li>
 </ul>
 
-<p>与 <strong>strutspersonne</strong> 应用程序中的 <strong>FormAction</strong> 类相比，仅访问表单值的方式发生了变化。</p>
+<p>对于 <strong>strutspersonne</strong> 应用程序中的 <strong>FormulaireAction</strong> 类，仅表单值的访问方式发生了变化。</p>
 <h2 id="44-strutspersonne1">4.4. <span style="color: #4f81bd">strutspersonne1 应用程序的部署与测试</span></h2>
 <h3 id="441">4.4.1. <span style="color: #4f81bd">创建上下文</span></h3>
-<p>我们将这个新应用程序命名为 <strong>strutspersonne1</strong>。我们在 Tomcat 4.x 的 <strong>&lt;tomcat&gt;\conf\serveur.xml</strong> 文件中创建一个新的定义：</p>
+<p>我们将这个新应用程序命名为 <strong>strutspersonne1</strong>。我们在 Tomcat 的 <strong>&lt;tomcat&gt;\conf\serveur.xml</strong> 文件中创建了一个新定义：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="nt">&lt;Context</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/strutspersonne1&quot;</span><span class="w"> </span><span class="na">docBase=</span><span class="s">&quot;e:/data/serge/web/struts/personne1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>完成上述操作后，必须重启 Tomcat。您可以通过访问以下 URL 来验证该上下文的有效性：</p>
+<p>完成上述操作后，需重启 Tomcat。可通过访问 URL 来验证上下文的有效性：</p>
 <p><strong>http://localhost:8080/strutspersonne1/</strong></p>
-<p><img src="images/10000000000001BF000000FBAC84E5C1.png" width="447" height="251" style="width:11.825cm;height:6.639cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BF000000FBAC84E5C1.png" /></p>
+<p><img src="images/10000000000001BF000000FBAC84E5C1.png" width="447" height="251" style="width:11.825cm;height:6.641cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BF000000FBAC84E5C1.png" /></p>
 <h3 id="442">4.4.2. <span style="color: #4f81bd">视图</span></h3>
-<p>将 <strong>strutspersonne</strong> 应用程序中的 <strong>views</strong> 文件夹复制到 <strong>strutspersonne1</strong> 应用程序文件夹中。视图文件未发生变化。</p>
-<p><img src="images/100000000000016400000093AF06E517.png" width="356" height="147" style="width:9.417cm;height:3.888cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016400000093AF06E517.png" /></p>
-<h3 id="443">4.4.3. <span style="color: #4f81bd">编译类</span></h3>
-<p>我们需要创建两个类：<strong>PersonneDynaForm</strong> 和 FormulaireAction，其中后者调用前者。我们可以使用 JBuilder 项目来创建并编译它们：</p>
+<p>将 <strong>strutspersonne</strong> 应用程序的 <strong>views</strong> 文件夹复制到 <strong>strutspersonne1</strong> 应用程序的文件夹中。因为视图没有变化。</p>
+<p><img src="images/100000000000016400000093AF06E517.png" width="356" height="147" style="width:9.417cm;height:3.889cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016400000093AF06E517.png" /></p>
+<h3 id="443">4.4.3. <span style="color: #4f81bd">类编译</span></h3>
+<p>我们需要创建两个类：<strong>PersonneDynaForm</strong> 和 FormulaireAction，后者调用前者。我们可以使用 JBuilder 项目来创建并编译它们：</p>
 <p><img src="images/10000000000000C400000076AFFB08BF.png" width="196" height="118" style="width:5.186cm;height:3.122cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C400000076AFFB08BF.png" /></p>
 <h3 id="444-web-inf">4.4.4. <span style="color: #4f81bd">WEB-INF 文件夹</span></h3>
-<p>将 <strong>strutspersonne</strong> 应用程序中的 <strong>WEB-INF</strong> 文件夹复制到 <strong>strutspersonne1</strong> 应用程序文件夹中。其中有几个文件发生了变化：</p>
+<p>我们将 <strong>strutspersonne</strong> 应用程序中的 <strong>WEB-INF</strong> 文件夹复制到 <strong>strutspersonne1</strong> 应用程序的文件夹中。部分文件会发生变化：</p>
 <p><img src="images/100000000000014900000077A5BAE4CE.png" width="329" height="119" style="width:8.703cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014900000077A5BAE4CE.png" /></p>
-<p><strong>struts-config.xml</strong> 配置文件内容如下：</p>
+<p>配置文件 <strong>struts-config.xml</strong> 变为如下内容：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">&lt;!DOCTYPE struts-config PUBLIC</span>
@@ -944,10 +946,10 @@
 <a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="w">    </span><span class="nt">&lt;message-resources</span><span class="w"> </span><span class="na">parameter=</span><span class="s">&quot;ressources.personneressources&quot;</span><span class="nt">/&gt;</span><span class="w">    </span>
 <a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>该文件与 <strong>strutspersonne</strong> 应用程序中的配置文件完全相同，唯一区别在于动态表单的定义（框选部分）。</p>
-<p>在 <strong>WEB-INF/classes</strong> 文件夹中，放置由 JBuilder 编译的类：</p>
+<p>该文件与<strong>strutspersonne应用程序</strong>中的文件完全相同，仅表单的动态定义部分（框选部分）有所不同。</p>
+<p>在 <strong>WEB-INF/classes</strong> 文件夹中，将放置由 JBuilder 编译的类：</p>
 <p><img src="images/100000000000020500000069F5F8D51F.png" width="517" height="105" style="width:13.677cm;height:2.778cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020500000069F5F8D51F.png" /></p>
-<p>在 <strong>WEB-INF\classes\resources</strong> 文件夹中，放置消息文件。该文件未作更改。</p>
+<p>在文件夹 <strong>WEB-INF\classes\ressources</strong> 中，放置消息文件。该文件未作更改。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>personne.formulaire.nom.vide=&lt;li&gt;Vous devez indiquer un nom&lt;/li&gt;
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>personne.formulaire.age.vide=&lt;li&gt;Vous devez indiquer un age&lt;/li&gt;
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>personne.formulaire.age.incorrect=&lt;li&gt;L&#39;âge [{0}] est incorrect&lt;/li&gt;
@@ -956,21 +958,21 @@
 </code></pre></div>
 <p><img src="images/1000000000000195000000689018085D.png" width="405" height="104" style="width:10.714cm;height:2.752cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000195000000689018085D.png" /></p>
 <h2 id="45">4.5. <span style="color: #4f81bd">测试</span></h2>
-<p>我们已准备好进行测试。以下是一些截图，欢迎读者尝试重现。</p>
-<p>请求 URL <strong>http://localhost:8080/strutspersonne1/formulaire.do</strong>：</p>
-<p><img src="images/10000000000001A5000000FC5BB2788A.png" width="421" height="252" style="width:11.137cm;height:6.666cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A5000000FC5BB2788A.png" /></p>
-<p>在不填写任何字段的情况下点击 [提交] 按钮：</p>
-<p><img src="images/10000000000001F2000000D65B879ADE.png" width="498" height="214" style="width:13.174cm;height:5.66cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000D65B879ADE.png" /></p>
-<p>请在年龄字段中输入错误信息后重试：</p>
-<p><img src="images/10000000000001A600000100626802BF.png" width="422" height="256" style="width:11.164cm;height:6.772cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A600000100626802BF.png" /></p>
-<p>我们得到以下响应：</p>
-<p><img src="images/10000000000001F2000000C7D0D592A9.png" width="498" height="199" style="width:13.174cm;height:5.263cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000C7D0D592A9.png" /></p>
-<p>请重试，这次请输入正确的值：</p>
-<p><img src="images/100000000000019500000102485CE3F3.png" width="405" height="258" style="width:10.714cm;height:6.824cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019500000102485CE3F3.png" /></p>
-<p>我们收到以下响应：</p>
+<p>我们已准备好进行测试。下面提供了一些屏幕截图，请读者尝试复现。</p>
+<p>要求生成URL<strong>http://localhost:8080/strutspersonne1/formulaire.do</strong>：</p>
+<p><img src="images/10000000000001A5000000FC5BB2788A.png" width="421" height="252" style="width:11.137cm;height:6.668cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A5000000FC5BB2788A.png" /></p>
+<p>点击按钮 [Envoyer] 而不填写字段：</p>
+<p><img src="images/10000000000001F2000000D65B879ADE.png" width="498" height="214" style="width:13.174cm;height:5.662cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000D65B879ADE.png" /></p>
+<p>重新尝试，年龄字段出现错误：</p>
+<p><img src="images/10000000000001A600000100626802BF.png" width="422" height="256" style="width:11.164cm;height:6.773cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A600000100626802BF.png" /></p>
+<p>得到以下响应：</p>
+<p><img src="images/10000000000001F2000000C7D0D592A9.png" width="498" height="199" style="width:13.174cm;height:5.265cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000C7D0D592A9.png" /></p>
+<p>我们重新尝试，这次输入正确的值：</p>
+<p><img src="images/100000000000019500000102485CE3F3.png" width="405" height="258" style="width:10.714cm;height:6.826cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019500000102485CE3F3.png" /></p>
+<p>得到以下结果：</p>
 <p><img src="images/10000000000001F8000000E6A0B8514D.png" width="504" height="230" style="width:13.333cm;height:6.085cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F8000000E6A0B8514D.png" /></p>
 <h2 id="46">4.6. <span style="color: #4f81bd">结论</span></h2>
-<p>使用动态表单可以更轻松地编写负责存储表单值的 <strong>ActionForm</strong> 类。我们可以将表单管理进一步优化。在 <strong>strutspersonne1</strong> 应用程序中，我们创建了一个 <strong>PersonneDynaForm</strong> 类来验证表单的值（姓名、年龄）。 实际上，某些验证操作经常出现：字段不可为空、字段需符合特定正则表达式、整数字段、日期字段等。此类标准验证可直接在 <strong>struts-config.html</strong> 配置文件中指定。如果需要执行的所有验证都是“标准”的，那么就没有必要为表单编写类。接下来我们将探讨这一情况。</p>
+<p>使用动态表单可以<strong>简化ActionForm这类</strong>负责存储表单值的类的编写。我们还可以进一步简化表单的管理。 在 <strong>strutspersonne1</strong> 应用程序中，我们创建了一个名为 <strong>PersonneDynaForm</strong> 的类，用于验证表单中（姓名、年龄）值的有效性。实际上，某些验证操作经常出现：字段不能为空、字段需符合特定正则表达式、整数字段、日期字段等。 此类标准验证可通过配置文件 <strong>struts-config.html</strong> 进行调用。如果所有需要执行的验证都是“标准”的，那么就无需再为表单编写类了。接下来我们将对此进行说明。</p>
 
 
 

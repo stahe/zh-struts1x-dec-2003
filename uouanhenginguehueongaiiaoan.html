@@ -18,7 +18,7 @@
         <link rel="prev" href="ongaiiaoanehiong.html">
       
       
-        <link rel="next" href="html-iaoan.html">
+        <link rel="next" href="iaoan-html.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ianini.html" class="md-nav__link">
+      <a href="aihu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+      <a href="struts-enuaningonghengu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -485,7 +487,7 @@
   <a href="#52" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2. 为动态表单编写完整性约束
+        5.2. 编写动态表单的完整性约束
       
     </span>
   </a>
@@ -496,7 +498,7 @@
   <a href="#53" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3. 应用程序类
+        5.3. 应用程序的类
       
     </span>
   </a>
@@ -507,12 +509,12 @@
   <a href="#54-strutspersonne2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.4. 部署和测试 strutspersonne2 应用程序
+        5.4. strutspersonne2 应用程序的部署与测试
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5.4. 部署和测试 strutspersonne2 应用程序">
+    <nav class="md-nav" aria-label="5.4. strutspersonne2 应用程序的部署与测试">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -541,7 +543,7 @@
   <a href="#543-web-inf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.4.3. WEB-INF 文件夹
+        5.4.3. 文件夹 WEB-INF
       
     </span>
   </a>
@@ -590,14 +592,14 @@
   
   
     <li class="md-nav__item">
-      <a href="html-iaoan.html" class="md-nav__link">
+      <a href="iaoan-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. HTML 表单
+    6. 表单 HTML
   
 
     
@@ -671,14 +673,14 @@
   
   
     <li class="md-nav__item">
-      <a href="hionghuuuan.html" class="md-nav__link">
+      <a href="ionghuuuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. 使用数据源
+    9. 利用数据源
   
 
     
@@ -736,11 +738,11 @@
 
 
 <h1 id="5">5. <span style="color: #365f91">具有完整性约束的动态表单</span></h1>
-<p>接下来，我们将开发一个名为 <strong>strutspersonne2</strong> 的新应用程序，使用 </p>
+<p>接下来我们将开发一个名为 <strong>strutspersonne2</strong> 的新应用程序，该应用程序使用 </p>
 <ul>
-  <li>类似 <b>strutspersonne1</b> 中的动态表单
+  <li>动态表单（与<b>strutspersonne1</b>类似）
   </li>
-  <li>一个声明该动态表单各字段需检查的完整性约束的文件
+  <li>一个用于声明该动态表单字段需验证的完整性约束的文件
   </li>
 </ul>
 
@@ -753,16 +755,16 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;/</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>我们必须编写 PersonneDynaForm 类，以提供一个 validate 方法，用于验证动态表单中的姓名和年龄值是否有效。需要执行两类检查：</p>
+<p>我们不得不编写类 <strong>PersonneDynaForm</strong>，以便拥有一个能够验证动态表单中“姓名”和“年龄”字段值是否有效的validate方法。需要进行的验证主要有两类：</p>
 <ul>
   <li>两个字段均不得为空
   </li>
-  <li>年龄字段必须符合掩码（正则表达式）<b>\s*\d+\s*</b>
+  <li>“age”字段必须符合正则表达式模式 <b>\s*\d+\s*</b>
   </li>
 </ul>
 
-<p>这两项验证是 <strong>StrutsValidator</strong> 环境能够执行的验证之一。该环境随 Struts 一起提供，并包含 <strong>commons-validator.jar</strong> 和 <strong>jakarta-oro.jar</strong> 中的一系列类。 如果您按照本文开头所述的步骤在 Tomcat 中安装了 Struts 库，那么这些库在 Tomcat 中已可用。请确保它们在 JBuilder 中同样可用。这一点在本文开头也已说明。</p>
-<p><strong>struts-config.xml</strong> 中的新表单声明如下：</p>
+<p>这两项验证属于 <strong>StrutsValidator</strong> 环境可执行的验证范围。该环境随 Struts 一起提供，并包含若干可在 <strong>commons-validator.jar</strong> 和 <strong>jakarta-oro.jar</strong> 中找到的类。 如果您已按照文档开头所述的步骤，在 Tomcat 中安装了 Struts 库，那么这些库在 Tomcat 中已可用。请确保它们在 JBuilder 中同样可用。这一点在文档开头也有说明。</p>
+<p><strong>struts-config.xml</strong> 文件中表单的新声明如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    <span class="p">&lt;</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        <span class="p">&lt;</span><span class="nt">form-bean</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;frmPersonne&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.validator.DynaValidatorForm&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String&quot;</span> <span class="na">initial</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
@@ -770,7 +772,7 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">&lt;/</span><span class="nt">form-beans</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>因此两者几乎没有区别。 动态表单关联的类现在是一个预定义的 StrutsValidator 类：<strong>org.apache.struts.validator.DynaValidatorForm</strong>。开发人员不再需要编写类，而是通过一个单独的 XML 文件指定表单必须检查的完整性约束。Struts 控制器必须知道该文件的名称。为此，struts-config<strong>.</strong>xml 文件中新增了一个配置部分：</p>
+<p>因此，两者几乎没有区别。动态表单关联的类现在是 StrutsValidator 的预定义类：<strong>org.apache.struts.validator.DynaValidatorForm</strong>。 开发人员无需再编写类。他只需在单独的 XML 文件中指定表单需验证的完整性约束。Struts 控制器必须知道该文件的名称。为此<strong>，struts-config.xml</strong> 文件中新增了一个配置部分：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="nt">&lt;plug-in</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;org.apache.struts.validator.ValidatorPlugIn&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="nt">&lt;set-property</span><span class="w"> </span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="na">property=</span><span class="s">&quot;pathnames&quot;</span><span class="w"> </span>
@@ -778,38 +780,38 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">/&gt;</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;/plug-in&gt;</span>
 </code></pre></div>
-<p><strong>&lt;plug-in&gt;</strong> 部分用于加载 Struts 外部的类。其主要属性是 <strong>classname</strong>，用于指定要实例化的类的名称。实例化的对象可能需要进行初始化。这通过 <strong>set-property</strong> 标签来实现，该标签有两个属性：</p>
+<p><strong>&lt;plug-in&gt;</strong> 部分用于加载 Struts 外部的类。其主要属性是 classname，用于指定要实例化的类名。实例化的对象可能需要进行初始化。这通过 <strong>set-property</strong> 标签实现，该标签有两个属性：</p>
 <ul>
-  <li><b>property</b>：要初始化的属性名称
+  <li><b>property</b>：待初始化的属性名称
   </li>
-  <li><b>value</b>：属性的值
+  <li><b>value</b>：要初始化的属性值
   </li>
 </ul>
 
-<p><strong>在此，DynaValidatorForm</strong> 类需要了解两项信息：</p>
+<p>在此，类 <strong>DynaValidatorForm</strong> 需要了解两项信息：</p>
 <ul>
-  <li>定义该类可验证的标准完整性约束的 XML 文件。
+  <li>文件 XML，该文件定义了该类能够验证的标准完整性约束。
   </li>
-  <li>定义应用程序各种动态表单完整性约束的 XML 文件
+  <li>文件 XML，该文件定义了应用程序中各个动态表单的完整性约束
   </li>
 </ul>
 
-<p>此处通过 <strong>pathnames</strong> 属性提供这些信息。该属性的值是验证器将加载的 XML 文件列表：</p>
+<p>这两项信息由 <strong>pathnames</strong> 属性提供。该属性的值是一个文件列表，包含验证器将加载的 XML 文件：</p>
 <ul>
-  <li><b>validator-rules.xml </b>是定义标准完整性约束的文件。该文件随 Struts 一起提供，位于 <b>&lt;struts&gt;\lib</b> 目录下，其 DTD 定义文件也位于该目录中：
+  <li><b>validator-rules.xml </b>是定义标准完整性约束的文件。它随 Struts 一起提供。该文件位于 <b>&lt;struts&gt;\lib</b> 目录下，并附有其定义文件 DTD：
   </li>
 </ul>
 
 <p><img src="images/100000000000014B00000021AEFAEF63.png" width="331" height="33" style="width:8.756cm;height:0.873cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014B00000021AEFAEF63.png" /></p>
 <ul>
-  <li><b>validation.xml</b> 定义了应用程序各种动态表单的完整性约束。该文件由开发人员创建，其名称可自定义。
+  <li><b>validation.xml</b> 用于定义应用程序中各个动态表单的完整性约束。该文件由开发人员构建，其名称可自定义。
   </li>
 </ul>
 
-<p>这两个文件可以放置在 WEB-INF 目录下的任意位置。在本示例中，它们将直接放置在 WEB-INF 目录下：</p>
-<p><img src="images/100000000000015D000000950E1C4A7E.png" width="349" height="149" style="width:9.232cm;height:3.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000950E1C4A7E.png" /></p>
-<h2 id="52">5.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">为动态表单编写完整性约束</span></strong></span></h2>
-<p><strong>validation.xml</strong> 文件将包含针对类型为 <strong>org.apache.struts.validator.DynaValidatorForm</strong> 的 <strong>frmPersonne</strong> 表单中 name 和 age 字段的完整性约束。其内容如下：</p>
+<p>这两个文件可以放置在 WEB-INF 下的任意位置。在本例中，它们将直接放置在 WEB-INF 之下：</p>
+<p><img src="images/100000000000015D000000950E1C4A7E.png" width="349" height="149" style="width:9.232cm;height:3.942cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000950E1C4A7E.png" /></p>
+<h2 id="52">5.2. <span style="color: #4f81bd">编写动态表单的完整性约束</span></h2>
+<p>文件 <strong>validation.xml</strong> 将包含针对表单 <strong>frmPersonne</strong>（类型为 <strong>org.apache.struts.validator.DynaValidatorForm</strong>）中“姓名”和“年龄”字段的完整性约束。其内容如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">form-validation</span><span class="p">&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="p">&lt;</span><span class="nt">global</span><span class="p">&gt;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      <span class="p">&lt;</span><span class="nt">constant</span><span class="p">&gt;</span>
@@ -833,15 +835,15 @@
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="p">&lt;/</span><span class="nt">formset</span><span class="p">&gt;</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="p">&lt;/</span><span class="nt">form-validation</span><span class="p">&gt;</span>    
 </code></pre></div>
-<p>必须遵守以下书写规则：</p>
+<p>需遵守的编写规则如下：</p>
 <ul>
-  <li>所有规则都包含在 &lt;<b>form-validation</b>&gt; 标签内
+  <li>所有规则均位于 &lt;<b>form-validation</b>&gt; 标签内
   </li>
-  <li>&lt;<b>global</b>&gt; 标签用于定义全局范围的信息，即在存在多个表单时对所有表单均有效。在此，我们将常量放置在 &lt;<b>global</b>&gt; 标签内。常量由其名称（&lt;<b>constant-name</b>&gt; 标签）及其值（&lt;<b>constant-value</b>&gt; 标签）定义。 我们使用正则表达式 <b>`_^\s*\d+\s*$`</b>（数字序列前后可能带有空格）来定义常量 <b>`entierpositif`</b>，该表达式用于验证正整数。
+  <li>&lt;<b>global</b>&gt;标签用于定义全局范围的信息，c.a.d。如果存在多个表单，该定义对所有表单均有效。此处我们在&lt;<b>global</b>&gt;中定义了常量。常量由其名称（&lt;<b>constant-name</b>&gt;标签）和数值（&lt;<b>constant-value</b>&gt;标签）来定义。 我们定义常量 `<b>entierpositif</b>`，其值为一个正整数必须满足的正则表达式：<b>_^\s*\d+\s*$</b>（即数字序列，其前后可能带有空格）。
   </li>
-  <li>&lt;<b>formset</b>&gt; 标签定义了需要检查完整性约束的表单集合
+  <li>&lt;<b>formset</b>&gt; 标签定义了需要验证完整性约束的所有表单集合
   </li>
-  <li>&lt;<b>form name=&quot;unFormulaire&quot;</b>&gt; 标签用于定义特定表单的完整性约束，该表单的名称由 name 属性指定。该名称必须存在于 <b>struts-config.xml </b>中定义的表单列表中。此处使用的 <b>frmPersonne</b> 表单在 <b>struts-config.xml </b>中通过以下部分定义：
+  <li>标签 &lt;<b>form name=&quot;unFormulaire&quot;</b>&gt; 用于定义特定表单的完整性约束，该表单的名称由 name 属性指定。该名称必须存在于 <b>struts-config.xml</b> 中定义的表单列表中。 此处使用的表单 <b>frmPersonne </b>在 <b>struts-config.xml</b> 中通过以下部分进行定义：
   </li>
 </ul>
 
@@ -852,19 +854,19 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 </code></pre></div>
 <ul>
-  <li>一个表单标签包含的 &lt;<b>field</b>&gt; 标签数量与该表单需要检查的完整性约束数量相同。一个 &lt;<b>field</b>&gt; 标签具有以下属性：
+  <li>一个 &lt;<b>form</b>&gt; 标签包含的 &lt;<b>field</b>&gt; 标签数量与表单中需要验证的完整性约束数量相同。一个 &lt;<b>field</b>&gt; 标签具有以下属性：
     <ul>
-      <li><b>property</b>：定义完整性约束的表单字段名称
+      <li><b>property</b>：为之定义完整性约束的表单字段名称
       </li>
-      <li><b>depends</b>：待检查的完整性约束列表。 
+      <li><b>depends</b>：待验证的完整性约束列表。 
         <ul>
-          <li>可能的约束条件如下：<b>必填</b>（该字段不能为空）、<b>掩码</b>（字段值必须与掩码变量定义的正则表达式匹配）、<b>整数</b>：字段值必须为整数、<b>字节</b>（byte）、长整型（long）、<b>浮点数</b>（<b>float</b>，单精度浮点数）、双精度浮点数（<b>double</b>）、短整型（short）、 <b>date</b>（字段值必须是有效的日期）、<b>range</b>（字段值必须在给定范围内）、<b>email</b>：（字段值必须是有效的电子邮件地址）、...
+          <li>可能的约束条件如下：<b>required</b>（字段不能为空）、<b>mask</b>（字段值必须符合<b>由mask变量</b>定义的正则表达式）、<b>integer</b>： 字段值必须为整数、<b>byte</b>（字节）、<b>long</b>（长整型）、<b>float</b>（单精度浮点数）、<b>double</b>（双精度浮点数）、<b>short</b>（短整型）、<b>date</b>（字段值必须为有效日期）、<b>range</b>（字段值必须在指定区间内）、<b>email</b>：（字段值必须为有效电子邮件地址），...
           </li>
-          <li>完整性约束将按 <b>depends</b> 属性指定的顺序进行检查。如果某个约束失败，后续的约束将不再进行测试。
+          <li>完整性约束将按 <b>depends</b> 属性的顺序进行验证。如果某项约束未通过验证，后续约束将不再进行测试。
           </li>
-          <li>每个约束都关联一个由键定义的错误消息。以下是格式为“约束（键）”的几个示例：required（errors.required）、mask（errors.invalid）、integer（errors.integer）、byte（errors.byte）、long（errors.long），...
+          <li>每个约束都关联一个由键定义的错误消息。以下是部分约束的示例（格式为约束 (键)）：required (errors.required)、mask (errors.invalid)、integer (errors.integer)、 byte (errors.byte)、long (errors.long)、...
           </li>
-          <li>与上述键关联的错误消息在 <b>validator-rules.xml</b> 文件中定义：
+          <li>与上述键相关的错误消息定义在文件 <b>validator-rules.xml</b> 中：
           </li>
         </ul>
       </li>
@@ -872,7 +874,7 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">   # Struts Validator Error Messages</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">   # Struts Validator 错误消息</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">   errors.required={0} is required.</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">   errors.minlength={0} can not be less than {1} characters.</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">   errors.maxlength={0} can not be greater than {1} characters.</span>
@@ -891,7 +893,7 @@
 <a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="x">   errors.email={0} is an invalid e-mail address.</span>
 </code></pre></div>
 <ul>
-  <li>如上所示，这些消息均为英文。此外，它们作为注释包含在文件中，这表明应将其放置在应用程序的消息文件中。请注意，这在 struts-config.xml 文件的某个部分中进行了定义：
+  <li>我们可以看到，上述消息均为英文。此外，它们以注释形式出现在文件中，其中注明需将其放入应用程序的消息文件中。需要提醒的是，该消息文件在文件 struts-config.xml 的某个部分中进行了定义：
   </li>
 </ul>
 
@@ -900,41 +902,41 @@
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="na">null=</span><span class="s">&quot;false&quot;</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">/&gt;</span><span class="w">    </span>
 </code></pre></div>
-<p><strong>parameter</strong> 属性表示应用程序的消息位于文件</p>
-<p><strong>WEB-INF/classes/resources/personneressources</strong>.<strong>properties</strong></p>
-<p>因此，错误消息应放置在此文件中。它们将添加到现有消息中：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">personne</span><span class="o">.</span><span class="n">formulaire</span><span class="o">.</span><span class="n">nom</span><span class="o">.</span><span class="n">vide</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Vous</span> <span class="n">devez</span> <span class="n">indiquer</span> <span class="n">un</span> <span class="n">nom</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">personne</span><span class="o">.</span><span class="n">formulaire</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">vide</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Vous</span> <span class="n">devez</span> <span class="n">indiquer</span> <span class="n">un</span> <span class="n">age</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">personne</span><span class="o">.</span><span class="n">formulaire</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">incorrect</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">L</span><span class="s1">&#39;âge est incorrect&lt;/li&gt;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">errors</span><span class="o">.</span><span class="n">header</span><span class="o">=&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">errors</span><span class="o">.</span><span class="n">footer</span><span class="o">=&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<p><strong>parameter</strong> 属性表明应用程序的消息位于文件</p>
+<p><strong>WEB-INF/classes/ressources/personneressources.properties中</strong>。</p>
+<p>因此，错误消息应放置在此文件中。它们将添加到已有的消息中：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">personne.formulaire.nom.vide=&lt;li&gt;Vous devez indiquer un nom&lt;/li&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">personne.formulaire.age.vide=&lt;li&gt;Vous devez indiquer un age&lt;/li&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">personne.formulaire.age.incorrect=&lt;li&gt;L&#39;âge est incorrect&lt;/li&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">errors.header=&lt;ul&gt;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">errors.footer=&lt;/ul&gt;</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>   <span class="c1"># Struts Validator error messages</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="c1"># the key is predefined and must not be changed</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="c1"># the associated error msg is free</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="c1"># the msg can have up to 4 parameters {0} to {3}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">   # Struts Validator 错误消息</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="x">    # 该键是预定义的，不得更改</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="x">    # 关联的错误消息是空的</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="x">    # 该消息最多可包含 4 个参数 {0} 至 {3}</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">required</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">renseigné</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">minlength</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">foit</span> <span class="n">avoir</span> <span class="n">au</span> <span class="n">moins</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="n">caractère</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">maxlength</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">ne</span> <span class="n">peut</span> <span class="n">avoir</span> <span class="n">plus</span> <span class="n">de</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="n">caractères</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">invalid</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">est</span> <span class="n">incorrect</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="x">   errors.required=&lt;li&gt;Le champ [{0}] doit être renseigné.&lt;/li&gt;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="x">   errors.minlength=&lt;li&gt;Le champ [{0}] foit avoir au moins {1} caractère.&lt;/li&gt;</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="x">   errors.maxlength=&lt;li&gt;Le champ [{0}] ne peut avoir plus de {1} caractères.&lt;/li&gt;</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="x">   errors.invalid=&lt;li&gt;Le champ [{0}] est incorrect.&lt;/li&gt;</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">byte</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">octet</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">short</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">entier</span> <span class="n">court</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">integer</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">entier</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">long</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">entier</span> <span class="n">long</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">float</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">réel</span> <span class="n">simple</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">double</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">réel</span> <span class="n">double</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="x">   errors.byte=&lt;li&gt;{0} doit être un octet.&lt;/li&gt;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="x">   errors.short=&lt;li&gt;{0} doit être un entier court.&lt;/li&gt;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="x">   errors.integer=&lt;li&gt;{0} doit être un entier.&lt;/li&gt;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="x">   errors.long=&lt;li&gt;{0} doit être un entier long.&lt;/li&gt;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="x">   errors.float=&lt;li&gt;{0} doit être un réel simple.&lt;/li&gt;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="x">   errors.double=&lt;li&gt;{0} doit être un réel double.&lt;/li&gt;</span>
 <a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">date</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">n</span><span class="s1">&#39;est pas une date valide.&lt;/li&gt;</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">range</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">dans</span> <span class="n">l</span><span class="s1">&#39;intervalle </span><span class="si">{1}</span><span class="s1"> à </span><span class="si">{2}</span><span class="s1">.&lt;/li&gt;</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">creditcard</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">n</span><span class="s1">&#39;est pas un numéro de carte valide.&lt;/li&gt;</span>
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">email</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">n</span><span class="s1">&#39;est pas une adresse électronique valide.&lt;/li&gt;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="x">   errors.date=&lt;li&gt;{0} n&#39;est pas une date valide.&lt;/li&gt;</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="x">   errors.range=&lt;li&gt;{0} doit être dans l&#39;intervalle {1} à {2}.&lt;/li&gt;</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="x">   errors.creditcard=&lt;li&gt;{0} n&#39;est pas un numéro de carte valide.&lt;/li&gt;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="x">   errors.email=&lt;li&gt;{0} n&#39;est pas une adresse électronique valide.&lt;/li&gt;</span>
 <a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
-<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>   <span class="n">personne</span><span class="o">.</span><span class="n">nom</span><span class="o">=</span><span class="n">nom</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>     <span class="n">personne</span><span class="o">.</span><span class="n">age</span><span class="o">=</span><span class="n">age</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="x">   personne.nom=nom</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="x">     personne.age=age</span>
 </code></pre></div>
-<p>让我们逐一讲解 <strong>validation.xml</strong> 文件中的完整性约束：</p>
+<p>让我们逐一说明文件 <strong>validation.xml</strong> 的完整性约束：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    <span class="p">&lt;</span><span class="nt">formset</span><span class="p">&gt;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;frmPersonne&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>          <span class="p">&lt;</span><span class="nt">field</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">depends</span><span class="o">=</span><span class="s">&quot;required&quot;</span><span class="p">&gt;</span>
@@ -944,25 +946,25 @@
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="p">&lt;/</span><span class="nt">formset</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>请注意，这些完整性约束适用于在 struts-config.xml 中定义的动态表单中的 name 和 age 字段：</p>
+<p>请注意，这些完整性约束适用于在 struts-config.xml 中定义的动态表单的“姓名”和“年龄”字段：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>        <span class="p">&lt;</span><span class="nt">form-bean</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;frmPersonne&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.validator.DynaValidatorForm&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String&quot;</span> <span class="na">initial</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>            <span class="p">&lt;</span><span class="nt">form-property</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;java.lang.String&quot;</span> <span class="na">initial</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 </code></pre></div>
-<p>两个文件中表单及其字段的名称必须完全一致。name 字段（<strong>property=&quot;name&quot;</strong>）上的完整性约束规定该字段不能为空（<strong>depends=&quot;required&quot;</strong>）。若不满足此条件，将生成一个包含 <strong>errors.required</strong> 键的 <strong>ActionError</strong> 对象。与该键关联的消息位于 <strong>person.resources.properties</strong> 文件中：</p>
+<p>两个文件中表单及其字段的名称必须完全一致。针对“姓名”字段（<strong>property=&quot;nom&quot;</strong>）的完整性约束规定该字段必须为非空（<strong>depends=&quot;required&quot;</strong>）。 若不满足此条件，将生成键为 <strong>errors.required</strong> 的对象 <strong>ActionError</strong>。与该键相关的消息位于文件 <strong>personne.ressources.properties</strong> 中：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="x">   errors.required=&lt;li&gt;Le champ [{0}] doit être renseigné.&lt;/li&gt;</span>
 </code></pre></div>
-<p>我们可以看到，该消息使用了 <strong>{0}</strong> 参数。其值由完整性约束中的 &lt;<strong>arg0</strong>&gt; 标签设定：</p>
+<p>可以看出，该消息使用了一个 <strong>{0}</strong> 参数。该参数的值由完整性约束中的 &lt;<strong>arg0</strong>&gt; 标签确定：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>             &lt;arg0 key=&quot;personne.nom&quot;/&gt;      
 </code></pre></div>
-<p>同样<strong>，arg0</strong> 由一个键来指定，该键也出现在消息文件中： </p>
+<p><strong>同样，arg0</strong> 由一个键指定，该键也出现在消息文件中： </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>   personne.nom=nom
 </code></pre></div>
-<p>综合以上内容，如果未填写 <strong>name</strong> 字段，生成的错误信息为： </p>
+<p>将所有内容组合起来，如果<strong>“名称</strong>”字段未填写，生成的错误消息为： </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>&lt;li&gt;Le champ [nom] doit être renseigné.&lt;/li&gt;
 </code></pre></div>
-<p>现在让我们来分析第二个约束条件，即针对<strong>“年龄</strong>”字段的约束：</p>
+<p>现在我们来分析第二个约束条件，即针对 <strong>age</strong> 字段的约束：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>    <span class="p">&lt;</span><span class="nt">global</span><span class="p">&gt;</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>      <span class="p">&lt;</span><span class="nt">constant</span><span class="p">&gt;</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="p">&lt;</span><span class="nt">constant-name</span><span class="p">&gt;</span>entierpositif<span class="p">&lt;/</span><span class="nt">constant-name</span><span class="p">&gt;</span>
@@ -982,23 +984,23 @@
 <a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 <a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="p">&lt;/</span><span class="nt">formset</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>年龄字段有两个约束条件：必填和<strong>输入格式</strong>。关于<strong>必填</strong>约束，我们可以重复之前的解释。这意味着与该约束相关的错误信息将是：</p>
+<p><strong>“age”</strong>字段有两个约束条件：<strong>required</strong> 和 <strong>mask</strong>。我们可以再次说明<strong>“required”</strong>约束的含义。由此可知，与该约束相关的错误信息将是：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>&lt;li&gt;Le champ [age] doit être renseigné.&lt;/li&gt;
 </code></pre></div>
-<p>第二个约束是<strong>掩码</strong>。这意味着该字段的内容必须匹配由正则表达式表示的模式。 该约束的值定义在 &lt;<strong>var</strong>&gt; 标签中，该标签定义了一个名为 <strong>mask</strong> (&lt;<strong>var-name</strong>&gt;) 的变量，其值为 <strong>${positiveInteger}</strong> (&lt;<strong>var-value</strong>&gt;)。<strong>positiveInteger</strong> 是文件 &lt;<strong>global</strong>&gt; 部分中定义的常量，其值为正则表达式 <strong>^\s*\d+\</strong>s*$。  因此，完整性约束要求年龄必须是一串一个或多个数字，其前后可选地带有空格。如果未满足此约束，将生成一个具有 <strong>errors.invalid</strong> 键的 <strong>ActionError</strong> 对象。在消息文件中，该键关联以下消息：</p>
+<p>第二个约束条件是 <strong>mask</strong>。这意味着字段内容必须符合由正则表达式定义的模式。 该约束的值定义在 &lt;<strong>var</strong>&gt; 标签中，该标签定义了一个名为 <strong>mask</strong> (&lt;<strong>var-name</strong>&gt;) 的变量，其值为 <strong>${entierpositif}</strong> (&lt;<strong>var-value</strong>&gt;)。<strong>entierpositif</strong> 是文件中 &lt;<strong>global</strong>&gt; 部分定义的常量，其值为正则表达式 <strong>^\s*\d+\</strong>s*$。  因此，完整性约束要求年龄必须由一个或多个数字组成，其前后可带有空格。如果未满足此约束，将生成键为 <strong>errors.invalid</strong> 的对象 <strong>ActionError</strong>。 在消息文件中，该键与以下消息相关联：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>   errors.invalid=&lt;li&gt;Le champ [{0}] est incorrect.&lt;/li&gt;
 </code></pre></div>
-<p>该约束必须为 {0} 参数定义一个值。它使用 &lt;arg0&gt; 标签来实现：</p>
+<p>该约束必须为参数 {0} 定义一个值。它通过 &lt;arg0&gt; 标签实现：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>             &lt;arg0 key=&quot;personne.age&quot;/&gt;      
 </code></pre></div>
-<p>在消息文件中，键 <strong>person.age</strong> 与以下消息相关联：</p>
+<p>在消息文件中，键 <strong>personne.age</strong> 与以下消息相关联：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>     personne.age=age
 </code></pre></div>
-<p>因此，如果未验证<strong>掩码</strong>约束，将生成以下错误消息：</p>
+<p>因此，如果未通过 <strong>mask</strong> 约束的验证，将生成以下错误消息：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&lt;li&gt;Le champ [age] est incorrect.&lt;/li&gt;
 </code></pre></div>
-<h2 id="53">5.3. <span style="color: #4f81bd">应用程序类</span></h2>
-<p>在 Struts 应用程序中，需要编写的类包括表单类（<strong>ActionForm</strong> 或其派生类）和操作类（<strong>Action</strong> 或其派生类）。 在新的 <strong>strutspersonne2</strong> 应用程序中，不再有表单类。表单内容在 <strong>struts-config.xml</strong> 中定义，相关的完整性约束则在 <strong>WEB-INF/validation.xml</strong> 中定义。在 <strong>strutspersonne1</strong> 应用程序中，用于处理表单的 <strong>FormulaireAction</strong> 类如下所示：</p>
+<h2 id="53">5.3. <span style="color: #4f81bd">应用程序的类</span></h2>
+<p>在 Struts 应用程序中，需要编写的类包括表单类（<strong>ActionForm</strong> 或其派生类）和动作类（<strong>Action</strong> 或其派生类）。在新应用程序 <strong>strutspersonne2</strong> 中，已不再包含表单类。 表单内容在 <strong>struts-config.xml</strong> 中定义，相关完整性约束则在 <strong>WEB-INF/validation.xml</strong> 中定义。 在 <strong>strutspersonne1</strong> 应用程序中，表单处理类 <strong>FormulaireAction</strong> 的定义如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.personne</span><span class="p">;</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="p">....</span>
@@ -1008,35 +1010,35 @@
 <a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ActionForward</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="n">ActionMapping</span><span class="w"> </span><span class="n">mapping</span><span class="p">,</span><span class="w"> </span><span class="n">ActionForm</span><span class="w"> </span><span class="n">form</span><span class="p">,</span>
 <a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">                               </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span>
 <a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">     </span><span class="c1">// we have a valid form, otherwise we wouldn&#39;t have got here</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">     </span><span class="c1">// 表单有效，否则不会显示在此处</span>
 <a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="n">DynaActionForm</span><span class="w"> </span><span class="n">formulaire</span><span class="o">=</span><span class="p">(</span><span class="n">DynaActionForm</span><span class="p">)</span><span class="n">form</span><span class="p">;</span>
 <a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">,</span><span class="n">formulaire</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">));</span>
 <a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="n">formulaire</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">));</span>
 <a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mapping</span><span class="p">.</span><span class="na">findForward</span><span class="p">(</span><span class="s">&quot;reponse&quot;</span><span class="p">);</span>
-<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">  </span><span class="p">}</span><span class="c1">//execute</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">  </span><span class="p">}</span><span class="c1">//执行</span>
 <a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>FormAction</strong> 类期望接收一个以 <strong>DynaActionForm</strong> 对象形式呈现的表单（装箱代码）。然而，在 struts-config.xml 文件中，表单类定义如下：</p>
+<p>类 <strong>FormulaireAction</strong> 预期接收一个以对象 <strong>DynaActionForm</strong>（框内代码）形式呈现的表单。然而在文件 struts-config.xml 中，表单的类定义如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>        <span class="p">&lt;</span><span class="nt">form-bean</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;frmPersonne&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;org.apache.struts.validator.DynaValidatorForm&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>...
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>        <span class="p">&lt;/</span><span class="nt">form-bean</span><span class="p">&gt;</span>            
 </code></pre></div>
-<p>因此，该表单将被放置在一个 <strong>DynaValidatorForm</strong> 对象中。事实证明，该类是从 DynaActionForm 类派生而来的。因此，我们 FormulaireAction 类的 <strong>execute</strong> 方法仍然有效，无需重写。</p>
-<h2 id="54-strutspersonne2">5.4. <span style="color: #4f81bd">部署和测试 strutspersonne2 应用程序</span></h2>
+<p>因此，表单将被放置在一个类型为 <strong>DynaValidatorForm</strong> 的对象中。恰巧该类是从 <strong>DynaActionForm</strong> 类派生而来的。因此，我们 <strong>FormulaireAction</strong> 类的 <strong>execute</strong> 方法仍然有效，无需重写。</p>
+<h2 id="54-strutspersonne2">5.4. <span style="color: #4f81bd">strutspersonne2 应用程序的部署与测试</span></h2>
 <h3 id="541">5.4.1. <span style="color: #4f81bd">创建上下文</span></h3>
-<p>我们将这个新应用程序命名为 <strong>strutspersonne2</strong>。我们在 Tomcat 4.x 的 <strong>&lt;tomcat&gt;\conf\serveur.xml</strong> 文件中创建一个新的定义：</p>
+<p>我们将这个新应用程序命名为 <strong>strutspersonne2</strong>。我们在 Tomcat 的 <strong>&lt;tomcat&gt;\conf\serveur.xml</strong> 文件中创建了一个新定义：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w">                </span><span class="nt">&lt;Context</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/strutspersonne2&quot;</span><span class="w"> </span><span class="na">docBase=</span><span class="s">&quot;e:/data/serge/web/struts/personne2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>完成上述操作后，必须重启 Tomcat。您可以通过访问以下 URL 来验证该上下文的有效性：</p>
+<p>完成上述操作后，需重启 Tomcat。可通过访问 URL 来验证上下文的有效性：</p>
 <p><strong>http://localhost:8080/strutspersonne2/</strong></p>
 <p><img src="images/10000000000001BA000000F35CCC5F66.png" width="442" height="243" style="width:11.693cm;height:6.429cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BA000000F35CCC5F66.png" /></p>
 <h3 id="542">5.4.2. <span style="color: #4f81bd">视图</span></h3>
-<p>将 <strong>strutspersonne1</strong> 应用程序中的 <strong>views</strong> 文件夹复制到 <strong>strutspersonne2</strong> 应用程序文件夹中。视图文件未发生变化。</p>
+<p>我们将<strong>strutspersonne1</strong>应用程序的<strong>vues</strong>文件夹复制到<strong>strutspersonne2</strong>应用程序的文件夹中。因为视图并没有变化。</p>
 <p><img src="images/100000000000016D00000077947A0537.png" width="365" height="119" style="width:9.656cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016D00000077947A0537.png" /></p>
-<h3 id="543-web-inf">5.4.3. <span style="color: #4f81bd">WEB-INF 文件夹</span></h3>
-<p>将 <strong>strutspersonne1</strong> 应用程序中的 <strong>WEB-INF</strong> 文件夹复制到 <strong>strutspersonne2</strong> 应用程序文件夹中。其中有几个文件发生了变化：</p>
-<p><img src="images/1000000000000166000000B80F3A355B.png" width="358" height="184" style="width:9.47cm;height:4.867cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000166000000B80F3A355B.png" /></p>
-<p><strong>struts-config.xml</strong> 配置文件内容如下：</p>
+<h3 id="543-web-inf">5.4.3. <span style="color: #4f81bd">文件夹 WEB-INF</span></h3>
+<p>我们将 <strong>strutspersonne1</strong> 应用程序中的 <strong>WEB-INF</strong> 文件夹复制到 <strong>strutspersonne2</strong> 应用程序的文件夹中。其中部分文件发生了变化：</p>
+<p><img src="images/1000000000000166000000B80F3A355B.png" width="358" height="184" style="width:9.47cm;height:4.868cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000166000000B80F3A355B.png" /></p>
+<p>配置文件 <strong>struts-config.xml</strong> 变为如下内容：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="cp">&lt;!DOCTYPE struts-config PUBLIC</span>
@@ -1097,8 +1099,8 @@
 <a id="__codelineno-23-58" name="__codelineno-23-58" href="#__codelineno-23-58"></a>
 <a id="__codelineno-23-59" name="__codelineno-23-59" href="#__codelineno-23-59"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>该文件与 <strong>strutspersonne1</strong> 应用程序中的文件完全相同，仅在表单的动态定义以及验证插件的引入方面有所不同（框选部分）。</p>
-<p>将以下 <strong>validation.xml</strong> 文件添加到 <strong>WEB-INF</strong> 目录中：</p>
+<p>该文件与应用程序 <strong>strutspersonne1</strong> 中的文件完全相同，仅在表单的动态定义和验证插件的插入方面有所不同（框选部分）。</p>
+<p>在 <strong>WEB-INF</strong> 中添加以下验证文件 <strong>validation.xml</strong>：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">&lt;</span><span class="nt">form-validation</span><span class="p">&gt;</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="p">&lt;</span><span class="nt">global</span><span class="p">&gt;</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>      <span class="p">&lt;</span><span class="nt">constant</span><span class="p">&gt;</span>
@@ -1122,59 +1124,59 @@
 <a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>    <span class="p">&lt;/</span><span class="nt">formset</span><span class="p">&gt;</span>
 <a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="p">&lt;/</span><span class="nt">form-validation</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>将位于 <strong>&lt;struts&gt;\lib</strong> 目录下的 <strong>validator-rules.xml</strong> 和 <strong>validator-rules_1_1.dtd</strong> 文件添加到 <strong>WEB-INF</strong> 目录中：</p>
-<p><img src="images/1000000000000166000000B80F3A355B.png" width="358" height="184" style="width:9.47cm;height:4.867cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000166000000B80F3A355B.png" /></p>
-<p>在 <strong>WEB-INF/classes</strong> 文件夹中，现在仅剩一个类：</p>
+<p>在 <strong>WEB-INF</strong> 中添加位于 <strong>&lt;struts&gt;\lib</strong> 目录下的文件 <strong>validator-rules.xml</strong>、<strong>validator-rules_1_1.dtd</strong>：</p>
+<p><img src="images/1000000000000166000000B80F3A355B.png" width="358" height="184" style="width:9.47cm;height:4.868cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000166000000B80F3A355B.png" /></p>
+<p>在 <strong>WEB-INF/classes</strong> 文件夹中，现在只剩下一类：</p>
 <p><img src="images/10000000000001F5000000691874FF34.png" width="501" height="105" style="width:13.254cm;height:2.778cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F5000000691874FF34.png" /></p>
-<p>在 <strong>WEB-INF\classes\resources</strong> 文件夹中，你会发现以下属性文件 <strong>personneressources.properties</strong>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">personne</span><span class="o">.</span><span class="n">formulaire</span><span class="o">.</span><span class="n">nom</span><span class="o">.</span><span class="n">vide</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Vous</span> <span class="n">devez</span> <span class="n">indiquer</span> <span class="n">un</span> <span class="n">nom</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">personne</span><span class="o">.</span><span class="n">formulaire</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">vide</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Vous</span> <span class="n">devez</span> <span class="n">indiquer</span> <span class="n">un</span> <span class="n">age</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">personne</span><span class="o">.</span><span class="n">formulaire</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">incorrect</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">L</span><span class="s1">&#39;âge est incorrect&lt;/li&gt;</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="n">errors</span><span class="o">.</span><span class="n">header</span><span class="o">=&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="n">errors</span><span class="o">.</span><span class="n">footer</span><span class="o">=&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<p>在 <strong>WEB-INF\classes\ressources</strong> 文件夹中，可以找到以下消息文件 <strong>personneressources.properties</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="x">personne.formulaire.nom.vide=&lt;li&gt;Vous devez indiquer un nom&lt;/li&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="x">personne.formulaire.age.vide=&lt;li&gt;Vous devez indiquer un age&lt;/li&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="x">personne.formulaire.age.incorrect=&lt;li&gt;L&#39;âge est incorrect&lt;/li&gt;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="x">errors.header=&lt;ul&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="x">errors.footer=&lt;/ul&gt;</span>
 <a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>   <span class="c1"># Struts Validator error messages</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>    <span class="c1"># the key is predefined and must not be changed</span>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>    <span class="c1"># the associated error msg is free</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>    <span class="c1"># the msg can have up to 4 parameters {0} to {3}</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="x">   # Struts Validator 的错误消息</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="x">    # 该键已预定义，不得更改</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="x">    # 关联的错误消息内容为空</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="x">    # 该消息最多可包含 4 个参数 {0} 至 {3}</span>
 <a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
-<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">required</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">renseigné</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">minlength</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">foit</span> <span class="n">avoir</span> <span class="n">au</span> <span class="n">moins</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="n">caractère</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">maxlength</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">ne</span> <span class="n">peut</span> <span class="n">avoir</span> <span class="n">plus</span> <span class="n">de</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="n">caractères</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">invalid</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Le</span> <span class="n">champ</span> <span class="p">[{</span><span class="mi">0</span><span class="p">}]</span> <span class="n">est</span> <span class="n">incorrect</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="x">   errors.required=&lt;li&gt;Le champ [{0}] doit être renseigné.&lt;/li&gt;</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="x">   errors.minlength=&lt;li&gt;Le champ [{0}] foit avoir au moins {1} caractère.&lt;/li&gt;</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="x">   errors.maxlength=&lt;li&gt;Le champ [{0}] ne peut avoir plus de {1} caractères.&lt;/li&gt;</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="x">   errors.invalid=&lt;li&gt;Le champ [{0}] est incorrect.&lt;/li&gt;</span>
 <a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
-<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">byte</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">octet</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">short</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">entier</span> <span class="n">court</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">integer</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">entier</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">long</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">entier</span> <span class="n">long</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">float</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">réel</span> <span class="n">simple</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">double</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">un</span> <span class="n">réel</span> <span class="n">double</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="x">   errors.byte=&lt;li&gt;{0} doit être un octet.&lt;/li&gt;</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="x">   errors.short=&lt;li&gt;{0} doit être un entier court.&lt;/li&gt;</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="x">   errors.integer=&lt;li&gt;{0} doit être un entier.&lt;/li&gt;</span>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="x">   errors.long=&lt;li&gt;{0} doit être un entier long.&lt;/li&gt;</span>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="x">   errors.float=&lt;li&gt;{0} doit être un réel simple.&lt;/li&gt;</span>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="x">   errors.double=&lt;li&gt;{0} doit être un réel double.&lt;/li&gt;</span>
 <a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
-<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">date</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">n</span><span class="s1">&#39;est pas une date valide.&lt;/li&gt;</span>
-<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">range</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">doit</span> <span class="n">être</span> <span class="n">dans</span> <span class="n">l</span><span class="s1">&#39;intervalle </span><span class="si">{1}</span><span class="s1"> à </span><span class="si">{2}</span><span class="s1">.&lt;/li&gt;</span>
-<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">creditcard</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">n</span><span class="s1">&#39;est pas un numéro de carte valide.&lt;/li&gt;</span>
-<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>   <span class="n">errors</span><span class="o">.</span><span class="n">email</span><span class="o">=&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="n">n</span><span class="s1">&#39;est pas une adresse électronique valide.&lt;/li&gt;</span>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="x">   errors.date=&lt;li&gt;{0} n&#39;est pas une date valide.&lt;/li&gt;</span>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="x">   errors.range=&lt;li&gt;{0} doit être dans l&#39;intervalle {1} à {2}.&lt;/li&gt;</span>
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="x">   errors.creditcard=&lt;li&gt;{0} n&#39;est pas un numéro de carte valide.&lt;/li&gt;</span>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="x">   errors.email=&lt;li&gt;{0} n&#39;est pas une adresse électronique valide.&lt;/li&gt;</span>
 <a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>
-<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>   <span class="n">personne</span><span class="o">.</span><span class="n">nom</span><span class="o">=</span><span class="n">nom</span>
-<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>  <span class="n">personne</span><span class="o">.</span><span class="n">age</span><span class="o">=</span><span class="n">age</span>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="x">   personne.nom=nom</span>
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a><span class="x">  personne.age=age</span>
 </code></pre></div>
 <p><img src="images/100000000000019F0000004E5467208F.png" width="415" height="78" style="width:10.978cm;height:2.064cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019F0000004E5467208F.png" /></p>
 <h2 id="55">5.5. <span style="color: #4f81bd">测试</span></h2>
-<p>我们已准备好进行测试。以下是一些截图，欢迎读者尝试重现。</p>
-<p>请访问网址 <strong>http://localhost:8080/strutspersonne2/formulaire.do</strong>：</p>
-<p><img src="images/100000000000019A000000FB05D04EC0.png" width="410" height="251" style="width:10.846cm;height:6.639cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019A000000FB05D04EC0.png" /></p>
-<p>我们不填写任何字段，直接点击[提交]按钮：</p>
+<p>我们已准备好进行测试。下面提供了一些屏幕截图，请读者尝试复现。</p>
+<p>要求生成URL<strong>http://localhost:8080/strutspersonne2/formulaire.do</strong>：</p>
+<p><img src="images/100000000000019A000000FB05D04EC0.png" width="410" height="251" style="width:10.846cm;height:6.641cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019A000000FB05D04EC0.png" /></p>
+<p>点击按钮 [Envoyer] 而不填写字段：</p>
 <p><img src="images/10000000000001F9000000D20064CC36.png" width="505" height="210" style="width:13.36cm;height:5.556cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F9000000D20064CC36.png" /></p>
-<p>我们尝试在年龄字段中输入错误信息：</p>
-<p><img src="images/100000000000019E00000104B5B71988.png" width="414" height="260" style="width:10.952cm;height:6.877cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019E00000104B5B71988.png" /></p>
-<p>我们收到以下响应：</p>
-<p><img src="images/10000000000001F2000000C51910A476.png" width="498" height="197" style="width:13.174cm;height:5.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000C51910A476.png" /></p>
-<p>请重试，这次请输入正确的数值：</p>
-<p><img src="images/100000000000018F000000FCCFDEBBB0.png" width="399" height="252" style="width:10.555cm;height:6.666cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F000000FCCFDEBBB0.png" /></p>
-<p>我们得到以下响应：</p>
-<p><img src="images/10000000000001F1000000EA40EEF3E0.png" width="497" height="234" style="width:13.148cm;height:6.189cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F1000000EA40EEF3E0.png" /></p>
+<p>重新尝试，年龄字段出现错误：</p>
+<p><img src="images/100000000000019E00000104B5B71988.png" width="414" height="260" style="width:10.952cm;height:6.879cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019E00000104B5B71988.png" /></p>
+<p>得到以下响应：</p>
+<p><img src="images/10000000000001F2000000C51910A476.png" width="498" height="197" style="width:13.174cm;height:5.212cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000C51910A476.png" /></p>
+<p>我们重新尝试，这次输入正确的值：</p>
+<p><img src="images/100000000000018F000000FCCFDEBBB0.png" width="399" height="252" style="width:10.555cm;height:6.668cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F000000FCCFDEBBB0.png" /></p>
+<p>得到以下结果：</p>
+<p><img src="images/10000000000001F1000000EA40EEF3E0.png" width="497" height="234" style="width:13.148cm;height:6.191cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F1000000EA40EEF3E0.png" /></p>
 <h2 id="56">5.6. <span style="color: #4f81bd">结论</span></h2>
-<p>我们已经证明，使用带有“标准”完整性约束的动态表单可以避免创建类来表示它们。如果完整性约束偏离了标准，那么我们再次需要创建类来验证这些新的约束。</p>
+<p>我们已经证明，对于具有“标准”完整性约束的动态表单，无需创建类来表示它们。如果完整性约束超出标准范围，则需要重新创建类来验证这些新约束。</p>
 
 
 

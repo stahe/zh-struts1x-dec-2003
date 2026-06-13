@@ -18,7 +18,7 @@
         <link rel="prev" href="-quiest-ingonghengu.html">
       
       
-        <link rel="next" href="hionghuuuan.html">
+        <link rel="next" href="ionghuuuan.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ianini.html" class="md-nav__link">
+      <a href="aihu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. 一般信息
+    1. 概述
   
 
     
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="strutspersonne-ingonghengu.html" class="md-nav__link">
+      <a href="struts-enuaningonghengu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. strutspersonne 应用程序
+    2. Struts 人员应用程序
   
 
     
@@ -438,14 +440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="html-iaoan.html" class="md-nav__link">
+      <a href="iaoan-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. HTML 表单
+    6. 表单 HTML
   
 
     
@@ -577,7 +579,7 @@
   <a href="#83-infosjsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.3. infos.jsp 视图的代码
+        8.3. 视图代码 infos.jsp
       
     </span>
   </a>
@@ -632,14 +634,14 @@
   
   
     <li class="md-nav__item">
-      <a href="hionghuuuan.html" class="md-nav__link">
+      <a href="ionghuuuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. 使用数据源
+    9. 利用数据源
   
 
     
@@ -697,7 +699,7 @@
 
 
 <h1 id="8">8. <span style="color: #365f91">创建插件</span></h1>
-<p>可以创建称为<strong>插件</strong>的应用程序，这些插件会在 Struts 应用程序启动时加载，并在关闭时卸载。这通常允许在应用程序启动时进行初始化，并在关闭时释放资源。这些操作也可以通过扩展控制器中的 <strong>ActionServlet</strong> 类来实现，这正是上一应用程序<strong>中所</strong>采用的方法。插件是该解决方案的一种替代方案。插件可以是一个比简单环境初始化更复杂的应用程序。 我们在介绍声明式验证规则的那一课中曾看到过一个示例。插件在 Struts 配置文件中进行声明。<strong>ValidatorPlugIn</strong> 在使用它的应用程序的 <strong>struts-config.xml</strong> 文件中声明如下：</p>
+<p>可以创建称为<strong>插件的</strong>应用程序，这些插件会在 Struts 应用程序启动时加载，并在其停止时卸载。这通常用于在应用程序启动时进行初始化，并在停止时释放资源。 这些操作也可以通过继承控制器类 <strong>ActionServlet</strong> 来实现，前面的应用程序<strong>中</strong>就是这样做的。插件是该解决方案的一种替代方案。插件可以是一个比简单环境初始化更复杂的应用程序。 我们在介绍声明式验证规则概念的课程中已看到过一个示例。插件需在 Struts 的配置文件中进行声明。例如，插件 <strong>ValidatorPlugIn</strong> 便是在使用它的应用程序的 <strong>struts-config.xml</strong> 文件中这样声明的：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="nt">&lt;plug-in</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;org.apache.struts.validator.ValidatorPlugIn&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="nt">&lt;set-property</span><span class="w"> </span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="na">property=</span><span class="s">&quot;pathnames&quot;</span><span class="w"> </span>
@@ -705,10 +707,10 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">/&gt;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;/plug-in&gt;</span>
 </code></pre></div>
-<p>接下来我们将介绍一个使用插件的 Struts 应用程序。</p>
+<p>现在，我们将介绍一个使用插件的 Struts 应用程序。</p>
 <h2 id="81-struts-plugin1">8.1. <span style="color: #4f81bd">Struts /plugin1 应用程序的配置</span></h2>
-<p>我们建议构建一个配置如下所示的 Struts 应用程序 <strong>/plugin1</strong>：</p>
-<p><mark style="background-color: #fff5ce">web.</mark><mark style="background-color: #c0c0c0">xml</mark></p>
+<p>我们计划构建一个配置如下所示的 Struts <strong>/plugin1</strong> 应用程序：</p>
+<p><mark style="background-color: #fff5ce">web.xml</mark></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">&lt;!DOCTYPE web-app</span>
@@ -741,7 +743,7 @@
 <a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="nt">&lt;/web-app&gt;</span>
 </code></pre></div>
-<p>我们不会过多讨论这个文件，因为它是标准的。</p>
+<p>我们不会过多讨论这个标准文件。</p>
 <p><mark style="background-color: #fff5ce">struts-config.xml</mark></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -758,18 +760,18 @@
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nt">&lt;/struts-config&gt;</span>
 </code></pre></div>
-<p>我们只添加了一个部分，即插件部分。此处使用的 <strong>&lt;plug-in&gt;</strong> 标签的属性如下：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<p>我们只引入了一个部分，即插件部分。此处使用的<strong>&lt;plug-in&gt;</strong>标签属性如下：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>className
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">插件类名</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">插件的类名</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;set-property&gt;
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">允许使用 (键, 值) 对初始化插件</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">允许使用 (键, 值) 对初始化插件</div></td></tr></table>
 
-<p>本应用的目的是演示插件如何获取其初始化参数，并将其提供给共享同一应用上下文的其他对象。我们将使用一个简单的 JSP 视图来显示插件的初始化值，这也解释了为何配置文件中没有 action 元素。</p>
+<p>本应用旨在演示插件如何获取其初始化参数，并将其提供给共享同一应用上下文的其他对象。我们将调用一个简单的视图 JSP 来显示插件的初始化值，这也解释了为何配置文件中没有任何操作。</p>
 <h2 id="82-java">8.2. <span style="color: #4f81bd">插件的 Java 类</span></h2>
-<p>作为 Struts 应用程序插件的 Java 类必须实现 <strong>org.apache.struts.action.PlugIn</strong> 接口。该实现需要编写两个方法：</p>
+<p>作为Struts应用程序插件的Java类必须实现<strong>org.apache.struts.action.PlugIn接口</strong>。该实现需要编写两个方法：</p>
 <ul>
   <li>public void init(ActionServlet servlet, ModuleConfig conf)
   </li>
@@ -777,8 +779,8 @@
   </li>
 </ul>
 
-<p>当 Struts 应用程序加载时，其控制器会实例化 <em>struts-config.</em>xml 文件中声明的所有插件，并为每个插件执行 <strong>init</strong> 方法。插件将在该方法中完成初始化工作。 在此，我们将简单地读取插件的初始化参数，并将它们放入应用上下文中，以便应用程序中的所有其他对象都能使用这些参数。当应用程序被卸载时，控制器将为每个已加载的插件执行 <strong>destroy</strong> 方法。此时应释放不再需要的资源。在此，我们无需进行任何操作。</p>
-<p>类代码如下：</p>
+<p>当 Struts 应用程序加载时，其控制器会实例化 <em>struts-config.xml</em> 文件中声明的所有插件，随后执行每个插件的 <strong>init</strong> 方法。插件将在该方法中进行初始化。 在此，我们只需读取插件的初始化参数，并将它们放入应用程序上下文中，以便应用程序中的所有其他对象都能使用这些参数。当应用程序即将卸载时，控制器将执行每个已加载插件的 <strong>destroy</strong> 方法。此时应释放不再需要的资源。在此，我们无需执行任何操作。</p>
+<p>该类的代码如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.struts.plugins</span><span class="p">;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.ServletException</span><span class="p">;</span>
@@ -789,61 +791,61 @@
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyPlugin</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">PlugIn</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="c1">// method called when application context is deleted</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="c1">// 删除应用程序上下文时调用的方法</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">     </span><span class="c1">// method called on initial creation of application context</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">     </span><span class="c1">// 在应用程序上下文初始化时调用的方法</span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">ActionServlet</span><span class="w"> </span><span class="n">servlet</span><span class="p">,</span><span class="w"> </span><span class="n">ModuleConfig</span><span class="w"> </span><span class="n">conf</span><span class="p">)</span>
 <a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">         </span><span class="c1">// class name of this object</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">         </span><span class="c1">// 该对象的类名</span>
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">();</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">        </span><span class="c1">// plug-in list</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">        </span><span class="c1">// 插件列表</span>
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="n">PlugInConfig</span><span class="o">[]</span><span class="w"> </span><span class="n">pluginConfigs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conf</span><span class="p">.</span><span class="na">findPlugInConfigs</span><span class="p">();</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">         </span><span class="c1">// explore plugins to find the right one</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">         </span><span class="c1">// which is named after this class</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">         </span><span class="c1">// 遍历插件以查找</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">         </span><span class="c1">// 名称与该类相同的插件</span>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">trouvé</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">trouvé</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">pluginConfigs</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">            </span><span class="c1">// plugin name</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">            </span><span class="c1">// 插件名称</span>
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">pluginClassName</span><span class="o">=</span><span class="n">pluginConfigs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getClassName</span><span class="p">();</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">             </span><span class="c1">// if it&#39;s not the right plugin, continue</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">             </span><span class="c1">// 如果不是正确的插件，则继续</span>
 <a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="w"> </span><span class="n">pluginClassName</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">className</span><span class="p">))</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">            </span><span class="c1">// it&#39;s the right one - you memorize its properties in context</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">            </span><span class="c1">// 是正确的——将其属性存储在上下文中</span>
 <a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">            </span><span class="n">servlet</span><span class="p">.</span><span class="na">getServletContext</span><span class="p">().</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;initialisations&quot;</span><span class="p">,</span><span class="n">pluginConfigs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getProperties</span><span class="p">());</span>
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">            </span><span class="n">trouvé</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
 <a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">        </span><span class="p">}</span><span class="c1">//for i</span>
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">//init</span>
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="p">}</span><span class="w"> </span><span class="c1">//class</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">//初始化</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="p">}</span><span class="w"> </span><span class="c1">//类</span>
 </code></pre></div>
 <p>请注意以下几点：</p>
 <ul>
-  <li><b>init</b> 方法接受一个名为 <b>conf</b>（类型为 <b>ModuleConfig）</b>的参数，该参数提供对 <b>struts-config.xml</b> 文件内容的访问。 
+  <li><b>init</b> 方法接收一个名为 <b>conf</b> 的参数（类型为 <b>ModuleConfig</b>），该参数可访问 <b>struts-config.xml</b> 文件的内容。 
   </li>
-  <li><b>[ModuleConfig].findPlugInConfigs()</b> 方法会从 Struts 配置文件中检索所有 <b>&lt;plug-in&gt;</b> 部分，并以 <b>PlugInConfig</b> 对象数组的形式返回。
+  <li>方法 <b>[ModuleConfig].findPlugInConfigs() </b>可将 Struts 配置文件中的所有 <b>&lt;plug-in&gt;</b> 部分以 <b>PlugInConfig</b> 对象数组的形式提取出来。
   </li>
-  <li>PlugInConfig 类表示配置文件中的一个 <b>&lt;plug-in&gt;</b> 部分。通过 <b>[PlugInConfig].getProperties</b> 方法，我们可以以 <b>java.util.Map</b> 字典的形式访问该部分中的 <b>&lt;set-property&gt;</b> 元素。
+  <li>类 <b>PluginConfig</b> 表示配置文件中的一个 <b>&lt;plug-in&gt;</b> 部分。 方法 <b>[PlugInConfig].getProperties</b> 允许我们以字典 <b>java.util.Map</b> 的形式访问该部分中的 <b>&lt;set-property&gt;</b> 元素。
   </li>
   <li>插件的属性字典被放置在应用程序上下文中。
   </li>
-  <li>由于可能存在多个插件，我们需要找到我们感兴趣的那个。它就是与正在执行的类同名的那个。
+  <li>由于可能存在多个插件，我们需要找到目标插件。该插件的名称与正在执行的类名称相同。
   </li>
 </ul>
 
-<p>在此，我们选择将整个字典放入上下文中。我们本可以选择直接使用它。以下代码片段演示了一种实现方式：</p>
+<p>在此我们选择将整个字典放入上下文中。我们本可以利用该字典。以下代码片段展示了一种实现方式：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">            </span><span class="n">Map</span><span class="w"> </span><span class="n">initialisations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pluginConfigs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getProperties</span><span class="p">();</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">             </span><span class="c1">// iterate over dictionary entries</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">             </span><span class="c1">// 遍历字典中的条目</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">            </span><span class="n">Iterator</span><span class="w"> </span><span class="n">entrées</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initialisations</span><span class="p">.</span><span class="na">entrySet</span><span class="p">().</span><span class="na">iterator</span><span class="p">();</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">entrées</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">                 </span><span class="c1">// retrieve current input (key,value)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">                 </span><span class="c1">// 获取当前条目（键，值）</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">                </span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="w"> </span><span class="n">entrée</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="p">)</span><span class="w"> </span><span class="n">entrées</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">clé</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">entrée</span><span class="p">.</span><span class="na">getKey</span><span class="p">();</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">entrée</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">                </span><span class="c1">// exploit (key,value)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">                </span><span class="c1">// 处理 (键,值)</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">                </span><span class="c1">//...</span>
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="p">}</span>
 </code></pre></div>
-<h2 id="83-infosjsp">8.3. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">infos.jsp 视图的代码</span></strong></span></h2>
-<p><strong>infos.jsp</strong> 视图负责显示插件属性字典的内容，该字典已放置在应用程序上下文中。由于 <strong>infos.jsp</strong> 视图是该上下文的一部分，因此它可以访问该上下文。其代码如下：</p>
+<h2 id="83-infosjsp">8.3. <span style="color: #4f81bd">视图代码 infos.jsp</span></h2>
+<p>视图 <strong>infos.jsp</strong> 负责显示已放入应用程序上下文中的插件属性字典的内容。由于视图 <strong>infos.jsp</strong> 是该上下文的一部分，因此它可以访问该字典。其代码如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-bean.tld&quot; prefix=&quot;bean&quot; %&gt;
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="err">&lt;</span>%@ taglib uri=&quot;/WEB-INF/struts-logic.tld&quot; prefix=&quot;logic&quot; %&gt;
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -867,28 +869,28 @@
 <a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>注：</p>
+<p>注意事项：</p>
 <ul>
-  <li>我们使用 <b>struts-logic </b>和 <b>struts-bean</b> 标签库
+  <li>我们使用了 <b>struts-logic </b>和 <b>struts-bean</b> 标签库
   </li>
-  <li><b>&lt;logic:iterate&gt;</b> 标签允许我们显示由插件的 <b>init</b> 方法放置在上下文中的初始化字典。<b>name</b> 属性指定要迭代的对象。该对象应为集合、迭代器等类型。系统将在所有作用域（页面、请求、会话、上下文）中搜索该对象。 在此示例中，该对象将在<b>上下文</b>作用域中被找到。<b>id</b> 参数用于在迭代过程中为集合的当前元素命名。在此，在 <b>&lt;logic:iterate&gt;</b> 标签的主体中，<b>element </b>将代表字典的当前元素。该元素由一个 <b>java.util.Map.Entry</b> 对象表示，本质上是字典中的一个 (键, 值) 对。
+  <li><b>&lt;logic:iterate&gt;</b> 标签允许我们显示由插件的 <b>init</b> 方法放入上下文中的初始化字典。<b>name</b> 属性指定了需要迭代的对象。该对象应类似于集合、迭代器等。系统会在所有作用域（页面、请求、会话、上下文）中搜索该对象。 在此示例中，该对象将在 <b>context</b> 作用域中被找到。<b>id</b> 参数用于在迭代过程中为集合中的当前元素命名。 在此，在 <b>&lt;logic:iterate&gt;</b> 标签的体内，<b>element </b>将代表字典中的当前元素。该元素由对象 <b>java.util.Map.Entry</b> 表示，该对象大致相当于字典中的一个 (键, 值) 对。
   </li>
-  <li>在 <b>&lt;logic:iterate&gt;</b> 标签的正文中，我们通过 (<b>&lt;bean:write&gt;</b>) 显示当前元素 <b>element</b> 的内容。该元素被视为一个具有两个<b>属性的</b>对象：<b>键</b>和<b>值</b>。这两个属性都会被显示出来。
+  <li>在 <b>&lt;logic:iterate&gt;</b> 标签的正文中，我们通过 (<b>&lt;bean:write&gt;</b>) 显示当前元素 <b>element</b> 的内容。该元素被视为一个具有两个属性（<b>property</b>）的对象：键 <b>key </b>和值 <b>value</b>。这两个属性都会被显示出来。
   </li>
 </ul>
 
 <h2 id="84">8.4. <span style="color: #4f81bd">部署</span></h2>
-<p>应用程序上下文在 Tomcat 的 <strong>server.xml</strong> 配置文件中进行定义：</p>
+<p>应用程序的上下文在 Tomcat 的配置文件 <strong>server.xml</strong> 中定义：</p>
 <p><strong>&lt;Context path=&quot;/plugin11&quot; reloadable=&quot;true&quot; docBase=&quot;E:\data\serge\web\struts\plugins\1&quot; /&gt;</strong></p>
 <p>应用程序的目录结构如下：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001300000008FE31A6D61.png" width="304" height="143" style="display:inline-block; margin:4px;width:8.042cm;height:3.784cm;" class="odt-zoomable" data-zoom-src="images/10000000000001300000008FE31A6D61.png" /><img src="images/1000000000000160000000D371853205.png" width="352" height="211" style="display:inline-block; margin:4px;width:9.312cm;height:5.583cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000000D371853205.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015F0000018256CF5DE2.png" width="351" height="386" style="display:inline-block; margin:4px;width:9.285cm;height:10.211cm;" class="odt-zoomable" data-zoom-src="images/100000000000015F0000018256CF5DE2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" colspan="2"><img src="images/10000000000001DF0000006C6244F965.png" width="479" height="108" style="display:inline-block; margin:4px;width:12.672cm;height:2.858cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DF0000006C6244F965.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001300000008FE31A6D61.png" width="304" height="143" style="display:inline-block; margin:4px;width:8.042cm;height:3.784cm;" class="odt-zoomable" data-zoom-src="images/10000000000001300000008FE31A6D61.png" /><img src="images/1000000000000160000000D371853205.png" width="352" height="211" style="display:inline-block; margin:4px;width:9.312cm;height:5.583cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000000D371853205.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000015F0000018256CF5DE2.png" width="351" height="386" style="display:inline-block; margin:4px;width:9.285cm;height:10.211cm;" class="odt-zoomable" data-zoom-src="images/100000000000015F0000018256CF5DE2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;" colspan="2"><img src="images/10000000000001DF0000006C6244F965.png" width="479" height="108" style="display:inline-block; margin:4px;width:12.672cm;height:2.858cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DF0000006C6244F965.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <h2 id="85">8.5. <span style="color: #4f81bd">测试</span></h2>
-<p>我们启动 Tomcat 并访问 URL <strong>http://localhost:8080/plugin1/infos.jsp</strong>：</p>
-<p><img src="images/10000000000001C2000000D919CB97E0.png" width="450" height="217" style="width:11.904cm;height:5.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C2000000D919CB97E0.png" /></p>
-<p>我们观察到，<strong>infos.jsp</strong> 视图已通过插件成功访问了应用程序上下文中存储的信息。</p>
+<p>我们启动 Tomcat 并请求 URL <strong>http://localhost:8080/plugin1/infos.jsp</strong>：</p>
+<p><img src="images/10000000000001C2000000D919CB97E0.png" width="450" height="217" style="width:11.904cm;height:5.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C2000000D919CB97E0.png" /></p>
+<p>我们发现视图 <strong>infos.jsp</strong> 确实通过插件访问了存储在应用程序上下文中的信息。</p>
 <h2 id="86">8.6. <span style="color: #4f81bd">结论</span></h2>
-<p>我们已经演示了如何使用插件初始化一个 Struts 应用程序。这可以作为派生 <strong>ActionServlet</strong> 类以实现相同结果的一种替代方案。</p>
+<p>我们已经证明，可以通过插件初始化一个 Struts 应用程序。这可以作为一种替代方案，而无需通过继承 <strong>ActionServlet</strong> 类来完成相同的工作。</p>
 
 
 
